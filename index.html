@@ -286,6 +286,34 @@ a.inl:hover{text-decoration:underline}
 @media (max-width:600px){.cs-head{padding:20px 16px}}
 
 /* 04 corporate */
+.conv{margin-top:40px;border-top:3px solid var(--rule)}
+.conv-head{display:grid;grid-template-columns:minmax(0,13em) minmax(0,1fr);gap:16px;padding:10px 0;border-bottom:1px solid var(--rule);font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;color:var(--ink-2)}
+.conv-head .ch{display:grid;grid-template-columns:minmax(0,1fr) 2em minmax(0,1.3fr) 7.5em;gap:16px}
+.conv-head .ch span:nth-child(3){color:var(--wv-deep)}
+.conv-head .ch span:nth-child(4){text-align:right}
+.conv-row{display:grid;grid-template-columns:minmax(0,13em) minmax(0,1fr);gap:16px;padding:20px 0;border-bottom:1px solid var(--hair)}
+.conv-cap{margin:0}
+.conv-cap b{font-family:var(--display);font-weight:900;font-size:clamp(26px,2.8vw,34px);text-transform:uppercase;line-height:1;display:block}
+.conv-row:first-of-type .conv-cap b{color:var(--wv)}
+.conv-cap span{display:block;font-size:13.5px;font-weight:600;color:var(--ink-2);margin-top:6px;line-height:1.5}
+.conv ul{display:grid;gap:0}
+.conv li{display:grid;grid-template-columns:minmax(0,1fr) 2em minmax(0,1.3fr) 7.5em;gap:16px;align-items:center;padding:12px 0;border-top:1px solid var(--hair)}
+.conv li:first-child{border-top:0;padding-top:0}
+.conv .in{font-size:14px;color:var(--ink-2);line-height:1.5}
+.conv .in b{display:block;font-size:16px;font-weight:800;color:var(--ink);letter-spacing:-.03em}
+.conv li>i{font-style:normal;font-family:var(--display);font-weight:900;font-size:28px;color:var(--wv);text-align:center;line-height:1}
+.conv .out{font-size:14.5px;line-height:1.5;background:var(--wv-tint);padding:10px 14px;border-left:3px solid var(--wv);border-radius:0}
+.conv .out strong{display:block;font-family:var(--display);font-weight:900;font-size:clamp(24px,2.4vw,30px);line-height:1.05;color:var(--wv-deep);margin-bottom:2px}
+.conv li>a{font-size:12.5px;font-weight:700;color:var(--wv-deep);text-decoration:none;text-align:right}
+.conv li>a::after{content:" →"}
+.conv li>a:hover{text-decoration:underline}
+@media (max-width:900px){
+  .conv-head{display:none}
+  .conv-row{grid-template-columns:minmax(0,1fr);gap:12px}
+  .conv li{grid-template-columns:minmax(0,1fr);gap:6px}
+  .conv li>i{text-align:left;transform:rotate(90deg);width:1em}
+  .conv li>a{text-align:left}
+}
 .assets{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:40px;border-top:3px solid var(--rule)}
 .assets article{padding:20px 18px 10px;border-left:1px solid var(--hair);min-width:0}
 .assets article:first-child{border-left:0;padding-left:0}
@@ -917,35 +945,36 @@ footer .w{padding-block:26px;display:grid;gap:6px}
     <span class="eyebrow"><b>For corporate</b></span>
     <h2 class="sec-h">우리 기업은 무엇을 더할 수 있을까요?</h2>
     <p class="lede" style="margin-top:14px">기업이 가진 자산은 재정자본만이 아닙니다. <strong>기업이 이미 잘하는 일이, 지역에는 가장 필요한 일일 수 있습니다.</strong> 기술, 사람, 시장, 자원이 앞의 사업에서 어떻게 지역의 해법이 됐는지 살펴보세요.</p>
-    <div class="assets">
-      <article>
-        <b>Core business</b><span class="what">기술 · 제품 · 디자인 · 유통 · 데이터</span>
+    <div class="conv">
+      <div class="conv-head" aria-hidden="true"><span>기업의 자본</span><span class="ch"><span>기업이 내놓은 것</span><span></span><span>지역에서 바뀐 것</span><span>사례</span></span></div>
+      <section class="conv-row">
+        <h3 class="conv-cap"><b>Core business</b><span>업(業) · 기술 · 제품 · 디자인 · 유통</span></h3>
         <ul>
-          <li><em>목욕탕</em>이노션의 디자인·브랜딩이 노후 목욕탕을 건강 인프라로 바꿨습니다.</li>
-          <li><em>농촌창업도약+</em>현대백화점그룹이 상품 개발·위생 관리·유통 역량으로 농촌 창업기업 15곳을 함께 키웁니다.</li>
+          <li><p class="in"><b>이노션</b>디자인 · 브랜딩</p><i aria-hidden="true">→</i><p class="out"><strong>10.7% → 1.2%</strong>노후 목욕탕이 주민 건강 인프라로. 낙상 경험률 감소</p><a href="#case-community">목욕탕</a></li>
+          <li><p class="in"><b>현대백화점그룹</b>상품 개발 · 위생 관리 · 유통</p><i aria-hidden="true">→</i><p class="out"><strong>15곳</strong>농촌 창업기업이 시장에 나갈 제품과 판로를 준비</p><a href="#case-economy">농촌창업도약+</a></li>
         </ul>
-      </article>
-      <article>
-        <b>People</b><span class="what">임직원 · 전문가 · 고객</span>
+      </section>
+      <section class="conv-row">
+        <h3 class="conv-cap"><b>People</b><span>임직원 · 전문가 · 고객</span></h3>
         <ul>
-          <li><em>부안 갯벌</em>기업 임직원 500여 명이 부안을 찾아 갯벌 보전에 참여했습니다.</li>
-          <li><em>해방프로젝트</em>아모레퍼시픽 임직원이 진도 중학생 29명의 진로 멘토가 됐습니다.</li>
+          <li><p class="in"><b>아모레퍼시픽</b>임직원 진로 멘토링 · 기업 투어</p><i aria-hidden="true">→</i><p class="out"><strong>+16.6%</strong>진도 중학생 29명의 진로 인식 상승</p><a href="#case-future">해방프로젝트</a></li>
+          <li><p class="in"><b>참여 기업</b>임직원의 지역 방문</p><i aria-hidden="true">→</i><p class="out"><strong>500여 명</strong>부안을 찾은 임직원이 갯벌 보전과 지역 관계인구로</p><a href="#why-wv">부안 갯벌</a></li>
         </ul>
-      </article>
-      <article>
-        <b>Market</b><span class="what">브랜드 · 채널 · 소비자 접점</span>
+      </section>
+      <section class="conv-row">
+        <h3 class="conv-cap"><b>Market</b><span>브랜드 · 채널 · 소비자 접점</span></h3>
         <ul>
-          <li><em>농촌창업도약+</em>현대백화점그룹의 유통 채널과 팝업이 지역 창업기업의 판로가 됩니다.</li>
-          <li><em>부안 갯벌</em>기업의 고객과 시민이 갯벌 약 800평 보전에 함께했습니다.</li>
+          <li><p class="in"><b>현대백화점그룹</b>유통 채널 · 팝업스토어</p><i aria-hidden="true">→</i><p class="out"><strong>판로</strong>지역 창업기업의 제품이 고객을 만나는 자리</p><a href="#case-economy">농촌창업도약+</a></li>
+          <li><p class="in"><b>참여 기업</b>고객 참여 캠페인</p><i aria-hidden="true">→</i><p class="out"><strong>약 800평</strong>시민이 함께 지킨 부안 갯벌</p><a href="#why-wv">부안 갯벌</a></li>
         </ul>
-      </article>
-      <article>
-        <b>Resource</b><span class="what">재원 · 공간 · 인프라</span>
+      </section>
+      <section class="conv-row">
+        <h3 class="conv-cap"><b>Resource</b><span>재원 · 공간 · 인프라</span></h3>
         <ul>
-          <li><em>목욕탕</em>이노션의 기금이 공간을 바꾸는 사업 재원이 됐습니다.</li>
-          <li><em>부안 갯벌</em>기업 ESG 재원으로 갯벌 약 2,200평을 함께 지켰습니다.</li>
+          <li><p class="in"><b>이노션</b>기금</p><i aria-hidden="true">→</i><p class="out"><strong>SROI 3.17배</strong>공간을 바꾼 재원이 21.5억 원의 사회적 가치로</p><a href="#case-community">목욕탕</a></li>
+          <li><p class="in"><b>참여 기업</b>ESG 재원</p><i aria-hidden="true">→</i><p class="out"><strong>약 2,200평</strong>기업이 함께 지킨 부안 갯벌</p><a href="#why-wv">부안 갯벌</a></li>
         </ul>
-      </article>
+      </section>
     </div>
     <div class="pull">
       <p>기업의 본업이 지역의 문제와 만나면, 사회공헌은 <em>지역에 필요한 해법</em>이 됩니다.</p>
