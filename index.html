@@ -215,6 +215,14 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .three-lib b{display:block;font-size:22px;font-weight:900;letter-spacing:-.04em;color:var(--wv)}
 .three-lib span{display:block;font-size:12.5px;margin-top:2px;opacity:.85}
 
+.cs-card.wide{grid-column:1/-1;flex-direction:row;border-style:dashed}
+.cs-card.wide .cs-vis{flex:0 0 38%;aspect-ratio:auto;min-height:220px}
+.cs-vis.market{background:var(--paper-2);display:flex;align-items:center;justify-content:center;gap:10px;font-family:var(--display);font-weight:900;text-transform:uppercase;color:var(--ink)}
+.mk-ai{font-size:clamp(72px,8vw,120px);line-height:.85;color:var(--wv)}
+.mk-x{font-size:40px;opacity:.5}
+.mk-m{font-family:var(--body);font-size:clamp(22px,2.4vw,30px);font-weight:900;letter-spacing:-.04em;line-height:1.15}
+@media (max-width:900px){.cs-card.wide{flex-direction:column}.cs-card.wide .cs-vis{flex:none;min-height:0;aspect-ratio:16/9}}
+
 /* impact builder */
 .ib-lede{max-width:none}
 .roles2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2vw,24px);margin-top:clamp(36px,5vw,56px)}
@@ -444,6 +452,15 @@ footer .w{padding-block:26px;display:grid;gap:6px}
           <span class="cs-more">자세히 보기</span>
         </span>
       </button>
+      <button class="cs-card wide" type="button" role="tab" id="tab-market" aria-controls="case-market" aria-selected="false" data-case="case-market">
+        <span class="cs-vis market" aria-hidden="true"><span class="mk-ai">AI</span><span class="mk-x">×</span><span class="mk-m">전통<br>시장</span></span>
+        <span class="cs-txt">
+          <span class="cs-ax">Local economy · 제안 모델</span>
+          <span class="cs-name">전통시장 AI 상생 솔루션</span>
+          <span class="cs-one">전통시장 소상공인의 AI 활용을 돕고, 시장을 지역 아이들의 돌봄과 나눔의 거점으로 잇는 모델입니다. 함께할 기업과 지역을 찾고 있습니다.</span>
+          <span class="cs-more">자세히 보기</span>
+        </span>
+      </button>
     </div>
 
     <div class="cs-panel" id="case-economy" role="tabpanel" aria-labelledby="tab-economy" hidden>
@@ -546,6 +563,39 @@ footer .w{padding-block:26px;display:grid;gap:6px}
             </ul>
           </div>
           <div class="blk yours"><h4>If you are</h4><p>어떤 업종이든, 일터를 열고 임직원이 멘토가 되는 것만으로 지역 아이들의 꿈이 넓어집니다.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-panel" id="case-market" role="tabpanel" aria-labelledby="tab-market" hidden>
+      <div class="cs-head">
+        <span class="eyebrow"><b>Next model</b> · 제안 단계 · 함께할 기업 파트너 모집</span>
+        <h3>전통시장 AI 상생 솔루션</h3>
+        <p>시장이 바뀌면, 지역이 함께 바뀝니다.</p>
+      </div>
+      <div class="cs-body">
+        <div>
+          <div class="blk"><h4>Problem</h4><p>전통시장 소상공인은 빠른 기술 변화를 따라가기 어렵고, 시장은 지역 공동체의 거점 역할을 잃어 가고 있습니다.</p></div>
+          <div class="blk"><h4>Solution · 세 가지를 함께</h4>
+            <ul class="three-lib">
+              <li><b>AI 전환</b><span>1:1 진단 → 교육·코칭 → 성과 측정</span></li>
+              <li><b>커뮤니티 허브</b><span>시장 유휴 공간을 교육과 교류의 거점으로</span></li>
+              <li><b>아이들의 식탁</b><span>급식카드·식사 바우처를 시장에서 사용</span></li>
+            </ul>
+            <p style="margin-top:14px">아이들이 시장에서 장을 보고, 상인은 반복해서 찾아오는 아이들을 살핍니다. 상인의 성장과 아이들의 돌봄이 한 시장 안에서 이어지도록 설계했습니다.</p>
+          </div>
+        </div>
+        <div>
+          <div class="blk"><h4>Partners · 제안 구조</h4>
+            <ul class="roles">
+              <li><b>기업 파트너</b><span>사업 재원 · 결제·금융 인프라 · 캠페인</span></li>
+              <li><b>유디임팩트</b><span>AI 전환 솔루션 · 상인 교육과 코칭</span></li>
+              <li><b>행정안전부 · 지자체</b><span>상인 참여 · 공공서비스 연계 · 확산</span></li>
+              <li class="me"><b>월드비전</b><span>운영 거버넌스 · 커뮤니티 허브 · 아동 영양 지원 · 성과 관리</span></li>
+            </ul>
+          </div>
+          <div class="blk"><h4>Sustain</h4><p>월드비전이 첫 단추를 끼우고, 이후에는 상인과 지역이 스스로 운영하는 구조를 목표로 합니다.</p></div>
+          <div class="blk yours"><h4>If you are</h4><p>금융·결제·플랫폼 기업이라면, 결제 인프라와 고객 캠페인이 시장의 매출과 아이들의 식사로 이어집니다.</p></div>
         </div>
       </div>
     </div>
