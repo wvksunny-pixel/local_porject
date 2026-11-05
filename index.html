@@ -197,6 +197,16 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .reach{font-size:13.5px;color:var(--ink-2)}
 .reach b{font-family:var(--mono);font-weight:500;color:var(--ink);user-select:all}
 
+.cs-impact{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13px;color:var(--ink-2);padding-top:10px;border-top:1px dashed var(--hair)}
+.cs-impact b{font-family:var(--display);font-weight:900;font-size:22px;line-height:1;color:var(--wv-deep);margin-right:4px}
+.cs-vis.route{background:var(--wv)}
+.cs-route{position:absolute;inset:0;width:100%;height:100%}
+.cs-route path{fill:none;stroke:#17140F;stroke-width:3;stroke-dasharray:2 10;stroke-linecap:round;opacity:.55}
+.cs-vis.route .cs-big{color:#17140F}
+.cs-vis.route .cs-big small{color:#17140F}
+.cs-cap2{position:absolute;left:18px;top:16px;z-index:2;font-size:14px;font-weight:800;letter-spacing:-.03em;line-height:1.4;color:#17140F}
+@media (prefers-reduced-motion:no-preference){.cs-route path{animation:dash 6s linear infinite}@keyframes dash{to{stroke-dashoffset:-120}}}
+
 /* impact builder */
 .ib-lede{max-width:none}
 .roles2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2vw,24px);margin-top:clamp(36px,5vw,56px)}
@@ -402,6 +412,7 @@ footer .w{padding-block:26px;display:grid;gap:6px}
           <span class="cs-ax">Local economy · 2026 1기</span>
           <span class="cs-name">농촌창업도약+</span>
           <span class="cs-one">농촌 창업기업 15곳을 제품 개발부터 판로까지 함께 키웁니다.</span>
+          <span class="cs-impact"><b>15곳</b> 1기 창업기업 <b>4년</b> 2026–2029</span>
           <span class="cs-more">자세히 보기</span>
         </span>
       </button>
@@ -411,15 +422,17 @@ footer .w{padding-block:26px;display:grid;gap:6px}
           <span class="cs-ax">Local community · 경기 안성</span>
           <span class="cs-name">세상에서 가장 안전한 목욕탕</span>
           <span class="cs-one">노후 목욕탕을 고령 주민의 건강과 돌봄 거점으로 바꿨습니다.</span>
+          <span class="cs-impact"><b>3.17배</b> SROI <b>27명</b> 주민 건강리더</span>
           <span class="cs-more">자세히 보기</span>
         </span>
       </button>
       <button class="cs-card" type="button" role="tab" id="tab-future" aria-controls="case-future" aria-selected="false" data-case="case-future">
-        <span class="cs-vis"><span class="cs-big">10,156<small>km</small></span></span>
+        <span class="cs-vis route"><svg class="cs-route" viewBox="0 0 400 300" preserveAspectRatio="none" aria-hidden="true"><path d="M-10 250 C 60 230, 70 150, 140 160 S 230 230, 270 150 S 330 40, 410 60" /></svg><span class="cs-cap2">진도 중학생 29명이<br>자전거로 달린 거리</span><span class="cs-big">10,156<small>km</small></span></span>
         <span class="cs-txt">
           <span class="cs-ax">Local future · 전남 진도</span>
           <span class="cs-name">해방프로젝트</span>
           <span class="cs-one">버스가 3시간에 한 대 다니는 마을의 중학생들이 자전거로 세상을 넓혔습니다.</span>
+          <span class="cs-impact"><b>+16.6%</b> 진로 인식 <b>54개</b> 새로 알게 된 직업</span>
           <span class="cs-more">자세히 보기</span>
         </span>
       </button>
@@ -676,7 +689,7 @@ function openFromHash(){
   var el = id && document.getElementById(id);
   if (el && el.classList.contains('cs-panel')) selectCase(id, true);
 }
-if (/^#case-/.test(location.hash)) openFromHash(); else selectCase('case-economy', false, true);
+if (/^#case-/.test(location.hash)) openFromHash(); else selectCase(null, false, true);
 window.addEventListener('hashchange', openFromHash);
 document.querySelectorAll('a[href^="#case-"]').forEach(function(a){
   a.addEventListener('click', function(e){
