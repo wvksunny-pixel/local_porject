@@ -11,4 +11,5 @@
 ## 사례 바로가기
 - `#case-economy` 농촌창업도약+
 - `#case-community` 세상에서 가장 안전한 목욕탕
-- `#case-future` 해방프로젝트 · 드림브릿지
+- `#case-future` 해방프로젝트
+- `#case-dreambridge` 드림브릿지

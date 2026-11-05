@@ -216,13 +216,13 @@ a.inl:hover{text-decoration:underline}
 .press a:hover{text-decoration:underline}
 
 /* 03 case studies */
-.cs-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,28px);margin-top:40px}
+.cs-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2.4vw,28px);margin-top:40px}
 .cs-card{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;background:var(--paper);border:2px solid var(--rule);min-width:0;transition:border-color .2s,box-shadow .2s,transform .25s;-webkit-tap-highlight-color:transparent}
 .cs-card:focus-visible{outline:3px solid var(--wv);outline-offset:3px}
 .cs-vis{position:relative;display:block;aspect-ratio:4/3;max-width:100%;overflow:hidden;background:var(--band);color:var(--band-fg);background-size:cover;background-position:center}
 .cs-vis>*{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
 .cs-num{position:absolute;top:14px;left:16px;font-family:var(--mono);font-size:12px;letter-spacing:.14em}
-.cs-big{position:absolute;left:16px;bottom:38px;font-family:var(--display);font-weight:900;font-size:clamp(64px,7.4vw,104px);line-height:.85;color:var(--wv);transform-origin:left bottom}
+.cs-big{position:absolute;left:16px;bottom:38px;font-family:var(--display);font-weight:900;font-size:clamp(52px,5vw,76px);line-height:.85;color:var(--wv);transform-origin:left bottom}
 .cs-big small{font-family:var(--body);font-size:16px;font-weight:700;color:var(--band-fg);margin-left:6px;letter-spacing:-.02em}
 .cs-cap{position:absolute;left:16px;right:16px;bottom:14px;font-size:13px;line-height:1.4}
 .cs-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none}
@@ -276,6 +276,7 @@ a.inl:hover{text-decoration:underline}
 .cs-head h3{font-size:clamp(26px,3.4vw,40px);font-weight:800;letter-spacing:-.04em;line-height:1.25;margin-top:8px}
 .cs-head p{font-size:clamp(16px,1.7vw,19px);margin-top:6px;opacity:.9}
 @keyframes csIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (max-width:1100px) and (min-width:901px){.cs-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (prefers-reduced-motion:reduce){.cs-panel{animation:none}.cs-card,.cs-vis>*{transition:none}}
 @media (max-width:900px){
   .cs-cards{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(260px,78%);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;margin-left:calc(-1*max(16px,env(safe-area-inset-left,0px)));margin-right:calc(-1*max(16px,env(safe-area-inset-right,0px)));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));scroll-padding-left:max(16px,env(safe-area-inset-left,0px))}
@@ -546,7 +547,7 @@ footer .w{padding-block:26px;display:grid;gap:6px}
         <li><b>지역에 남깁니다</b><span>사업이 끝나도 주민과 지자체가 이어 가는 구조를 만듭니다.</span></li>
       </ol>
     </div>
-    <p class="lede" style="margin-top:28px">아래 세 사례는 이렇게 서로 다른 자원이 하나로 연결된 결과입니다. 지역마다 다른 문제를 발견하고, 기업과 정부, 지역사회가 가진 자원을 이었습니다. <a href="#why-wv" class="inl">월드비전의 백본 방식 자세히 보기 →</a></p>
+    <p class="lede" style="margin-top:28px">아래 네 사례는 이렇게 서로 다른 자원이 하나로 연결된 결과이거나, 연결을 기다리는 모델입니다. 지역마다 다른 문제를 발견하고, 기업과 정부, 지역사회가 가진 자원을 이었습니다. <a href="#why-wv" class="inl">월드비전의 백본 방식 자세히 보기 →</a></p>
 
     <div class="cs-cards" role="tablist" aria-label="사업 사례">
       <button class="cs-card" type="button" role="tab" id="tab-economy" aria-controls="case-economy" aria-selected="false" data-case="case-economy">
@@ -584,10 +585,24 @@ footer .w{padding-block:26px;display:grid;gap:6px}
           <span class="cs-cap">진도 중학생 29명이 자전거로 달린 거리</span>
         </span>
         <span class="cs-txt">
-          <span class="cs-tag">2025 파일럿 완료 · 확장 모델 준비</span>
+          <span class="cs-tag">2025 파일럿 완료</span>
           <span class="cs-who">월드비전 × 오리진디자인 × 아모레퍼시픽<em>외 3개 기관</em></span>
-          <span class="cs-name">해방프로젝트 · 드림브릿지</span>
+          <span class="cs-name">해방프로젝트</span>
           <span class="cs-one">버스가 3시간에 한 대 다니는 진도에서, 아이들의 이동과 진로를 넓혔습니다.</span>
+          <span class="cs-more">자세히 보기</span>
+        </span>
+      </button>
+      <button class="cs-card" type="button" role="tab" id="tab-dreambridge" aria-controls="case-dreambridge" aria-selected="false" data-case="case-dreambridge">
+        <span class="cs-vis" data-img="">
+          <span class="cs-num">04 · Local future</span>
+          <span class="cs-big">80<small>명</small></span>
+          <span class="cs-cap">진도 · 통영 섬 지역 아동·청소년 대상 설계</span>
+        </span>
+        <span class="cs-txt">
+          <span class="cs-tag ghost">확장 모델 · 기업 파트너 모집</span>
+          <span class="cs-who">진도군 × 통영시 × 월드비전</span>
+          <span class="cs-name">드림브릿지</span>
+          <span class="cs-one">진로체험 시설이 한 곳도 없는 섬 지역 아이들에게, AI 진로 교육과 안전 교육을 엽니다.</span>
           <span class="cs-more">자세히 보기</span>
         </span>
       </button>
@@ -753,72 +768,51 @@ footer .w{padding-block:26px;display:grid;gap:6px}
     <!-- CASE 03 -->
     <div class="cs-panel" id="case-future" role="tabpanel" aria-labelledby="tab-future" hidden>
       <div class="cs-head">
-        <span class="eyebrow"><b>Case 03</b> · Local future · 전라남도 진도군 · 경상남도 통영시</span>
-        <h3>해방프로젝트 · 드림브릿지</h3>
-        <p>사는 곳 때문에 아이들의 경험과 꿈이 작아지지 않도록.</p>
+        <span class="eyebrow"><b>Case 03</b> · Local future · 전라남도 진도군 · 2025 파일럿 완료</span>
+        <h3>진도군 트윈세대 해방프로젝트</h3>
+        <p>이동의 장벽이 성장의 장벽이 되지 않도록.</p>
       </div>
       <div class="dt">
-        <div class="row">
-          <h4><small>Overview</small>두 사업의 관계</h4>
-          <div class="pair">
-            <div><span class="cs-tag">2025 파일럿 완료</span><b>진도군 트윈세대 해방프로젝트</b><span>진도 군내중학교 전교생 29명과 함께, 이동의 장벽을 넘어 경험과 진로를 넓힌 프로젝트입니다. 아모레퍼시픽이 진로 멘토링으로 함께했습니다.</span></div>
-            <div><span class="cs-tag ghost">확장 모델 · 기업 파트너 모집</span><b>드림브릿지</b><span>진도와 통영의 섬 지역 아이들에게 AI 진로 교육과 디지털 안전 교육을 제공하도록 설계한 모델입니다. 아직 기업과 함께 진행한 사례는 아닙니다.</span></div>
-          </div>
-        </div>
         <div class="row">
           <h4><small>01 Problem</small>지역에서 발견한 문제</h4>
           <div>
             <div class="facts">
               <div><strong>3<i>시간</i></strong><span>진도 대중교통 평균 배차 간격 (서울 버스 평균 7분)</span></div>
               <div><strong>50<i>분</i></strong><span>군내면 아이들이 걸어서 편의점까지 가는 시간</span></div>
-              <div><strong>256<i>개</i></strong><span>진도군을 이루는 섬 (유인도 45개)</span></div>
-              <div><strong>0.76<i>명</i></strong><span>통영시 합계출산율 (2023 인구감소 관심지역)</span></div>
+              <div><strong>3<i>곳</i></strong><span>아이들이 주로 가는 곳: 집, 학교, 편의점</span></div>
+              <div><strong>29<i>명</i></strong><span>군내중학교 전교생</span></div>
             </div>
-            <p style="margin-top:14px">진도 군내중학교 아이들이 가장 자주 가는 곳은 집, 학교, 편의점 세 곳뿐이었습니다. 부모님은 생계로 바쁘고, 버스는 3시간에 한 대 다닙니다. 가 보지 못한 곳의 직업은 꿈꾸기 어렵습니다. 경험이 줄면 시야가 좁아지고, 꿈과 자신감도 함께 작아집니다.</p>
-            <p>섬 지역의 교육 기회도 마찬가지입니다. 진도군에는 진로체험 전용 시설이 없고, 통영의 한산면·산양읍·욕지면 같은 섬 지역은 방과 후 교육 시설이 부족합니다.</p>
+            <p style="margin-top:14px">학생들의 집은 학교에서 걸어서 다닐 수 없는 거리에 흩어져 있고, 버스는 3시간에 한 대 다닙니다. 부모님은 생계로 바빠 원할 때 데려다주기 어렵습니다. 가 보지 못한 곳의 직업은 꿈꾸기 어렵습니다. 경험이 줄면 시야가 좁아지고, 꿈과 자신감도 함께 작아집니다.</p>
           </div>
         </div>
         <div class="row">
           <h4><small>02 Solution</small>사업으로 푼 방법</h4>
           <div>
-            <p><b>해방프로젝트</b> · 아이들 각자에게 자전거를 지원하고, 2025년 5~6월 네 번의 프로그램으로 스스로 이동하고 도전하는 힘을 길렀습니다.</p>
+            <p>아이들 각자에게 자전거를 지원하고, 2025년 5~6월 네 번의 프로그램으로 스스로 이동하고 도전하는 힘을 길렀습니다.</p>
             <div class="steps4">
               <div><span class="n">01</span><b>인식</b><span>내가 가지 못한 곳과 그 이유 적어 보기</span></div>
               <div><span class="n">02</span><b>준비</b><span>나만의 해방자전거 꾸미기와 시승</span></div>
               <div><span class="n">03</span><b>실행</b><span>서울 방문, 아모레퍼시픽 기업 투어와 진로 멘토링</span></div>
               <div><span class="n">04</span><b>다짐</b><span>해방 선포식과 성과 공유</span></div>
             </div>
-            <p style="margin-top:16px"><b>드림브릿지</b> · AI 진로체험 '꿈제작소'(진로 탐색 → AI 윤리·활용 실습 → 꿈 동화책 만들기)와 XR 교통안전 '안전체험소'(실감형 교육 → AI 보행 안전 평가)를 만 9~18세 아동·청소년 80명에게 제공하도록 설계했습니다.</p>
           </div>
         </div>
         <div class="row">
           <h4><small>03 Partners</small>참여 기관과 역할</h4>
-          <div>
-            <p class="sub">해방프로젝트</p>
-            <ul class="roles">
-              <li><b>오리진디자인</b><span>공동 기획, 운영, 기관 사이 조율</span></li>
-              <li><b>아모레퍼시픽</b><span>기업 투어와 진로 멘토링</span></li>
-              <li><b>진도군교육지원청 · 군내중학교</b><span>프로젝트 참여와 협조, 교과 프로그램 연계</span></li>
-              <li><b>서울용산경찰서</b><span>서울 활동 안전 교육과 이동 지원</span></li>
-            </ul>
-            <p class="sub" style="margin-top:16px">드림브릿지 (설계)</p>
-            <ul class="roles">
-              <li><b>진도군 · 학교 중심</b><span>교육지원청 추천을 받은 학교에 찾아가 운영</span></li>
-              <li><b>통영시 · 복지시설 중심</b><span>지역 사회복지시설을 '디지털 돌봄 거점'으로 활용</span></li>
-            </ul>
-          </div>
+          <ul class="roles">
+            <li><b>오리진디자인</b><span>공동 기획, 운영, 기관 사이 조율</span></li>
+            <li><b>아모레퍼시픽</b><span>기업 투어와 진로 멘토링</span></li>
+            <li><b>진도군교육지원청 · 군내중학교</b><span>프로젝트 참여와 협조, 교과 프로그램 연계</span></li>
+            <li><b>서울용산경찰서</b><span>서울 활동 안전 교육과 이동 지원</span></li>
+          </ul>
         </div>
         <div class="row">
           <h4><small>04 World Vision</small>월드비전의 연결과 조정</h4>
-          <div>
-            <p>해방프로젝트에서 월드비전은 오리진디자인과 함께 사업을 기획하고, 인구소멸지역 아동을 위한 사업의 방향과 목적, 변화를 측정할 기준을 함께 설계했습니다. 사업 재원도 월드비전이 마련했습니다.</p>
-            <p>드림브릿지에서는 광주전남·경남울산사업본부의 지역 네트워크로 교육청, 학교, 복지시설을 연결하고 지역별 운영을 관리합니다.</p>
-          </div>
+          <p>월드비전은 오리진디자인과 함께 사업을 기획하고, 인구소멸지역 아동을 위한 사업의 방향과 목적, 변화를 측정할 기준을 함께 설계했습니다. 사업 재원도 월드비전이 마련했습니다.</p>
         </div>
         <div class="row">
           <h4><small>05 Change</small>성과와 변화</h4>
           <div>
-            <p class="sub">해방프로젝트 · 참여 학생 29명</p>
             <div class="big">
               <div class="hl"><strong>10,156<i>km</i></strong><span>자전거로 이동한 거리 (1인 평균 350km)</span></div>
               <div><strong>171<i>명</i></strong><span>새로 만난 사람</span></div>
@@ -832,25 +826,84 @@ footer .w{padding-block:26px;display:grid;gap:6px}
               <div><strong>2~6배</strong><span>부모님 도움 없이 스스로 이동한 횟수</span></div>
             </div>
             <p style="margin-top:14px">가장 크게 오른 항목은 "미래에 어떤 직업을 가질지 계획이 있다"(+23.5%)와 "실패해도 다시 도전할 수 있는 용기가 있다"(+21.1%)였습니다.</p>
-            <p class="src" style="margin-top:6px">사전·사후 설문 기준 · 자료: 해방프로젝트 임팩트리포트(2025)</p>
-            <p class="sub" style="margin-top:20px">드림브릿지 · 기대하는 변화</p>
-            <div class="join">
-              <div><b>다른 지역에도 쓸 수 있는 협력 방식</b><span>AI 교육을 위한 민관 협력 절차 만들기</span></div>
-              <div><b>변화를 확인하는 데이터</b><span>사전·사후 설문으로 디지털 친숙도와 안전 인식 변화 측정</span></div>
-            </div>
+            <p class="src" style="margin-top:6px">참여 학생 29명 사전·사후 설문 기준 · 자료: 해방프로젝트 임팩트리포트(2025)</p>
           </div>
         </div>
         <div class="row">
           <h4><small>06 Join</small>기업이 더할 수 있는 것</h4>
           <div>
-            <p style="margin-bottom:14px">해방프로젝트에서 아모레퍼시픽은 회사 문을 열고 임직원이 직접 아이들의 진로 멘토가 됐습니다. 드림브릿지에는 이런 방식으로 참여할 수 있습니다.</p>
+            <p style="margin-bottom:14px">아모레퍼시픽은 회사 문을 열고 임직원이 직접 아이들의 진로 멘토가 됐습니다. 다른 인구감소지역에서도 이런 방식으로 함께할 수 있습니다.</p>
             <div class="join ext">
-              <div><b>AI·디지털 교육 기술</b><span>기업의 AI 기술과 플랫폼으로 교육의 질 높이기</span></div>
-              <div><b>교육 콘텐츠 · 디지털 기기</b><span>섬 지역 거점에 콘텐츠와 기기 지원</span></div>
-              <div><b>임직원 멘토링 · 기업 방문</b><span>일터를 보여 주고 임직원이 진로 멘토로</span></div>
-              <div><b>프로그램 공동 개발</b><span>기업의 업을 담은 새 커리큘럼 함께 만들기</span></div>
-              <div><b>도서·산간 지역 확장</b><span>진도·통영 모델을 더 많은 섬과 산간 지역으로</span></div>
+              <div><b>기업 방문 · 진로 멘토링</b><span>일터를 보여 주고 임직원이 멘토로</span></div>
+              <div><b>이동 수단 · 안전 장비</b><span>아이들이 스스로 움직일 수 있는 도구 지원</span></div>
+              <div><b>다른 인구감소지역으로 확장</b><span>진도에서 검증한 프로그램을 새 지역에</span></div>
+              <div><b>임팩트 측정과 공유</b><span>사전·사후 변화를 함께 측정하고 알리기</span></div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 04 -->
+    <div class="cs-panel" id="case-dreambridge" role="tabpanel" aria-labelledby="tab-dreambridge" hidden>
+      <div class="cs-head">
+        <span class="eyebrow"><b>Case 04</b> · Local future · 전라남도 진도군 · 경상남도 통영시 · 확장 모델</span>
+        <h3>드림브릿지</h3>
+        <p>AI 시대의 기회가 지역에 따라 달라지지 않도록.</p>
+      </div>
+      <div class="dt">
+        <div class="row">
+          <h4><small>Model</small>사업 모델 안내</h4>
+          <p class="model"><b>드림브릿지는 진도와 통영에서 설계한 사업 모델입니다.</b> 아직 기업과 함께 진행한 사례는 아니며, 이 모델을 더 많은 지역으로 넓힐 기업 파트너를 찾고 있습니다.</p>
+        </div>
+        <div class="row">
+          <h4><small>01 Problem</small>지역에서 발견한 문제</h4>
+          <div>
+            <div class="facts">
+              <div><strong>256<i>개</i></strong><span>진도군을 이루는 섬 (유인도 45개)</span></div>
+              <div><strong>0<i>곳</i></strong><span>진도군 안의 진로체험 전용 시설</span></div>
+              <div><strong>D<i>등급</i></strong><span>진도군 교통약자 교통안전지수 (80개 동급 지자체 중 64위)</span></div>
+              <div><strong>0.76<i>명</i></strong><span>통영시 합계출산율 (2023 인구감소 관심지역)</span></div>
+            </div>
+            <p style="margin-top:14px">진도는 약 2만 9천 명이 사는 인구감소지역으로, 1차 산업 비중이 70%가 넘어 아이들이 만날 수 있는 직업이 한정적입니다. 통영의 한산면·산양읍·욕지면 같은 섬 지역은 방과 후 교육 시설이 부족하고 이동이 어렵습니다. 산업과 교육, 진로 기회가 수도권에 몰려 있어 AI·디지털 체험 교육도 고르게 닿지 않습니다.</p>
+          </div>
+        </div>
+        <div class="row">
+          <h4><small>02 Solution</small>사업으로 푸는 방법</h4>
+          <div>
+            <div class="join">
+              <div><b>AI 진로체험 '꿈제작소'</b><span>진로 탐색 → AI 윤리 교육과 활용 실습 → 나만의 꿈 동화책 만들기 → 발표</span></div>
+              <div><b>교통안전 '안전체험소'</b><span>XR 실감형 교통안전 교육 → AI 보행 안전 평가 → 개인별 결과 보고서 → 안전용품</span></div>
+            </div>
+            <p style="margin-top:14px">만 9~18세 아동·청소년 80명을 대상으로, 섬에 사는 아이를 우선 선발하도록 설계했습니다.</p>
+          </div>
+        </div>
+        <div class="row">
+          <h4><small>03 Partners</small>함께하는 지역 기관</h4>
+          <ul class="roles">
+            <li><b>진도군 · 학교 중심</b><span>교육지원청 추천을 받은 학교에 찾아가 운영</span></li>
+            <li><b>통영시 · 복지시설 중심</b><span>지역 사회복지시설을 '디지털 돌봄 거점'으로 활용</span></li>
+          </ul>
+        </div>
+        <div class="row">
+          <h4><small>04 World Vision</small>월드비전의 연결과 조정</h4>
+          <p>월드비전은 광주전남·경남울산사업본부의 지역 네트워크로 교육청, 학교, 복지시설을 연결하고, 모집·선정 기준과 지역별 운영을 관리합니다.</p>
+        </div>
+        <div class="row">
+          <h4><small>05 Change</small>기대하는 변화</h4>
+          <div class="join">
+            <div><b>다른 지역에도 쓸 수 있는 협력 방식</b><span>AI 교육을 위한 민관 협력 절차 만들기</span></div>
+            <div><b>변화를 확인하는 데이터</b><span>사전·사후 설문으로 디지털 친숙도와 안전 인식 변화 측정</span></div>
+          </div>
+        </div>
+        <div class="row">
+          <h4><small>06 Join</small>기업이 더할 수 있는 것</h4>
+          <div class="join ext">
+            <div><b>AI·디지털 교육 기술</b><span>기업의 AI 기술과 플랫폼으로 교육의 질 높이기</span></div>
+            <div><b>교육 콘텐츠 · 디지털 기기</b><span>섬 지역 거점에 콘텐츠와 기기 지원</span></div>
+            <div><b>임직원 멘토링</b><span>AI를 실제 업무에 쓰는 임직원이 진로 멘토로</span></div>
+            <div><b>프로그램 공동 개발</b><span>기업의 업을 담은 새 커리큘럼 함께 만들기</span></div>
+            <div><b>도서·산간 지역 확장</b><span>진도·통영 모델을 더 많은 섬과 산간 지역으로</span></div>
           </div>
         </div>
       </div>
