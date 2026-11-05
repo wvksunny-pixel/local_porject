@@ -317,6 +317,33 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .ps-y br,.ps-x br{display:none}
 }
 
+.gb{margin-top:56px;background:var(--band);color:var(--band-fg);padding:clamp(28px,4vw,52px) clamp(20px,3vw,40px)}
+.gb-k{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--wv)}
+.gb-title{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(56px,10vw,150px);line-height:.84;margin-top:16px;color:var(--wv)}
+.gb-title .o{color:transparent;-webkit-text-stroke:1.5px var(--band-fg)}
+.gb-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:clamp(16px,3vw,40px);align-items:end;margin-top:26px;padding-top:20px;border-top:1px solid rgba(127,127,127,.45)}
+.gb-ko{font-size:clamp(22px,2.6vw,30px);font-weight:900;letter-spacing:-.04em}
+.gb-txt{font-size:15.5px;line-height:1.8;opacity:.9}
+.gb-steps{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));margin-top:36px;position:relative}
+.gb-steps::before{content:"";position:absolute;left:0;right:0;top:7px;height:2px;background:linear-gradient(to right,rgba(127,127,127,.5),var(--wv))}
+.gb-steps li{position:relative;padding-top:24px;padding-right:10px;min-width:0}
+.gb-steps li::before{content:"";position:absolute;top:0;left:0;width:16px;height:16px;border-radius:50%;background:var(--band);border:2px solid var(--band-fg)}
+.gb-steps li:last-child::before{background:var(--wv);border-color:var(--wv);box-shadow:0 0 0 5px rgba(255,107,0,.25)}
+.gb-n{display:block;font-family:var(--mono);font-size:11px;opacity:.7}
+.gb-t{display:block;font-size:14px;font-weight:700;letter-spacing:-.02em;line-height:1.45;margin-top:4px}
+.gb-steps li:last-child .gb-t{color:var(--wv)}
+.gb-roles{margin-top:22px;display:grid;gap:6px}
+.gb-bar{height:22px;display:flex;align-items:center;padding:0 10px;font-size:11.5px;font-weight:700}
+.gb-bar.wv{background:linear-gradient(to right,var(--wv) 0%,var(--wv) 35%,rgba(255,107,0,0) 100%);color:var(--on-wv)}
+.gb-bar.lc{background:linear-gradient(to right,rgba(127,127,127,0) 0%,rgba(247,242,232,.85) 100%);justify-content:flex-end;color:var(--band)}
+@media (max-width:900px){
+  .gb-body{grid-template-columns:minmax(0,1fr)}
+  .gb-steps{grid-template-columns:minmax(0,1fr);gap:0}
+  .gb-steps::before{left:7px;right:auto;top:0;bottom:0;width:2px;height:auto;background:linear-gradient(to bottom,rgba(127,127,127,.5),var(--wv))}
+  .gb-steps li{padding:0 0 16px 32px}
+  .gb-roles{display:none}
+}
+
 /* 05 next model */
 .next{margin-top:36px;border:2px dashed var(--wv-deep);background:var(--paper)}
 .next-head{background:var(--paper-2);color:var(--ink)}
@@ -1279,13 +1306,17 @@ footer .w{padding-block:26px;display:grid;gap:6px}
       </article>
     </div>
 
-    <div class="exit">
-      <p class="bye">“잘 가요,<br>월드비전.”</p>
-      <div>
-        <p style="font-size:15.5px;line-height:1.75">해외 지역개발 현장에서 주민들이 월드비전에게 건네는 인사입니다. 잘 돕는 것보다, 언젠가 떠날 수 있는 구조를 만드는 것. 국내 지역사업에도 같은 원칙을 적용합니다.</p>
-        <ol aria-label="지역개발 7단계">
-          <li>지역 조사</li><li>주민과 문제 정의</li><li>지역 거버넌스 구축</li><li>해법 연결</li><li>지역 역량 강화</li><li>주민·지방정부가 직접 운영</li><li>자립, 다른 지역으로</li>
-        </ol>
+    <div class="gb">
+      <span class="gb-k">Exit strategy · 15–20 years</span>
+      <p class="gb-title"><span class="o">Goodbye,</span><br>World Vision.</p>
+      <div class="gb-body">
+        <p class="gb-ko">“잘 가요, 월드비전.”</p>
+        <p class="gb-txt">15~20년의 지역개발이 끝나는 날, 월드비전이 목표로 하는 인사입니다.<br class="pc">잘 돕는 것보다 언젠가 떠날 수 있는 구조를 만드는 것.<br class="pc">국내 지역사업에도 같은 원칙을 적용합니다.</p>
+      </div>
+      <ol class="gb-steps" aria-label="지역개발 7단계"><li><span class="gb-n">01</span><span class="gb-t">지역 조사</span></li><li><span class="gb-n">02</span><span class="gb-t">주민과 문제 정의</span></li><li><span class="gb-n">03</span><span class="gb-t">지역 거버넌스 구축</span></li><li><span class="gb-n">04</span><span class="gb-t">해법 연결</span></li><li><span class="gb-n">05</span><span class="gb-t">지역 역량 강화</span></li><li><span class="gb-n">06</span><span class="gb-t">주민·지방정부가 직접 운영</span></li><li><span class="gb-n">07</span><span class="gb-t">자립, 다른 지역으로</span></li></ol>
+      <div class="gb-roles" aria-hidden="true">
+        <div class="gb-bar wv"><span>월드비전의 역할</span></div>
+        <div class="gb-bar lc"><span>주민·지방정부의 역할</span></div>
       </div>
     </div>
   </div>
