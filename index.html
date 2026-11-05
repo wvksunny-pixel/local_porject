@@ -323,7 +323,10 @@ a.inl:hover{text-decoration:underline}
 .assets ul li{font-size:14.5px;line-height:1.65;padding:10px 0;border-top:1px solid var(--hair)}
 .assets ul li em{font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--wv-deep);display:block;text-transform:uppercase}
 .pull{background:var(--band);color:var(--band-fg);margin-top:48px;padding:clamp(24px,4vw,40px)}
-.pull p{font-weight:800;font-size:clamp(22px,3vw,34px);line-height:1.45;letter-spacing:-.035em;max-width:28ch}
+.pull-en{display:block;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(44px,7vw,92px);line-height:.9;color:var(--wv);margin-bottom:18px}
+.pull-en i{font-style:normal;font-weight:700;color:var(--band-fg);opacity:.85}
+.pull p{font-weight:800;font-size:clamp(18px,2.2vw,28px);line-height:1.45;letter-spacing:-.035em;white-space:nowrap}
+@media (max-width:900px){.pull p{white-space:normal}}
 .pull p em{font-style:normal;color:var(--wv)}
 
 /* 05 why world vision */
@@ -977,6 +980,7 @@ footer .w{padding-block:26px;display:grid;gap:6px}
       </section>
     </div>
     <div class="pull">
+      <span class="pull-en">Business <i>as a</i> solution.</span>
       <p>기업의 본업이 지역의 문제와 만나면, 사회공헌은 <em>지역에 필요한 해법</em>이 됩니다.</p>
     </div>
   </div>
