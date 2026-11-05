@@ -245,6 +245,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .guide-sub{font-size:clamp(20px,2.2vw,24px);font-weight:800;letter-spacing:-.035em;margin-top:56px}
 .guide-sub+.conv{margin-top:18px}
 
+.bb-two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px;max-width:640px}
+.bb-two div{background:var(--paper);color:var(--ink);padding:16px 18px}
+.bb-two b{display:block;font-family:var(--display);font-weight:900;font-size:28px;text-transform:uppercase;line-height:1;color:var(--wv-deep)}
+.bb-two span{display:block;font-size:16px;font-weight:700;letter-spacing:-.03em;line-height:1.5;margin-top:8px}
+@media (max-width:480px){.bb-two{grid-template-columns:minmax(0,1fr)}}
+
 /* 05 next model */
 .next{margin-top:36px;border:2px dashed var(--wv-deep);background:var(--paper)}
 .next-head{background:var(--paper-2);color:var(--ink)}
@@ -1110,7 +1116,11 @@ footer .w{padding-block:26px;display:grid;gap:6px}
     <p class="lede" style="margin-top:14px">앞의 사례에서 월드비전은 후원금을 전달하는 데서 멈추지 않았습니다.<br class="pc">목욕탕에서는 문제를 정의하고 10개 기관을 이었고, 농촌창업도약+에서는 멘토단을 꾸리고 성과 관리를 설계했습니다.<br class="pc">해방프로젝트에서는 파트너와 함께 사업을 기획하고 재원을 마련했습니다.</p>
 
     <h3 class="bbh"><span>01</span>Bridge &amp; Backbone <small>흩어진 자원을 잇고, 끝까지 조율합니다</small></h3>
-    <p class="lede" style="margin-top:16px">지역 문제를 풀 자원은 이미 있습니다. 다만 서로 다른 곳에 흩어져 있어 만나지 못할 뿐입니다. 월드비전은 이 자원들을 잇는 다리(Bridge)가 되고, 사업이 끝날 때까지 가운데서 역할과 일정을 맞추는 중심(Backbone)이 됩니다.</p>
+    <p class="lede" style="margin-top:16px">지역 문제를 풀 자원은 이미 있습니다.<br>다만 각자 다른 곳에 있어서 서로 만나지 못할 뿐입니다.</p>
+    <div class="bb-two">
+      <div><b>Bridge</b><span>필요한 기관과 기업을<br>찾아서 연결합니다.</span></div>
+      <div><b>Backbone</b><span>사업이 끝날 때까지<br>역할과 일정을 맞춥니다.</span></div>
+    </div>
     <div class="actors">
       <div><em>정부 · 지방정부</em><b>Government</b><span>정책, 제도, 공공자원, 지역 정보</span></div>
       <div><em>기업</em><b>Corporate</b><span>재원, 기술, 업(業), 임직원, 고객</span></div>
