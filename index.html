@@ -1534,7 +1534,7 @@ var FORM_ENDPOINT = '';
     });
     var consent = document.getElementById('f-consent');
     if (!consent.checked) bad.push('개인정보 수집·이용 동의');
-    if (bad.length) { say(bad.join(', ') + '을(를) 확인해 주세요.', 'err'); (form.querySelector('[aria-invalid="true"]') || consent).focus(); return; }
+    if (bad.length) { say('다음 항목을 확인해 주세요: ' + bad.join(', '), 'err'); (form.querySelector('[aria-invalid="true"]') || consent).focus(); return; }
     if (form.elements['website'].value) return;
     function v(id){ return document.getElementById(id).value.trim(); }
     if (!FORM_ENDPOINT) { say('온라인 접수 창구를 준비하고 있습니다. 지금은 월드비전 대표전화 02-2078-7000으로 문의해 주세요.', 'err'); return; }
