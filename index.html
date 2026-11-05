@@ -194,6 +194,20 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .model{background:var(--wv-tint);border-left:4px solid var(--wv);padding:14px 16px;font-size:15.5px;line-height:1.7;border-radius:0}
 .model b{font-weight:700}
 
+/* 03 backbone definition */
+.bdef{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(20px,4vw,48px);margin-top:28px;padding:clamp(20px,3vw,28px);background:var(--paper-2);border-top:3px solid var(--wv)}
+.bdef-q p{font-size:15.5px;line-height:1.8;margin-top:10px;color:var(--ink-2)}
+.bdef-q p strong{color:var(--ink);font-weight:700}
+.bdef-steps{counter-reset:bd;display:grid;gap:0}
+.bdef-steps li{display:grid;grid-template-columns:2.4em minmax(0,1fr);column-gap:10px;padding:11px 0;border-top:1px solid var(--hair)}
+.bdef-steps li:first-child{border-top:0;padding-top:0}
+.bdef-steps li::before{counter-increment:bd;content:counter(bd,decimal-leading-zero);grid-row:span 2;font-family:var(--display);font-weight:900;font-size:24px;line-height:1;color:var(--wv-deep)}
+.bdef-steps b{font-size:16px;font-weight:800;letter-spacing:-.03em}
+.bdef-steps span{font-size:14px;color:var(--ink-2);line-height:1.6}
+a.inl{color:var(--wv-deep);font-weight:700;text-decoration:none;white-space:nowrap}
+a.inl:hover{text-decoration:underline}
+@media (max-width:900px){.bdef{grid-template-columns:minmax(0,1fr)}}
+
 /* 03 case studies */
 .cs-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,28px);margin-top:40px}
 .cs-card{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;background:var(--paper);border:2px solid var(--rule);min-width:0;transition:border-color .2s,box-shadow .2s,transform .25s;-webkit-tap-highlight-color:transparent}
@@ -512,7 +526,20 @@ footer .w{padding-block:26px;display:grid;gap:6px}
   <div class="w">
     <span class="eyebrow"><b>Case studies</b></span>
     <h2 class="sec-h">백본이 움직이면,<br>지역에서 이런 일이 일어납니다.</h2>
-    <p class="lede" style="margin-top:14px">지역마다 다른 문제를 발견하고, 기업과 정부, 지역사회가 가진 자원을 연결했습니다. 실제 사업 사례 세 가지를 살펴보세요.</p>
+    <div class="bdef">
+      <div class="bdef-q">
+        <span class="eyebrow"><b>Backbone</b> · 백본이란?</span>
+        <p>지역 문제는 한 기관의 힘으로 풀기 어렵습니다. 정책은 정부에, 재원과 기술은 기업에, 전문성은 현장 조직에, 지역을 지켜 갈 힘은 주민에게 흩어져 있기 때문입니다.</p>
+        <p><strong>백본(Backbone)은 이 주체들이 한 사업 안에서 함께 움직이도록 처음부터 끝까지 가운데서 연결하고 조율하는 조직</strong>입니다. 몸을 받치는 등뼈처럼, 각자 잘하는 일에 집중할 수 있게 사업의 중심을 잡아 줍니다.</p>
+      </div>
+      <ol class="bdef-steps" aria-label="백본이 하는 일">
+        <li><b>문제를 정의하고</b><span>현장에서 지역이 정말 풀고 싶은 문제를 찾습니다.</span></li>
+        <li><b>맞는 파트너를 잇고</b><span>그 문제에 필요한 기업, 기관, 전문가를 연결합니다.</span></li>
+        <li><b>끝까지 조율하고</b><span>역할, 재원, 일정을 하나의 실행 구조로 맞춥니다.</span></li>
+        <li><b>지역에 남깁니다</b><span>사업이 끝나도 주민과 지자체가 이어 가는 구조를 만듭니다.</span></li>
+      </ol>
+    </div>
+    <p class="lede" style="margin-top:28px">아래 세 사례는 이렇게 서로 다른 자원이 하나로 연결된 결과입니다. 지역마다 다른 문제를 발견하고, 기업과 정부, 지역사회가 가진 자원을 이었습니다. <a href="#why-wv" class="inl">월드비전의 백본 방식 자세히 보기 →</a></p>
 
     <div class="cs-cards" role="tablist" aria-label="사업 사례">
       <button class="cs-card" type="button" role="tab" id="tab-economy" aria-controls="case-economy" aria-selected="false" data-case="case-economy">
