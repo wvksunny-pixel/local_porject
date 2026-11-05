@@ -61,6 +61,7 @@ a{color:inherit}
 .mast .w{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding-block:12px}
 .mast .eyebrow{color:var(--on-wv)}
 .mast .logo{display:block;height:28px;width:auto;max-width:none}
+@media (max-width:600px){br.pc{display:none}}
 @media (max-width:600px){.mast .logo{height:22px}}
 nav.toc{border-bottom:1px solid var(--rule);position:sticky;top:env(safe-area-inset-top,0px);background:var(--paper);z-index:5}
 nav.toc .w{display:flex;gap:4px 22px;flex-wrap:nowrap;overflow-x:auto;padding-block:11px;scrollbar-width:none}
@@ -421,7 +422,7 @@ footer .w{padding-block:26px;display:grid;gap:6px}
     <h1 class="disp">Local,<br>but<span>impactful.</span></h1>
     <div class="hero-foot">
       <p class="kr">지역소멸,<br>막연한 사회문제가 아닙니다.</p>
-      <p class="lede">지역에서 일할 기회가 줄고, 사람들이 모일 공간이 사라지고, 아이들이 배울 기회마저 달라지고 있습니다. <strong>지역마다 다른 문제를 기업의 자원과 연결해 해결할 수 있습니다.</strong></p>
+      <p class="lede">지역에서 일할 기회가 줄고, 사람들이 모일 공간이 사라지고,<br class="pc">아이들이 배울 기회마저 달라지고 있습니다.<br><strong>지역마다 다른 문제를 기업의 자원과 연결해 해결할 수 있습니다.</strong></p>
     </div>
     <nav class="explore" aria-label="사업 바로가기">
       <a href="#case-economy"><span class="eyebrow">Case 01</span><b><em>01</em> Local economy</b><span class="t">농촌창업도약+</span><span class="go">사업 보기 →</span></a>
