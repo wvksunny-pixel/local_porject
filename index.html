@@ -60,7 +60,8 @@ a{color:inherit}
 .mast{background:var(--wv);color:var(--on-wv)}
 .mast .w{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding-block:12px}
 .mast .eyebrow{color:var(--on-wv)}
-.mast .logo{font-family:var(--display);font-weight:900;font-size:22px;text-transform:uppercase;letter-spacing:.02em}
+.mast .logo{display:block;height:28px;width:auto;max-width:none}
+@media (max-width:600px){.mast .logo{height:22px}}
 nav.toc{border-bottom:1px solid var(--rule);position:sticky;top:env(safe-area-inset-top,0px);background:var(--paper);z-index:5}
 nav.toc .w{display:flex;gap:4px 22px;flex-wrap:nowrap;overflow-x:auto;padding-block:11px;scrollbar-width:none}
 nav.toc .w::-webkit-scrollbar{display:none}
@@ -398,7 +399,7 @@ footer .w{padding-block:26px;display:grid;gap:6px}
 
 <header class="mast">
   <div class="w">
-    <span class="logo">World Vision</span>
+    <img class="logo" src="assets/wv-logo-white.png" alt="World Vision" width="600" height="133">
     <span class="eyebrow">Impact Partnership Newsletter · 2026.11</span>
   </div>
 </header>
