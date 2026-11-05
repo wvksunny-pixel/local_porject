@@ -46,7 +46,7 @@ a{color:inherit}
 .eyebrow b{letter-spacing:.14em}
 .eyebrow b{color:var(--wv-deep);font-weight:500}
 .disp{font-family:var(--display);font-weight:900;text-transform:uppercase;line-height:.86;letter-spacing:0}
-.sec-h{font-size:clamp(28px,3.6vw,42px);font-weight:800;line-height:1.3;letter-spacing:-.035em;margin-top:14px}
+.sec-h{font-size:clamp(28px,3.6vw,42px);font-weight:800;line-height:1.32;letter-spacing:-.035em;margin-top:20px}
 .lede{font-size:clamp(16.5px,1.6vw,18.5px);color:var(--ink-2);max-width:62ch;line-height:1.75}
 .lede strong{color:var(--ink);font-weight:700}
 .src{font-family:var(--mono);font-size:11.5px;color:var(--ink-2);line-height:1.65;letter-spacing:0}
@@ -194,6 +194,70 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .model{background:var(--wv-tint);border-left:4px solid var(--wv);padding:14px 16px;font-size:15.5px;line-height:1.7;border-radius:0}
 .model b{font-weight:700}
 
+/* 02 why local */
+.why3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:3px solid var(--rule);margin-top:40px}
+.why3 article{padding:24px 24px 12px;border-left:1px solid var(--hair);min-width:0}
+.why3 article:first-child{border-left:0;padding-left:0}
+.why3 .n{font-family:var(--display);font-weight:900;font-size:40px;line-height:1;color:var(--wv)}
+.why3 h3{font-size:20px;font-weight:800;letter-spacing:-.035em;line-height:1.45;margin:14px 0 12px}
+.why3 p{font-size:15.5px;color:var(--ink-2);line-height:1.8;max-width:38ch}
+.chainx{display:grid;gap:0;margin-top:14px;counter-reset:cx}
+.chainx li{padding:9px 0 9px 14px;border-left:3px solid var(--wv);position:relative;font-size:14.5px;line-height:1.55}
+.chainx li+li{margin-top:2px}
+.chainx li b{display:block;font-weight:800;letter-spacing:-.02em}
+.chainx li span{color:var(--ink-2)}
+.sigstrip{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:center;margin-top:48px;padding:clamp(20px,3vw,28px);background:var(--band);color:var(--band-fg)}
+.sigstrip .eyebrow,.sigstrip .eyebrow b{color:var(--band-fg)}
+.sigstrip .eyebrow b{color:var(--wv)}
+.sig-lead p{font-size:16px;line-height:1.75;margin-top:12px;max-width:44ch}
+.sig-nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
+.sig-nums div{padding:4px 14px;border-left:1px solid rgba(127,127,127,.45)}
+.sig-nums div:first-child{border-left:0;padding-left:0}
+.sig-nums strong{display:block;font-family:var(--display);font-weight:900;font-size:clamp(40px,4.6vw,58px);line-height:.95}
+.sig-nums strong i{font-style:normal;font-size:.5em}
+.sig-nums .hl strong{color:var(--wv)}
+.sig-nums span{display:block;font-size:12.5px;margin-top:6px;line-height:1.45;opacity:.85}
+.sig3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,2vw,20px);margin-top:16px}
+.sig3 div{border-top:1px solid var(--rule);padding-top:12px}
+.sig3 .ax{font-family:var(--display);font-weight:900;font-size:20px;text-transform:uppercase;color:var(--wv-deep)}
+.sig3 .quote{font-size:16.5px;margin-top:6px}
+.bridge{margin-top:44px;font-size:clamp(19px,2.2vw,24px);line-height:1.6;letter-spacing:-.03em;color:var(--ink-2);border-left:4px solid var(--wv);padding-left:18px;border-radius:0}
+.bridge strong{color:var(--ink);font-weight:800}
+
+/* 03 local csr guide */
+.types{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2vw,24px);margin-top:40px}
+.types article{border:2px solid var(--rule);display:flex;flex-direction:column;background:var(--paper);min-width:0}
+.t-head{background:var(--band);color:var(--band-fg);padding:18px 20px}
+.t-head b{font-family:var(--display);font-weight:900;font-size:clamp(26px,2.8vw,34px);text-transform:uppercase;line-height:1;color:var(--wv);display:block}
+.t-head h3{font-size:20px;font-weight:800;letter-spacing:-.035em;margin-top:12px}
+.t-head p{font-size:14px;margin-top:4px;opacity:.85}
+.types ul{padding:6px 20px 8px;flex:1}
+.types li{display:grid;grid-template-columns:8.5em minmax(0,1fr);gap:12px;padding:11px 0;border-top:1px solid var(--hair);font-size:14.5px;line-height:1.6}
+.types li:first-child{border-top:0}
+.types li b{font-weight:800;letter-spacing:-.02em}
+.types li span{color:var(--ink-2)}
+.t-case{display:block;margin:0 20px 18px;padding:12px 14px;background:var(--wv-tint);border-left:3px solid var(--wv);text-decoration:none;font-size:14px;font-weight:700;line-height:1.5;border-radius:0}
+.t-case span{display:block;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;color:var(--wv-deep);text-transform:uppercase}
+.t-case::after{content:" →";color:var(--wv-deep)}
+.t-case:hover{background:var(--wv);color:var(--on-wv)}
+.t-case:hover span,.t-case:hover::after{color:var(--on-wv)}
+
+.guide-sub{font-size:clamp(20px,2.2vw,24px);font-weight:800;letter-spacing:-.035em;margin-top:56px}
+.guide-sub+.conv{margin-top:18px}
+
+/* 05 next model */
+.next{margin-top:36px;border:2px dashed var(--wv-deep);background:var(--paper)}
+.next-head{background:var(--paper-2);color:var(--ink)}
+.next-head .eyebrow{color:var(--ink-2)}
+.next-head .eyebrow b{color:var(--wv-deep)}
+
+@media (max-width:900px){
+  .why3,.sigstrip,.sig3,.types{grid-template-columns:minmax(0,1fr)}
+  .why3 article{border-left:0;padding-left:0;border-bottom:1px solid var(--hair);padding-bottom:22px}
+  .why3 p{max-width:none}
+}
+@media (max-width:600px){.types li{grid-template-columns:minmax(0,1fr);gap:2px}.sig-nums div{padding:4px 10px}}
+
 /* 03 backbone definition */
 .bdef{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(20px,4vw,48px);margin-top:28px;padding:clamp(20px,3vw,28px);background:var(--paper-2);border-top:3px solid var(--wv)}
 .bdef-q p{font-size:15.5px;line-height:1.8;margin-top:10px;color:var(--ink-2)}
@@ -216,13 +280,13 @@ a.inl:hover{text-decoration:underline}
 .press a:hover{text-decoration:underline}
 
 /* 03 case studies */
-.cs-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2.4vw,28px);margin-top:40px}
+.cs-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,28px);margin-top:40px}
 .cs-card{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;background:var(--paper);border:2px solid var(--rule);min-width:0;transition:border-color .2s,box-shadow .2s,transform .25s;-webkit-tap-highlight-color:transparent}
 .cs-card:focus-visible{outline:3px solid var(--wv);outline-offset:3px}
 .cs-vis{position:relative;display:block;aspect-ratio:4/3;max-width:100%;overflow:hidden;background:var(--band);color:var(--band-fg);background-size:cover;background-position:center}
 .cs-vis>*{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
 .cs-num{position:absolute;top:14px;left:16px;font-family:var(--mono);font-size:12px;letter-spacing:.14em}
-.cs-big{position:absolute;left:16px;bottom:38px;font-family:var(--display);font-weight:900;font-size:clamp(52px,5vw,76px);line-height:.85;color:var(--wv);transform-origin:left bottom}
+.cs-big{position:absolute;left:16px;bottom:38px;font-family:var(--display);font-weight:900;font-size:clamp(56px,6vw,92px);line-height:.85;color:var(--wv);transform-origin:left bottom}
 .cs-big small{font-family:var(--body);font-size:16px;font-weight:700;color:var(--band-fg);margin-left:6px;letter-spacing:-.02em}
 .cs-cap{position:absolute;left:16px;right:16px;bottom:14px;font-size:13px;line-height:1.4}
 .cs-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none}
@@ -276,11 +340,10 @@ a.inl:hover{text-decoration:underline}
 .cs-head h3{font-size:clamp(26px,3.4vw,40px);font-weight:800;letter-spacing:-.04em;line-height:1.25;margin-top:8px}
 .cs-head p{font-size:clamp(16px,1.7vw,19px);margin-top:6px;opacity:.9}
 @keyframes csIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-@media (max-width:1100px) and (min-width:901px){.cs-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (prefers-reduced-motion:reduce){.cs-panel{animation:none}.cs-card,.cs-vis>*{transition:none}}
 @media (max-width:900px){
-  .cs-cards{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(260px,78%);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;margin-left:calc(-1*max(16px,env(safe-area-inset-left,0px)));margin-right:calc(-1*max(16px,env(safe-area-inset-right,0px)));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));scroll-padding-left:max(16px,env(safe-area-inset-left,0px))}
-  .cs-card{scroll-snap-align:start}
+  .cs-cards{grid-template-columns:minmax(0,1fr)}
+  .cs-vis{aspect-ratio:16/9}
   .cs-cards.has-sel .cs-card[aria-selected="false"]{opacity:.75}
 }
 @media (max-width:600px){.cs-head{padding:20px 16px}}
@@ -461,74 +524,84 @@ footer .w{padding-block:26px;display:grid;gap:6px}
   <div class="w">
     <a href="#" class="back" data-link="newsletter" hidden>← 뉴스레터</a>
     <a href="#why-local">Why local</a>
-    <a href="#projects">Projects</a>
-    <a href="#corporate">For corporate</a>
+    <a href="#guide">CSR guide</a>
+    <a href="#projects">Cases</a>
+    <a href="#next">Next model</a>
     <a href="#why-wv">Why World Vision</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
-<!-- SECTION 01. MAIN -->
+<!-- SECTION 01. INTRO -->
 <section class="band hero" id="main">
   <div class="w">
-    <span class="eyebrow"><b>Local Impact</b> · 지역소멸과 기업 파트너십</span>
+    <span class="eyebrow"><b>Local CSR guide</b> · 기업을 위한 로컬 사회공헌 가이드</span>
     <h1 class="disp">Local,<br>but<span>impactful.</span></h1>
     <div class="hero-foot">
-      <p class="kr">지역소멸,<br>막연한 사회문제가 아닙니다.</p>
-      <p class="lede">지역에서 일할 기회가 줄고, 사람들이 모일 공간이 사라지고,<br class="pc">아이들이 배울 기회마저 달라지고 있습니다.<br><strong>지역마다 다른 문제를 기업의 자원과 연결해 해결할 수 있습니다.</strong></p>
+      <p class="kr">우리 회사가 있는 지역에서,<br>무엇을 할 수 있을까요?</p>
+      <div>
+        <p class="lede">공장과 사업장은 지역의 일자리와 경제를 만듭니다.<br class="pc">임직원은 그 지역에서 일하고, 아이를 키우며 살아갑니다.</p>
+        <p class="lede" style="margin-top:12px"><strong>기업이 이미 관계를 맺고 있는 지역이<br class="pc">로컬 사회공헌의 가장 좋은 출발점입니다.</strong></p>
+      </div>
     </div>
-    <nav class="explore" aria-label="사업 바로가기">
-      <a href="#case-economy"><span class="eyebrow">Case 01</span><b><em>01</em> Local economy</b><span class="t">농촌창업도약+</span><span class="go">사업 보기 →</span></a>
-      <a href="#case-community"><span class="eyebrow">Case 02</span><b><em>02</em> Local community</b><span class="t">세상에서 가장 안전한 목욕탕</span><span class="go">사업 보기 →</span></a>
-      <a href="#case-future"><span class="eyebrow">Case 03</span><b><em>03</em> Local future</b><span class="t">해방프로젝트 · 드림브릿지</span><span class="go">사업 보기 →</span></a>
+    <nav class="explore" aria-label="페이지 바로가기">
+      <a href="#why-local"><span class="eyebrow">Why local</span><b><em>01</em> Why now</b><span class="t">지역에서 무슨 일이 일어나고 있나요</span><span class="go">살펴보기 →</span></a>
+      <a href="#guide"><span class="eyebrow">Local CSR guide</span><b><em>02</em> What we can do</b><span class="t">우리 회사의 자원으로 할 수 있는 일</span><span class="go">살펴보기 →</span></a>
+      <a href="#projects"><span class="eyebrow">Case studies</span><b><em>03</em> How it works</b><span class="t">실제로 이렇게 바뀌었습니다</span><span class="go">살펴보기 →</span></a>
     </nav>
   </div>
 </section>
 
-<!-- SECTION 02. WHY LOCAL IMPACT -->
+<!-- SECTION 02. WHY LOCAL -->
 <section class="band" id="why-local">
   <div class="w">
-    <span class="eyebrow"><b>Why local impact</b></span>
-    <h2 class="sec-h">지역소멸, 실제로 어떤 문제가 생기고 있을까요?</h2>
-    <p class="lede" style="margin-top:14px">사람이 줄어드는 것만이 문제가 아닙니다. 일자리, 공동체, 교육이 함께 흔들립니다. 현장 전문가와 학계 전문가가 각자 짚은 문제도 같은 곳을 가리키고 있습니다.</p>
+    <span class="eyebrow"><b>Why local</b></span>
+    <h2 class="sec-h">왜 지금,<br>로컬에 주목해야 할까요?</h2>
 
-    <div class="prob">
+    <div class="why3">
       <article>
-        <span class="ax"><em>01</em> Local economy</span>
-        <h3>지역에서 일하고 성장할 기회가 부족합니다.</h3>
-        <p class="t">청년을 지역으로 부르는 사업은 늘었지만, 그 뒤에 일하고 자리 잡는 일은 여전히 개인에게 맡겨져 있습니다. 좋은 농산물과 아이디어가 있어도 시장까지 가는 길은 좁습니다.</p>
-        <div class="sigbox">
-          <span class="eyebrow">현장이 보낸 신호</span>
-          <p class="quote">쏟아지는 청년유입 사업, 정착은 개인의 몫</p>
-          <p class="issue">학계 이슈 <b>정서적·지지적 관계 단절 : 정착 네트워크 지원</b>과 직접 연결</p>
-        </div>
+        <span class="n">01</span>
+        <h3>기업이 있는 곳에<br>지역사회가 있습니다.</h3>
+        <p>많은 기업의 공장과 물류센터는 지역에 자리하고 있습니다. 그 지역의 사람들이 임직원이 되고, 이웃이 되고, 고객이 됩니다. 지역이 약해지면 일할 사람을 구하기 어렵고, 임직원 가족이 살아갈 환경도 함께 흔들립니다.</p>
       </article>
       <article>
-        <span class="ax"><em>02</em> Local community</span>
-        <h3>지역을 지탱하던 공간과 관계가 약해지고 있습니다.</h3>
-        <p class="t">새 사업과 새 조직에 자원이 몰리는 동안, 지역을 오래 지켜 온 공간과 조직은 하나둘 문을 닫습니다. 주민이 만나던 곳이 사라지면 이웃 사이의 관계도 느슨해집니다.</p>
-        <div class="sigbox">
-          <span class="eyebrow">현장이 보낸 신호</span>
-          <p class="quote">‘새로운 조직 발굴’에 밀려 붕괴하는 지역기반 조직</p>
-          <p class="issue">학계 이슈 <b>로컬 비영리 공익활동 위기</b>와 직접 연결 · 함께 나온 신호 “관계에는 투자하지 않는 사회”</p>
-        </div>
+        <span class="n">02</span>
+        <h3>지역의 문제는<br>서로 연결돼 있습니다.</h3>
+        <p>지역소멸은 사람 수가 줄어드는 것만의 문제가 아닙니다. 하나가 무너지면 다른 것도 함께 약해집니다.</p>
+        <ol class="chainx" aria-label="지역 문제가 이어지는 흐름">
+          <li><b>일자리가 줄면</b><span>청년이 지역을 떠납니다</span></li>
+          <li><b>사람이 줄면</b><span>버스, 가게, 목욕탕 같은 생활 시설이 문을 닫습니다</span></li>
+          <li><b>모일 곳이 사라지면</b><span>이웃과 지역 조직의 관계가 약해집니다</span></li>
+          <li><b>배울 곳이 줄면</b><span>아이들이 꿈꿀 수 있는 직업과 경험이 좁아집니다</span></li>
+        </ol>
       </article>
       <article>
-        <span class="ax"><em>03</em> Local future</span>
-        <h3>사는 곳에 따라 아이들의 교육과 미래 경험이 달라지고 있습니다.</h3>
-        <p class="t">AI 교육은 대부분 학교를 통해 전해집니다. 학교 밖에서 배울 기회가 드문 섬과 농촌의 아이들에게는 새 기술이 가장 늦게 닿습니다.</p>
-        <div class="sigbox">
-          <span class="eyebrow">현장이 보낸 신호</span>
-          <p class="quote">학교를 벗어나면 닿지 않는 AI 교육</p>
-          <p class="issue">학계 이슈 <b>AI 대전환기, 청소년의 핵심 역량 강화</b>와 직접 연결</p>
-        </div>
+        <span class="n">03</span>
+        <h3>지역마다<br>필요한 해법은 다릅니다.</h3>
+        <p>어떤 지역에는 창업한 청년이 팔 곳이 필요하고, 어떤 지역에는 어르신이 안전하게 씻을 공간이 필요합니다. 버스가 3시간에 한 대 다니는 지역의 아이들에게는 스스로 움직일 수단이 필요합니다. 같은 지원을 모든 지역에 똑같이 나누는 방식으로는 풀기 어렵습니다.</p>
       </article>
+    </div>
+
+    <div class="sigstrip">
+      <div class="sig-lead">
+        <span class="eyebrow"><b>Signal</b> · 현장과 학계가 같은 곳을 가리킵니다</span>
+        <p>사랑의열매가 현장 전문가 100명의 목소리를 분석했더니, 현장에서 먼저 감지한 변화 열 개 중 일곱 개가 학계 전문가가 꼽은 사회이슈와 이어졌습니다.</p>
+      </div>
+      <div class="sig-nums" role="list">
+        <div role="listitem"><strong>100<i>명</i></strong><span>현장 전문가</span></div>
+        <div role="listitem"><strong>104<i>개</i></strong><span>현장 신호</span></div>
+        <div role="listitem" class="hl"><strong>69<i>%</i></strong><span>학계 이슈와 연결 (직접·부분 합산)</span></div>
+      </div>
+    </div>
+    <div class="sig3">
+      <div><span class="ax">Economy</span><p class="quote">쏟아지는 청년유입 사업, 정착은 개인의 몫</p></div>
+      <div><span class="ax">Community</span><p class="quote">‘새로운 조직 발굴’에 밀려 붕괴하는 지역기반 조직</p></div>
+      <div><span class="ax">Future</span><p class="quote">학교를 벗어나면 닿지 않는 AI 교육</p></div>
     </div>
 
     <details class="fold" id="signal">
       <summary><span>근거 자료 · 사랑의열매 SIGNAL 분석 자세히 보기</span></summary>
       <div class="fold-in">
-        <p class="lede" style="margin-top:18px">사랑의열매는 2026 기업사회공헌 컨퍼런스에서 현장 전문가 100명이 먼저 감지한 변화를 'SIGNAL'로 정리하고, 학계 전문가의 「사회이슈분석 2027」과 비교했습니다. 출발점은 달랐지만, 현장 신호 열 개 중 일곱 개가 학계 이슈와 이어졌습니다.</p>
         <div class="nums" role="list">
           <div role="listitem"><strong>100</strong><span>현장 전문가 (5개 영역)</span></div>
           <div role="listitem"><strong>104</strong><span>최종 도출한 현장 신호</span></div>
@@ -536,7 +609,12 @@ footer .w{padding-block:26px;display:grid;gap:6px}
           <div role="listitem"><strong>89</strong><span>학계가 꼽은 사회이슈</span></div>
           <div role="listitem" class="hl"><strong>69%</strong><span>학계 이슈와 연결된 현장 신호 (72개)</span></div>
         </div>
-        <p class="src" style="margin-top:10px">69%는 직접 연결 30건과 부분 연결을 합산한 수치입니다. 5개 영역: 미래세대 · 디지털·AI · 인구·지역 · 기후·안전 · 마음건강</p>
+        <p class="src" style="margin-top:10px">69%는 직접 연결과 부분 연결을 합산한 수치입니다. 5개 영역: 미래세대 · 디지털·AI · 인구·지역 · 기후·안전 · 마음건강</p>
+        <ul class="roles" style="margin-top:22px">
+          <li><b>“쏟아지는 청년유입 사업, 정착은 개인의 몫”</b><span>학계 이슈 '정서적·지지적 관계 단절 : 정착 네트워크 지원'과 직접 연결</span></li>
+          <li><b>“‘새로운 조직 발굴’에 밀려 붕괴하는 지역기반 조직”</b><span>학계 이슈 '로컬 비영리 공익활동 위기'와 직접 연결 · 함께 나온 신호 “관계에는 투자하지 않는 사회”</span></li>
+          <li><b>“학교를 벗어나면 닿지 않는 AI 교육”</b><span>학계 이슈 'AI 대전환기, 청소년의 핵심 역량 강화'와 직접 연결</span></li>
+        </ul>
         <div class="two" style="margin-top:28px">
           <div>
             <span class="eyebrow">영역별 연결 비율</span>
@@ -550,17 +628,105 @@ footer .w{padding-block:26px;display:grid;gap:6px}
           </div>
           <div>
             <span class="eyebrow">분석이 내린 결론</span>
-            <p class="kr" style="font-size:22px;margin-top:10px">기업 사회공헌의 다음 질문은 ‘무엇을’이 아니라 ‘어떻게’입니다.</p>
-            <p class="lede" style="margin-top:10px;font-size:15.5px">어떤 문제가 중요한지는 이미 확인됐습니다. 이제 필요한 것은 누가, 어떤 방식으로 함께 움직이느냐입니다.</p>
+            <p class="kr" style="font-size:22px;margin-top:12px">기업 사회공헌의 다음 질문은<br>‘무엇을’이 아니라 ‘어떻게’입니다.</p>
           </div>
         </div>
         <p class="src" style="margin-top:20px">자료: 사랑의열매 「SIGNAL 브리핑」, 임팩트리서치랩 「기업 실무자를 위한 SIGNAL 사용법」, 「SIGNAL × 사회이슈분석 2027」 (2026.10.29)</p>
       </div>
     </details>
+
+    <p class="bridge">문제는 충분히 확인됐습니다.<br><strong>이제 질문은 ‘우리 기업은 무엇을 할 수 있을까?’입니다.</strong></p>
   </div>
 </section>
 
-<!-- SECTION 03. CASE STUDIES -->
+<!-- SECTION 03. LOCAL CSR GUIDE -->
+<section class="band" id="guide">
+  <div class="w">
+    <span class="eyebrow"><b>Local CSR guide</b></span>
+    <h2 class="sec-h">우리 회사의 자원으로 시작하는<br>로컬 사회공헌</h2>
+    <p class="lede" style="margin-top:16px">기부금이나 물품만이 방법은 아닙니다.<br class="pc">기업이 매일 하는 일이 지역에서는 가장 필요한 해법이 될 수 있습니다.</p>
+
+    <div class="types">
+      <article>
+        <div class="t-head"><b>Manufacturing</b><h3>제조업 · 생산시설</h3><p>공장과 기술자가 지역에 있습니다.</p></div>
+        <ul>
+          <li><b>직무 체험</b><span>지역 청소년이 공장과 연구소를 직접 보고, 일하는 사람을 만나는 진로 체험</span></li>
+          <li><b>기술교육</b><span>사내 기술 교육 과정을 지역 청년과 특성화고 학생에게 열기</span></li>
+          <li><b>청년 멘토링</b><span>현장 엔지니어가 지역 청년의 취업과 정착을 함께 고민하는 멘토로</span></li>
+          <li><b>안전·환경 전문성 공유</b><span>사업장의 안전 관리 노하우로 노후 생활시설을 점검하고 개선</span></li>
+        </ul>
+        <a class="t-case" href="#case-future"><span>실제 사례</span>아모레퍼시픽의 기업 투어와 진로 멘토링 · 해방프로젝트</a>
+      </article>
+      <article>
+        <div class="t-head"><b>Logistics &amp; retail</b><h3>물류 · 유통기업</h3><p>상품을 고르고, 옮기고, 파는 힘이 있습니다.</p></div>
+        <ul>
+          <li><b>지역 창업팀 판로</b><span>팝업스토어와 온라인몰 기획전으로 지역 창업기업의 첫 판매처 열기</span></li>
+          <li><b>지역 생산품 유통</b><span>MD 관점의 상품 개발과 위생·품질 관리로 지역 제품을 시장에 맞게</span></li>
+          <li><b>물류 역량 활용</b><span>배송, 포장, 재고 관리 노하우를 지역 소상공인과 나누기</span></li>
+        </ul>
+        <a class="t-case" href="#case-economy"><span>실제 사례</span>현대백화점그룹의 상품 개발·유통 지원 · 농촌창업도약+</a>
+      </article>
+      <article>
+        <div class="t-head"><b>Tech &amp; IT</b><h3>IT · 기술기업</h3><p>기술과 플랫폼, 그것을 다루는 사람이 있습니다.</p></div>
+        <ul>
+          <li><b>AI 교육</b><span>학교 밖에서 AI를 접하기 어려운 지역 아이들을 찾아가는 교육</span></li>
+          <li><b>디지털 역량 강화</b><span>교육 콘텐츠와 디지털 기기로 섬·산간 지역의 학습 거점 만들기</span></li>
+          <li><b>기술·플랫폼 지원</b><span>지역 기관이 쓸 수 있는 도구와 데이터, 기술 자문 제공</span></li>
+        </ul>
+        <a class="t-case" href="#case-dreambridge"><span>함께할 모델</span>진도·통영 섬 지역 AI 교육 · 드림브릿지</a>
+      </article>
+      <article>
+        <div class="t-head"><b>People</b><h3>임직원 중심 기업</h3><p>각 분야의 전문가인 임직원이 있습니다.</p></div>
+        <ul>
+          <li><b>전문성 나눔</b><span>디자인, 브랜딩, 마케팅 같은 본업의 기술을 지역 문제에 쓰기</span></li>
+          <li><b>진로 멘토링</b><span>일터를 보여 주고, 지역 아이들과 청년의 진로를 함께 그리기</span></li>
+          <li><b>지역사회 참여</b><span>임직원이 지역을 직접 찾아 활동하며 지역과 관계 맺기</span></li>
+          <li><b>재능기부</b><span>개인의 전문성을 모아 지역 조직과 주민을 돕기</span></li>
+        </ul>
+        <a class="t-case" href="#case-community"><span>실제 사례</span>이노션의 디자인·브랜딩 · 세상에서 가장 안전한 목욕탕</a>
+      </article>
+    </div>
+
+    <h3 class="guide-sub">실제로 이렇게 바뀌었습니다</h3>
+    <div class="conv">
+      <div class="conv-head" aria-hidden="true"><span>기업의 자본</span><span class="ch"><span>기업이 내놓은 것</span><span></span><span>지역에서 바뀐 것</span><span>사례</span></span></div>
+      <section class="conv-row">
+        <h3 class="conv-cap"><b>Core business</b><span>업(業) · 기술 · 제품 · 디자인 · 유통</span></h3>
+        <ul>
+          <li><p class="in"><b>이노션</b>디자인 · 브랜딩</p><i aria-hidden="true">→</i><p class="out"><strong>10.7% → 1.2%</strong>노후 목욕탕이 주민 건강 인프라로. 낙상 경험률 감소</p><a href="#case-community">목욕탕</a></li>
+          <li><p class="in"><b>현대백화점그룹</b>상품 개발 · 위생 관리 · 유통</p><i aria-hidden="true">→</i><p class="out"><strong>15곳</strong>농촌 창업기업이 시장에 나갈 제품과 판로를 준비</p><a href="#case-economy">농촌창업도약+</a></li>
+        </ul>
+      </section>
+      <section class="conv-row">
+        <h3 class="conv-cap"><b>People</b><span>임직원 · 전문가 · 고객</span></h3>
+        <ul>
+          <li><p class="in"><b>아모레퍼시픽</b>임직원 진로 멘토링 · 기업 투어</p><i aria-hidden="true">→</i><p class="out"><strong>+16.6%</strong>진도 중학생 29명의 진로 인식 상승</p><a href="#case-future">해방프로젝트</a></li>
+          <li><p class="in"><b>참여 기업</b>임직원의 지역 방문</p><i aria-hidden="true">→</i><p class="out"><strong>500여 명</strong>부안을 찾은 임직원이 갯벌 보전과 지역 관계인구로</p><a href="#why-wv">부안 갯벌</a></li>
+        </ul>
+      </section>
+      <section class="conv-row">
+        <h3 class="conv-cap"><b>Market</b><span>브랜드 · 채널 · 소비자 접점</span></h3>
+        <ul>
+          <li><p class="in"><b>현대백화점그룹</b>유통 채널 · 팝업스토어</p><i aria-hidden="true">→</i><p class="out"><strong>판로</strong>지역 창업기업의 제품이 고객을 만나는 자리</p><a href="#case-economy">농촌창업도약+</a></li>
+          <li><p class="in"><b>참여 기업</b>고객 참여 캠페인</p><i aria-hidden="true">→</i><p class="out"><strong>약 800평</strong>시민이 함께 지킨 부안 갯벌</p><a href="#why-wv">부안 갯벌</a></li>
+        </ul>
+      </section>
+      <section class="conv-row">
+        <h3 class="conv-cap"><b>Resource</b><span>재원 · 공간 · 인프라</span></h3>
+        <ul>
+          <li><p class="in"><b>이노션</b>기금</p><i aria-hidden="true">→</i><p class="out"><strong>SROI 3.17배</strong>공간을 바꾼 재원이 21.5억 원의 사회적 가치로</p><a href="#case-community">목욕탕</a></li>
+          <li><p class="in"><b>참여 기업</b>ESG 재원</p><i aria-hidden="true">→</i><p class="out"><strong>약 2,200평</strong>기업이 함께 지킨 부안 갯벌</p><a href="#why-wv">부안 갯벌</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="pull">
+      <span class="pull-en">Business <i>as a</i> solution.</span>
+      <p>기업의 본업이 지역의 문제와 만나면, 사회공헌은 <em>지역에 필요한 해법</em>이 됩니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 04. CASE STUDIES -->
 <section class="band" id="projects">
   <div class="w">
     <span class="eyebrow"><b>Case studies</b></span>
@@ -578,7 +744,7 @@ footer .w{padding-block:26px;display:grid;gap:6px}
         <li><b>지역에 남깁니다</b><span>사업이 끝나도 주민과 지자체가 이어 가는 구조를 만듭니다.</span></li>
       </ol>
     </div>
-    <p class="lede" style="margin-top:28px">아래 네 사례는 이렇게 서로 다른 자원이 하나로 연결된 결과이거나, 연결을 기다리는 모델입니다. 지역마다 다른 문제를 발견하고, 기업과 정부, 지역사회가 가진 자원을 이었습니다. <a href="#why-wv" class="inl">월드비전의 백본 방식 자세히 보기 →</a></p>
+    <p class="lede" style="margin-top:28px">아래 세 사례는 이렇게 서로 다른 자원이 하나로 연결된 결과입니다. 지역마다 다른 문제를 발견하고, 기업과 정부, 지역사회가 가진 자원을 이었습니다. <a href="#why-wv" class="inl">월드비전의 백본 방식 자세히 보기 →</a></p>
 
     <div class="cs-cards" role="tablist" aria-label="사업 사례">
       <button class="cs-card" type="button" role="tab" id="tab-economy" aria-controls="case-economy" aria-selected="false" data-case="case-economy">
@@ -620,20 +786,6 @@ footer .w{padding-block:26px;display:grid;gap:6px}
           <span class="cs-who">월드비전 × 오리진디자인 × 아모레퍼시픽<em>외 3개 기관</em></span>
           <span class="cs-name">해방프로젝트</span>
           <span class="cs-one">버스가 3시간에 한 대 다니는 진도에서, 아이들의 이동과 진로를 넓혔습니다.</span>
-          <span class="cs-more">자세히 보기</span>
-        </span>
-      </button>
-      <button class="cs-card" type="button" role="tab" id="tab-dreambridge" aria-controls="case-dreambridge" aria-selected="false" data-case="case-dreambridge">
-        <span class="cs-vis" data-img="">
-          <span class="cs-num">04 · Local future</span>
-          <span class="cs-big">80<small>명</small></span>
-          <span class="cs-cap">진도 · 통영 섬 지역 아동·청소년 대상 설계</span>
-        </span>
-        <span class="cs-txt">
-          <span class="cs-tag ghost">확장 모델 · 기업 파트너 모집</span>
-          <span class="cs-who">진도군 × 통영시 × 월드비전</span>
-          <span class="cs-name">드림브릿지</span>
-          <span class="cs-one">진로체험 시설이 한 곳도 없는 섬 지역 아이들에게, AI 진로 교육과 안전 교육을 엽니다.</span>
           <span class="cs-more">자세히 보기</span>
         </span>
       </button>
@@ -708,7 +860,7 @@ footer .w{padding-block:26px;display:grid;gap:6px}
           </div>
         </div>
         <div class="row">
-          <h4><small>06 Join</small>기업이 더할 수 있는 것</h4>
+          <h4><small>06 Your turn</small>다른 기업이라면</h4>
           <div class="join ext">
             <div><b>유통망</b><span>오프라인 팝업과 온라인몰 기획전으로 판매 기회 제공</span></div>
             <div><b>상품 개발</b><span>MD·바이어 관점에서 제품 완성도 높이기</span></div>
@@ -785,7 +937,7 @@ footer .w{padding-block:26px;display:grid;gap:6px}
           </div>
         </div>
         <div class="row">
-          <h4><small>06 Join</small>기업이 더할 수 있는 것</h4>
+          <h4><small>06 Your turn</small>다른 기업이라면</h4>
           <div class="join ext">
             <div><b>디자인</b><span>안전하고 쓰기 쉬운 공간 만들기</span></div>
             <div><b>브랜딩</b><span>지역의 정체성을 담은 이름과 이야기</span></div>
@@ -861,7 +1013,7 @@ footer .w{padding-block:26px;display:grid;gap:6px}
           </div>
         </div>
         <div class="row">
-          <h4><small>06 Join</small>기업이 더할 수 있는 것</h4>
+          <h4><small>06 Your turn</small>다른 기업이라면</h4>
           <div>
             <p style="margin-bottom:14px">아모레퍼시픽은 일터를 열고 임직원이 직접 아이들의 진로 멘토가 됐습니다. 다른 인구감소지역에서도 이런 방식으로 함께할 수 있습니다.</p>
             <div class="join ext">
@@ -875,12 +1027,19 @@ footer .w{padding-block:26px;display:grid;gap:6px}
       </div>
     </div>
 
-    <!-- CASE 04 -->
-    <div class="cs-panel" id="case-dreambridge" role="tabpanel" aria-labelledby="tab-dreambridge" hidden>
-      <div class="cs-head">
-        <span class="eyebrow"><b>Case 04</b> · Local future · 전라남도 진도군 · 경상남도 통영시 · 확장 모델</span>
+  </div>
+</section>
+
+<!-- SECTION 05. NEXT MODEL -->
+<section class="band" id="next">
+  <div class="w">
+    <span class="eyebrow"><b>Next model</b> · 함께할 기업을 찾는 확장 모델</span>
+    <h2 class="sec-h">이런 지역에도<br>새로운 협력을 만들 수 있습니다.</h2>
+    <div class="next" id="case-dreambridge">
+      <div class="cs-head next-head">
+        <span class="eyebrow"><b>Dreambridge</b> · 전라남도 진도군 · 경상남도 통영시</span>
         <h3>드림브릿지</h3>
-        <p>AI 시대의 기회가 지역에 따라 달라지지 않도록.</p>
+        <p>AI 시대의 기회가 사는 곳에 따라 달라지지 않도록.</p>
       </div>
       <div class="dt">
         <div class="row">
@@ -928,7 +1087,7 @@ footer .w{padding-block:26px;display:grid;gap:6px}
           </div>
         </div>
         <div class="row">
-          <h4><small>06 Join</small>기업이 더할 수 있는 것</h4>
+          <h4><small>06 Join</small>기업이 참여할 수 있는 영역</h4>
           <div class="join ext">
             <div><b>AI·디지털 교육 기술</b><span>기업의 AI 기술과 플랫폼으로 교육의 질 높이기</span></div>
             <div><b>교육 콘텐츠 · 디지털 기기</b><span>섬 지역 거점에 콘텐츠와 기기 지원</span></div>
@@ -942,56 +1101,13 @@ footer .w{padding-block:26px;display:grid;gap:6px}
   </div>
 </section>
 
-<!-- SECTION 04. FOR CORPORATE -->
-<section class="band" id="corporate">
-  <div class="w">
-    <span class="eyebrow"><b>For corporate</b></span>
-    <h2 class="sec-h">우리 기업은 무엇을 더할 수 있을까요?</h2>
-    <p class="lede" style="margin-top:14px">기업이 가진 자산은 재정자본만이 아닙니다. <strong>기업이 이미 잘하는 일이, 지역에는 가장 필요한 일일 수 있습니다.</strong> 기술, 사람, 시장, 자원이 앞의 사업에서 어떻게 지역의 해법이 됐는지 살펴보세요.</p>
-    <div class="conv">
-      <div class="conv-head" aria-hidden="true"><span>기업의 자본</span><span class="ch"><span>기업이 내놓은 것</span><span></span><span>지역에서 바뀐 것</span><span>사례</span></span></div>
-      <section class="conv-row">
-        <h3 class="conv-cap"><b>Core business</b><span>업(業) · 기술 · 제품 · 디자인 · 유통</span></h3>
-        <ul>
-          <li><p class="in"><b>이노션</b>디자인 · 브랜딩</p><i aria-hidden="true">→</i><p class="out"><strong>10.7% → 1.2%</strong>노후 목욕탕이 주민 건강 인프라로. 낙상 경험률 감소</p><a href="#case-community">목욕탕</a></li>
-          <li><p class="in"><b>현대백화점그룹</b>상품 개발 · 위생 관리 · 유통</p><i aria-hidden="true">→</i><p class="out"><strong>15곳</strong>농촌 창업기업이 시장에 나갈 제품과 판로를 준비</p><a href="#case-economy">농촌창업도약+</a></li>
-        </ul>
-      </section>
-      <section class="conv-row">
-        <h3 class="conv-cap"><b>People</b><span>임직원 · 전문가 · 고객</span></h3>
-        <ul>
-          <li><p class="in"><b>아모레퍼시픽</b>임직원 진로 멘토링 · 기업 투어</p><i aria-hidden="true">→</i><p class="out"><strong>+16.6%</strong>진도 중학생 29명의 진로 인식 상승</p><a href="#case-future">해방프로젝트</a></li>
-          <li><p class="in"><b>참여 기업</b>임직원의 지역 방문</p><i aria-hidden="true">→</i><p class="out"><strong>500여 명</strong>부안을 찾은 임직원이 갯벌 보전과 지역 관계인구로</p><a href="#why-wv">부안 갯벌</a></li>
-        </ul>
-      </section>
-      <section class="conv-row">
-        <h3 class="conv-cap"><b>Market</b><span>브랜드 · 채널 · 소비자 접점</span></h3>
-        <ul>
-          <li><p class="in"><b>현대백화점그룹</b>유통 채널 · 팝업스토어</p><i aria-hidden="true">→</i><p class="out"><strong>판로</strong>지역 창업기업의 제품이 고객을 만나는 자리</p><a href="#case-economy">농촌창업도약+</a></li>
-          <li><p class="in"><b>참여 기업</b>고객 참여 캠페인</p><i aria-hidden="true">→</i><p class="out"><strong>약 800평</strong>시민이 함께 지킨 부안 갯벌</p><a href="#why-wv">부안 갯벌</a></li>
-        </ul>
-      </section>
-      <section class="conv-row">
-        <h3 class="conv-cap"><b>Resource</b><span>재원 · 공간 · 인프라</span></h3>
-        <ul>
-          <li><p class="in"><b>이노션</b>기금</p><i aria-hidden="true">→</i><p class="out"><strong>SROI 3.17배</strong>공간을 바꾼 재원이 21.5억 원의 사회적 가치로</p><a href="#case-community">목욕탕</a></li>
-          <li><p class="in"><b>참여 기업</b>ESG 재원</p><i aria-hidden="true">→</i><p class="out"><strong>약 2,200평</strong>기업이 함께 지킨 부안 갯벌</p><a href="#why-wv">부안 갯벌</a></li>
-        </ul>
-      </section>
-    </div>
-    <div class="pull">
-      <span class="pull-en">Business <i>as a</i> solution.</span>
-      <p>기업의 본업이 지역의 문제와 만나면, 사회공헌은 <em>지역에 필요한 해법</em>이 됩니다.</p>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 05. WHY WORLD VISION -->
+<!-- SECTION 06. WHY WORLD VISION -->
 <section class="bb" id="why-wv">
   <div class="w">
     <span class="eyebrow"><b>Why World Vision</b></span>
     <h2 class="disp">Why World<br>Vision?</h2>
-    <p class="kr" style="margin-top:22px">서로 다른 자원을 연결하고,<br>지역에 남는 구조를 만듭니다.</p>
+    <p class="kr" style="margin-top:28px">지역을 이해하고, 파트너를 연결하고,<br>실행을 함께합니다.</p>
+    <p class="lede" style="margin-top:14px">앞의 사례에서 월드비전은 후원금을 전달하는 데서 멈추지 않았습니다.<br class="pc">목욕탕에서는 문제를 정의하고 10개 기관을 이었고, 농촌창업도약+에서는 멘토단을 꾸리고 성과 관리를 설계했습니다.<br class="pc">해방프로젝트에서는 파트너와 함께 사업을 기획하고 재원을 마련했습니다.</p>
 
     <h3 class="bbh"><span>01</span>Bridge &amp; Backbone <small>흩어진 자원을 잇고, 끝까지 조율합니다</small></h3>
     <p class="lede" style="margin-top:16px">지역 문제를 풀 자원은 이미 있습니다. 다만 서로 다른 곳에 흩어져 있어 만나지 못할 뿐입니다. 월드비전은 이 자원들을 잇는 다리(Bridge)가 되고, 사업이 끝날 때까지 가운데서 역할과 일정을 맞추는 중심(Backbone)이 됩니다.</p>
@@ -1084,21 +1200,22 @@ footer .w{padding-block:26px;display:grid;gap:6px}
   </div>
 </section>
 
-<!-- SECTION 06. CONTACT -->
+<!-- SECTION 07. CONTACT -->
 <section class="band cta" id="contact">
   <div class="w">
     <span class="eyebrow"><b>Contact</b></span>
     <h2 class="disp" style="margin-top:14px">Have a local<br>impact <span>idea?</span></h2>
-    <p class="kr" style="margin-top:24px">어디서 시작해도 괜찮습니다.</p>
+    <p class="kr" style="margin-top:28px">우리 회사의 사업장이 있는 지역부터<br>이야기해 보세요.</p>
+    <p class="lede" style="margin-top:12px">아래 세 가지 중 하나만 있어도 협력을 시작할 수 있습니다.</p>
     <div class="paths">
-      <div><b>Place</b><h3>지역에서 시작하기</h3><p>사업장이 있는 지역이나 관계를 맺고 싶은 지역을 알려 주세요. 그 지역의 문제를 함께 찾습니다.</p><span class="ex">예: 공장이 있는 군 단위 지역</span></div>
-      <div><b>Problem</b><h3>문제에서 시작하기</h3><p>청년 정착, 공동체 회복, 교육 격차처럼 풀고 싶은 문제를 가져오세요. 그 문제가 가장 필요한 지역을 함께 찾습니다.</p><span class="ex">예: 섬 지역 아이들의 디지털 교육</span></div>
-      <div><b>Business</b><h3>기업의 업(業)에서 시작하기</h3><p>유통, 기술, 디자인, 임직원처럼 우리 기업이 잘하는 일을 알려 주세요. 그 역량이 필요한 지역 문제를 연결합니다.</p><span class="ex">예: 유통망을 지역 창업의 판로로</span></div>
+      <div><b>Place</b><h3>사업장이나 공장이<br>있는 지역</h3><p>그 지역에서 지금 무엇이 가장 필요한지, 월드비전 지역사업본부와 함께 찾습니다.</p><span class="ex">예: 공장이 있는 군 단위 지역</span></div>
+      <div><b>Problem</b><h3>기업이 해결하고 싶은<br>지역 문제</h3><p>청년 정착, 돌봄, 아이들의 교육처럼 풀고 싶은 문제가 있다면, 그 문제가 가장 필요한 지역을 함께 찾습니다.</p><span class="ex">예: 섬 지역 아이들의 디지털 교육</span></div>
+      <div><b>Resource</b><h3>활용할 수 있는<br>기술 · 인력 · 공간 · 유통망</h3><p>우리 기업이 잘하는 일을 알려 주세요. 그 역량이 해법이 될 지역 문제를 연결합니다.</p><span class="ex">예: 유통망을 지역 창업의 판로로</span></div>
     </div>
     <div class="contact">
       <div>
         <span class="eyebrow">Corporate partnership</span>
-        <p class="kr">지역, 문제, 자원 중 하나만 정해져 있어도 충분합니다. 함께 이야기를 시작해 보세요.</p>
+        <p class="kr">지역의 문제를 찾고, 사업을 설계하고,<br>실행까지 함께하겠습니다.</p>
         <p class="reach" style="margin-top:14px" data-reach>월드비전 대표전화 <span class="addr">02-2078-7000</span></p>
       </div>
       <div class="btns">
