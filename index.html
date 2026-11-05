@@ -286,6 +286,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .net-groups li em{font-style:normal;font-weight:500;font-size:12px;margin-left:6px;opacity:.85}
 @media (prefers-reduced-motion:reduce){.drawer:not([hidden]){animation:none}}
 
+.pm-why{display:grid;gap:0;margin-top:14px;background:var(--paper);color:var(--ink)}
+.pm-why li{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:10px;padding:10px 14px;border-top:1px solid var(--hair);font-size:14px;line-height:1.55}
+.pm-why li:first-child{border-top:0}
+.pm-why b{font-weight:800;color:var(--wv-deep);letter-spacing:-.02em}
+.pm-proof{margin-top:12px;font-size:14px;line-height:1.7}
+
 /* 05 next model */
 .next{margin-top:36px;border:2px dashed var(--wv-deep);background:var(--paper)}
 .next-head{background:var(--paper-2);color:var(--ink)}
@@ -1186,7 +1192,13 @@ footer .w{padding-block:26px;display:grid;gap:6px}
     <h3 class="bbh"><span>03</span>What we bring <small>월드비전이 할 수 있는 일</small></h3>
     <div class="why-wv">
       <div><b>Field network</b><h4>전국에 있는 현장 네트워크</h4><p>전국 14개 지역사업본부와 600명 이상의 국내 직원이 지역 현장에 있습니다. 드림브릿지도 광주전남·경남울산사업본부를 통해 교육지원청과 학교, 복지시설을 연결하도록 설계했습니다.</p><button type="button" class="net-btn" data-open="network" aria-controls="network" aria-expanded="false">전국 현장 네트워크 보기 <span aria-hidden="true">→</span></button></div>
-      <div><b>PM</b><h4>파트너의 역할과 자원을 조정하는 힘</h4><p>목욕탕에서는 10개 기관, 농촌창업도약+에서는 정부, 기업, 공공기관, 사회적협동조합이 함께했습니다. 월드비전은 두 사업 모두 문제 정의, 기관 연결, 전체 사업 관리(PM)를 맡았습니다.</p></div>
+      <div><b>PM</b><h4>파트너의 역할과 자원을 조정하는 힘</h4><p>참여 기관이 많을수록 목표와 일정, 예산 기준이 서로 다릅니다. 정부는 정책 성과를, 기업은 사회공헌 전략과 내부 결재를, 현장은 당사자의 필요를 먼저 봅니다. 가운데서 이를 맞추는 곳이 없으면 사업은 쉽게 멈추거나 각자 따로 움직입니다.</p>
+        <ul class="pm-why">
+          <li><b>한 방향으로</b><span>공동 목표와 성과 지표를 함께 정합니다</span></li>
+          <li><b>각자 잘하는 일에</b><span>역할을 나눠 파트너가 본업에 집중하게 합니다</span></li>
+          <li><b>끝까지</b><span>일정과 재원을 관리하고 성과를 측정해 보고합니다</span></li>
+        </ul>
+        <p class="pm-proof">목욕탕에서는 10개 기관이 3년 동안 한 사업으로 움직여 외부 검증 성과까지 냈고, 농촌창업도약+에서는 정부 공모·기업 유통·멘토링이 경진대회부터 판로까지 하나의 흐름으로 이어졌습니다. 두 사업 모두 월드비전이 전체 사업 관리(PM)를 맡았습니다.</p></div>
       <div><b>Governance</b><h4>사업이 끝나도 지역에 남는 운영 구조</h4><p>외부 재원은 언젠가 끝나지만 지자체와 주민은 남습니다. 목욕탕에서는 주민 건강리더 27명이 이웃을 살피고, 부안의 갯벌 보전 모델은 지방정부가 반복해서 쓰는 정책이 됐습니다. 행정안전부·농림축산식품부와도 다년간 협의하며 이런 구조를 담은 지역소멸 대응 사업모델을 만들고 있습니다.</p></div>
       <div><b>Long-term</b><h4>국제 지역개발에서 쌓은 긴 호흡</h4><p>월드비전은 해외 지역개발사업에서 15~20년 동안 한 지역과 함께합니다. 주민과 지방정부가 스스로 운영할 수 있을 때를 자립의 기준으로 삼고, 그때 지역을 떠납니다.</p></div>
     </div>
