@@ -196,6 +196,39 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .reach{font-size:13.5px;color:var(--ink-2)}
 .reach b{font-family:var(--mono);font-weight:500;color:var(--ink);user-select:all}
 
+/* impact builder */
+.ib-lede{max-width:none}
+.roles2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2vw,24px);margin-top:clamp(36px,5vw,56px)}
+.roles2 article{background:var(--paper);color:var(--ink);padding:clamp(24px,3vw,36px);display:flex;flex-direction:column}
+.roles2 article+article{background:var(--band);color:var(--band-fg)}
+.r-k{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
+.r-en{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(56px,7vw,96px);line-height:.85;color:var(--wv);margin-top:12px}
+.roles2 h3{font-size:clamp(19px,2vw,23px);font-weight:800;letter-spacing:-.04em;margin-top:18px}
+.roles2 p{font-size:15.5px;line-height:1.75;margin-top:10px;opacity:.9}
+.r-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:20px}
+.r-tags li{font-size:13px;font-weight:700;border:1px solid currentColor;padding:4px 10px;opacity:.85}
+.flow6{margin-top:clamp(36px,5vw,56px)}
+.f-k{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase}
+.flow6 ol{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));margin-top:14px;counter-reset:s;border-top:3px solid var(--on-wv)}
+.flow6 li{position:relative;padding:18px 16px 4px 0;min-width:0}
+.flow6 li+li{padding-left:16px;border-left:1px solid var(--on-wv)}
+.flow6 li:not(:last-child)::after{content:"→";position:absolute;right:-9px;top:14px;z-index:1;background:var(--wv);font-family:var(--display);font-weight:900;font-size:18px;line-height:1;padding:0 2px}
+.flow6 .sn{display:block;font-family:var(--mono);font-size:11px;opacity:.7}
+.flow6 b{display:block;font-family:var(--display);font-weight:900;font-size:clamp(20px,2vw,26px);text-transform:uppercase;line-height:1;margin-top:6px}
+.flow6 .sk{display:block;font-size:14px;font-weight:700;letter-spacing:-.025em;line-height:1.45;margin-top:10px}
+.flow6 li:last-child{background:var(--band);color:var(--band-fg);padding-right:16px}
+.flow6 li:last-child b{color:var(--wv)}
+.net-line{margin-top:28px;font-size:15px;font-weight:600;display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
+.net-line .net-btn{margin-top:0}
+@media (max-width:900px){
+  .roles2{grid-template-columns:minmax(0,1fr)}
+  .flow6 ol{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .flow6 li,.flow6 li+li{padding:14px 12px 12px 0;border-left:0;border-bottom:1px solid var(--on-wv)}
+  .flow6 li:nth-child(even){padding-left:12px;border-left:1px solid var(--on-wv)}
+  .flow6 li::after{display:none}
+  .flow6 li:last-child{padding-left:12px}
+}
+
 /* inquiry form */
 .inq{margin-top:28px;padding-top:28px;border-top:3px solid var(--rule)}
 .inq fieldset{border:0;margin:0;padding:0}
@@ -273,7 +306,7 @@ footer .w{padding-block:26px;display:grid;gap:6px}
     <a href="#why-local">Why local</a>
     <a href="#corporate">For corporate</a>
     <a href="#cases">Cases</a>
-    <a href="#why-wv">Why World Vision</a>
+    <a href="#why-wv">Impact builder</a>
   </div>
 </nav>
 
@@ -489,28 +522,44 @@ footer .w{padding-block:26px;display:grid;gap:6px}
   </div>
 </section>
 
-<!-- 5. WHY WORLD VISION -->
+<!-- 5. IMPACT BUILDER -->
 <section class="bb" id="why-wv">
   <figure class="cover">
     <img src="assets/buan-tidal-flat.jpg" alt="해 질 녘 전북 부안 갯벌 위로 길게 뻗은 나무 데크" width="1536" height="864" loading="lazy">
     <figcaption>
-      <span class="cv-k">Why World Vision</span>
-      <span class="cv-t">Bridge <i>&amp;</i><br>Backbone.</span>
+      <span class="cv-k">World Vision</span>
+      <span class="cv-t">Impact<br>Builder.</span>
       <span class="cv-c">전북 부안 갯벌 — 지자체와 기업, 시민이 함께 지켜 온 곳</span>
     </figcaption>
   </figure>
   <div class="w">
-    <span class="eyebrow"><b>Why World Vision</b></span>
-    <h2 class="sec-h">지역을 알고, 파트너를 연결하고,<br>실행합니다.</h2>
+    <span class="eyebrow"><b>Impact builder</b></span>
+    <h2 class="sec-h">지역의 문제를 발견하고,<br>함께 변화를 만듭니다.</h2>
+    <p class="lede ib-lede">지역에 필요한 문제를 찾고, 기업과 정부, 지역사회의 자원을 연결합니다.<br class="pc">각자의 역량이 하나의 해결책으로 이어지고, 그 변화가 지역에 남을 수 있도록<br class="pc">함께 설계하고 실행합니다.</p>
 
-    <div class="caps">
-      <article><b>Know</b><h3>지역을 압니다</h3><p>전국 14개 지역사업본부와 600명 이상의 국내 직원이 현장에 있습니다.</p><button type="button" class="net-btn" data-open="network" aria-controls="network" aria-expanded="false">전국 네트워크 보기 →</button></article>
-      <article><b>Connect</b><h3>파트너를 잇습니다</h3><p>문제에 맞는 기업, 지자체, 전문기관을 찾아 하나의 사업으로 묶습니다.</p></article>
-      <article><b>Run</b><h3>끝까지 조율합니다</h3><p>역할과 일정, 재원을 맞추고 성과를 측정합니다. 파트너는 본업에 집중합니다.</p></article>
-      <article><b>Sustain</b><h3>지역에 남깁니다</h3><p>사업이 끝나도 주민과 지자체가 이어 갈 수 있는 구조를 만듭니다.</p></article>
+    <div class="roles2">
+      <article>
+        <span class="r-k">Role 01</span>
+        <b class="r-en">Bridge</b>
+        <h3>흩어진 자원을 연결합니다.</h3>
+        <p>기업의 기술과 전문성, 정부의 정책과 재원, 지역사회의 경험과 필요를 연결해 함께할 수 있는 협력 구조를 만듭니다.</p>
+        <ul class="r-tags"><li>기업</li><li>정부 · 지자체</li><li>지역사회</li><li>전문기관</li></ul>
+      </article>
+      <article>
+        <span class="r-k">Role 02</span>
+        <b class="r-en">Backbone</b>
+        <h3>함께 움직이는 구조를 만듭니다.</h3>
+        <p>각 파트너의 역할과 자원을 조정하고, 사업의 실행부터 성과 확인, 지속 가능한 운영까지 전체 과정을 함께합니다.</p>
+        <ul class="r-tags"><li>역할 조정</li><li>실행</li><li>성과 확인</li><li>지속 운영</li></ul>
+      </article>
     </div>
-    <p class="steps" aria-label="월드비전 6-Step 백본 모델"><span>Discover</span><span>Translate</span><span>Connect</span><span>Orchestrate</span><span>Measure</span><span>Sustain</span></p>
-    <p class="steps-cap">월드비전 6-Step Backbone Model</p>
+
+    <div class="flow6">
+      <p class="f-k">6-Step Backbone Model</p>
+      <ol><li><span class="sn">01</span><b>Discover</b><span class="sk">지역의 문제와 기회 발견</span></li><li><span class="sn">02</span><b>Translate</b><span class="sk">함께 해결할 사업으로 구체화</span></li><li><span class="sn">03</span><b>Connect</b><span class="sk">필요한 파트너 연결</span></li><li><span class="sn">04</span><b>Orchestrate</b><span class="sk">역할과 자원 조정 및 실행</span></li><li><span class="sn">05</span><b>Measure</b><span class="sk">변화와 성과 확인</span></li><li><span class="sn">06</span><b>Sustain</b><span class="sk">지역에 남는 구조 만들기</span></li></ol>
+    </div>
+
+    <p class="net-line">전국 14개 지역사업본부와 600명 이상의 국내 직원이 현장에서 함께합니다. <button type="button" class="net-btn" data-open="network" aria-controls="network" aria-expanded="false">전국 네트워크 보기 →</button></p>
 
     <div class="cta" id="contact">
       <h2 class="disp">Have a local<br>impact <span>idea?</span></h2>
