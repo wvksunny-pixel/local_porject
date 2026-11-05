@@ -210,6 +210,11 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .quote-s{margin-top:14px;padding:12px 14px;border-left:3px solid var(--wv);background:var(--paper-2);font-size:15px;font-weight:700;letter-spacing:-.025em;line-height:1.6;border-radius:0}
 .quote-s span{display:block;font-size:12px;font-weight:500;color:var(--ink-2);margin-top:4px;letter-spacing:0}
 
+.three-lib{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:14px}
+.three-lib li{background:var(--band);color:var(--band-fg);padding:12px 14px}
+.three-lib b{display:block;font-size:22px;font-weight:900;letter-spacing:-.04em;color:var(--wv)}
+.three-lib span{display:block;font-size:12.5px;margin-top:2px;opacity:.85}
+
 /* impact builder */
 .ib-lede{max-width:none}
 .roles2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2vw,24px);margin-top:clamp(36px,5vw,56px)}
@@ -430,12 +435,12 @@ footer .w{padding-block:26px;display:grid;gap:6px}
         </span>
       </button>
       <button class="cs-card" type="button" role="tab" id="tab-future" aria-controls="case-future" aria-selected="false" data-case="case-future">
-        <span class="cs-vis route"><svg class="cs-route" viewBox="0 0 400 300" preserveAspectRatio="none" aria-hidden="true"><path d="M-10 250 C 60 230, 70 150, 140 160 S 230 230, 270 150 S 330 40, 410 60" /></svg><span class="cs-cap2">진도 중학생 29명이<br>자전거로 달린 거리</span><span class="cs-big">10,156<small>km</small></span></span>
+        <span class="cs-vis route"><svg class="cs-route" viewBox="0 0 400 300" preserveAspectRatio="none" aria-hidden="true"><path d="M-10 250 C 60 230, 70 150, 140 160 S 230 230, 270 150 S 330 40, 410 60" /></svg><span class="cs-cap2">자유 · 힘 · 꿈<br>세 가지 해방</span><span class="cs-big">+21.1<small>% 다시 도전할 용기</small></span></span>
         <span class="cs-txt">
           <span class="cs-ax">Local future · 전남 진도</span>
           <span class="cs-name">해방프로젝트</span>
-          <span class="cs-one">버스가 3시간에 한 대 다니는 마을의 중학생들이 자전거로 세상을 넓혔습니다.</span>
-          <span class="cs-impact"><b>+16.6%</b> 진로 인식 <b>54개</b> 새로 알게 된 직업</span>
+          <span class="cs-one">경험이 부족해 꿈이 작아지던 아이들이, 스스로 세상을 넓히고 도전하는 힘을 얻었습니다.</span>
+          <span class="cs-impact"><b>+15.3%</b> 자기효능감 <b>+16.6%</b> 진로 인식</span>
           <span class="cs-more">자세히 보기</span>
         </span>
       </button>
@@ -516,11 +521,17 @@ footer .w{padding-block:26px;display:grid;gap:6px}
       </div>
       <div class="cs-body">
         <div>
-          <div class="blk"><h4>Problem</h4><p>진도 군내중학교 아이들이 가는 곳은 집, 학교, 편의점뿐이었습니다. 버스는 3시간에 한 대. 가 보지 못한 곳의 직업은 꿈꾸기 어렵습니다.</p></div>
-          <div class="blk"><h4>Solution</h4><p>전교생 29명에게 자전거를 지원하고, 네 번의 프로그램으로 스스로 이동하고 도전하는 힘을 길렀습니다. 나만의 자전거를 꾸미고 안전 교육을 받은 뒤, 서울 이촌한강공원을 달리고 아모레퍼시픽 본사에서 진로 멘토링을 받았습니다.</p>
+          <div class="blk"><h4>Problem · 경험 빈곤</h4><p>진도 군내중학교 아이들이 가는 곳은 집, 학교, 편의점뿐이었습니다. 버스는 3시간에 한 대. 경제적 빈곤과는 다른 '경험 빈곤'입니다. 경험이 줄면 시야가 좁아지고, 꿈과 자신감도 함께 작아집니다.</p></div>
+          <div class="blk"><h4>Solution · 자전거는 도구, 목표는 성장</h4><p>전교생 29명에게 자전거를 지원하고, 네 번의 프로그램으로 스스로 움직이고 도전하는 경험을 쌓았습니다. 서울 이촌한강공원을 달리고, 아모레퍼시픽 본사에서 다양한 직업을 가진 사람들을 만났습니다.</p>
+            <ul class="three-lib">
+              <li><b>자유</b><span>갖게 된 이동성</span></li>
+              <li><b>힘</b><span>갖게 된 자기효능감</span></li>
+              <li><b>꿈</b><span>갖게 된 진로 인식</span></li>
+            </ul>
             <p class="quote-s">“이제 부모님 도움 없이도 내가 가고 싶은 곳을 편하게 다닐 수 있겠다는 생각에 기대된다.”<span>— 참여 학생 · 전남광주교육통 보도(2025.5)</span></p></div>
           <div class="blk"><h4>Result · 사전·사후 설문</h4>
-            <div class="big"><div><strong>10,156<i>km</i></strong><span>자전거로 이동한 거리</span></div><div><strong>54<i>개</i></strong><span>새로 알게 된 직업</span></div><div><strong>+16.6<i>%</i></strong><span>진로 인식 지표 평균</span></div></div>
+            <div class="big"><div><strong>+15.3<i>%</i></strong><span>자기효능감 7개 지표 평균</span></div><div><strong>+16.6<i>%</i></strong><span>진로 인식 6개 지표 평균</span></div><div><strong>+21.1<i>%</i></strong><span>"실패해도 다시 도전할 용기가 있다"</span></div></div>
+            <p class="cap">함께 쌓은 경험 · 자전거 이동 10,156km · 새로 만난 사람 171명 · 새로 알게 된 직업 54개</p>
             <div class="press"><a href="https://www.jngjedu.kr" target="_blank" rel="noopener">전남광주교육통 보도 ↗</a></div>
           </div>
         </div>
