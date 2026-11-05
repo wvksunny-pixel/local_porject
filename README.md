@@ -16,3 +16,7 @@
 - `#case-future` 해방프로젝트
 - `#next` 드림브릿지 (확장 모델)
 - `#contact` 문의
+
+## 협력 문의 접수
+페이지의 문의 양식은 `index.html` 맨 아래 `FORM_ENDPOINT`가 비어 있으면 실제로 보내지 않고 대표전화를 안내합니다.
+문의를 구글 시트로 받으려면 `apps-script/inquiry.gs`의 설치 방법대로 웹 앱을 배포하고, 발급된 URL을 `FORM_ENDPOINT`에 넣으세요.

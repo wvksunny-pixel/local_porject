@@ -353,6 +353,43 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .paths .tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px}
 .paths .tags i{font-style:normal;font-size:12px;font-weight:700;border:1px solid var(--wv-deep);color:var(--wv-deep);padding:2px 8px}
 
+/* inquiry form */
+.inq{margin-top:40px;border:2px solid var(--rule);background:var(--paper);padding:clamp(20px,3vw,36px)}
+.inq-head h3{font-size:clamp(22px,2.6vw,30px);font-weight:800;letter-spacing:-.04em;line-height:1.4;margin-top:12px}
+.inq fieldset{border:0;margin:0;padding:0}
+.inq legend{font-size:16px;font-weight:800;letter-spacing:-.03em;padding:0;margin-bottom:10px}
+.inq legend span{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--ink-2);margin-left:6px}
+.inq-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 16px;margin-top:28px;padding-top:20px!important;border-top:3px solid var(--rule)!important}
+.inq-grid legend{grid-column:1/-1;float:left;width:100%}
+.inq label{font-size:13.5px;font-weight:700;color:var(--ink-2);display:flex;flex-direction:column;gap:6px}
+.inq em{font-style:normal;color:var(--wv-deep)}
+.inq input[type=text],.inq input[type=email],.inq input[type=tel],.inq textarea{font:500 15.5px var(--body);color:var(--ink);background:var(--paper-2);border:1px solid var(--hair);border-bottom:2px solid var(--ink);padding:11px 12px;border-radius:0;width:100%;min-width:0}
+.inq input:focus,.inq textarea:focus{outline:none;border-bottom-color:var(--wv);background:var(--paper)}
+.inq [aria-invalid="true"]{border-bottom-color:#C62828!important;background:#FDECEA}
+.inq-q{margin-top:26px!important;padding-top:20px!important;border-top:1px solid var(--hair)!important}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{flex-direction:row;cursor:pointer}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips span{display:inline-block;font-size:14px;font-weight:700;color:var(--ink);border:1px solid var(--rule);padding:8px 14px;transition:background .15s,color .15s}
+.chips label:hover span{border-color:var(--wv-deep)}
+.chips input:checked+span{background:var(--wv);border-color:var(--wv);color:var(--on-wv)}
+.chips input:focus-visible+span{outline:2px solid var(--wv);outline-offset:2px}
+.inq-msg{margin-top:26px;padding-top:20px;border-top:1px solid var(--hair)}
+.inq-msg textarea{resize:vertical;line-height:1.6}
+.hp{position:absolute!important;left:-9999px}
+.inq-consent{margin-top:22px;background:var(--paper-2);padding:14px 16px}
+.inq-consent label{flex-direction:row;align-items:center;gap:10px;color:var(--ink);cursor:pointer}
+.inq-consent input{width:18px;height:18px;accent-color:var(--wv)}
+.inq-consent p{font-size:12.5px;color:var(--ink-2);line-height:1.65;margin-top:8px}
+.inq-foot{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:22px}
+.inq-send{font:800 16px var(--body);background:var(--wv);color:var(--on-wv);border:0;padding:15px 26px;cursor:pointer}
+.inq-send:hover{background:var(--ink);color:var(--paper)}
+.inq-send[disabled]{opacity:.6;cursor:progress}
+.inq-status{font-size:14px;font-weight:700;line-height:1.6;flex:1 1 260px}
+.inq-status.err{color:#C62828}
+.inq-status.ok{color:var(--wv-deep)}
+@media (max-width:900px){.inq-grid{grid-template-columns:minmax(0,1fr)}}
+
 /* 05 next model */
 .next{margin-top:36px;border:2px dashed var(--wv-deep);background:var(--paper)}
 .next-head{background:var(--paper-2);color:var(--ink)}
@@ -1343,6 +1380,95 @@ footer .w{padding-block:26px;display:grid;gap:6px}
       <div><b>Problem</b><h3>기업이 함께 풀고 싶은<br>사회문제</h3><p>지역소멸, 저출생과 고령화, 청년 유출, 돌봄 공백, 교육 격차. 우리 사회가 함께 풀어야 할 과제 가운데 기업이 집중하고 싶은 문제를 알려 주세요. 정부 정책과 연결해, 그 문제가 가장 절실한 지역을 함께 찾습니다.</p><span class="tags"><i>지역소멸</i><i>저출생·고령화</i><i>청년 유출</i><i>돌봄 공백</i><i>교육 격차</i></span><span class="ex">예: 인구감소지역 아이들의 디지털 교육 격차</span></div>
       <div><b>Resource</b><h3>활용할 수 있는<br>기술 · 인력 · 공간 · 유통망</h3><p>우리 기업이 잘하는 일을 알려 주세요. 그 역량이 해법이 될 지역 문제를 연결합니다.</p><span class="ex">예: 유통망을 지역 창업의 판로로</span></div>
     </div>
+    <form class="inq" id="inquiry" novalidate>
+      <div class="inq-head">
+        <span class="eyebrow"><b>Inquiry</b> · 로컬 사회공헌 협력 문의</span>
+        <h3>3분이면 충분합니다.<br>알려 주시면 담당자가 연락드립니다.</h3>
+      </div>
+
+      <fieldset class="inq-grid">
+        <legend>담당자 정보</legend>
+        <label>이름 <em>*</em><input id="f-name" name="name" type="text" autocomplete="name" required placeholder="홍길동"></label>
+        <label>기업명 <em>*</em><input id="f-company" name="company" type="text" autocomplete="organization" required placeholder="○○주식회사"></label>
+        <label>부서 · 직함<input id="f-title" name="title" type="text" autocomplete="organization-title" placeholder="ESG팀 매니저"></label>
+        <label>이메일 <em>*</em><input id="f-email" name="email" type="email" autocomplete="email" required placeholder="name@company.com"></label>
+        <label>연락처<input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="010-0000-0000"></label>
+      </fieldset>
+
+      <fieldset class="inq-q">
+        <legend>사업장이나 공장이 있는 지역 <span>복수 선택</span></legend>
+        <div class="chips">
+          <label><input type="checkbox" name="region" value="서울"><span>서울</span></label>
+          <label><input type="checkbox" name="region" value="인천·경기"><span>인천·경기</span></label>
+          <label><input type="checkbox" name="region" value="강원"><span>강원</span></label>
+          <label><input type="checkbox" name="region" value="충청"><span>충청</span></label>
+          <label><input type="checkbox" name="region" value="전라"><span>전라</span></label>
+          <label><input type="checkbox" name="region" value="경상"><span>경상</span></label>
+          <label><input type="checkbox" name="region" value="제주"><span>제주</span></label>
+          <label><input type="checkbox" name="region" value="아직 정하지 않음"><span>아직 정하지 않음</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="inq-q">
+        <legend>관심 있는 사회문제 <span>복수 선택</span></legend>
+        <div class="chips">
+          <label><input type="checkbox" name="issue" value="지역소멸·인구감소"><span>지역소멸·인구감소</span></label>
+          <label><input type="checkbox" name="issue" value="청년 일자리·창업"><span>청년 일자리·창업</span></label>
+          <label><input type="checkbox" name="issue" value="돌봄·공동체"><span>돌봄·공동체</span></label>
+          <label><input type="checkbox" name="issue" value="아동·청소년 교육"><span>아동·청소년 교육</span></label>
+          <label><input type="checkbox" name="issue" value="디지털·AI 격차"><span>디지털·AI 격차</span></label>
+          <label><input type="checkbox" name="issue" value="기후·환경"><span>기후·환경</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="inq-q">
+        <legend>함께 쓸 수 있는 기업의 자원 <span>복수 선택</span></legend>
+        <div class="chips">
+          <label><input type="checkbox" name="resource" value="기술·제품"><span>기술·제품</span></label>
+          <label><input type="checkbox" name="resource" value="유통·판로"><span>유통·판로</span></label>
+          <label><input type="checkbox" name="resource" value="임직원 참여·멘토링"><span>임직원 참여·멘토링</span></label>
+          <label><input type="checkbox" name="resource" value="디자인·브랜딩"><span>디자인·브랜딩</span></label>
+          <label><input type="checkbox" name="resource" value="공간·시설"><span>공간·시설</span></label>
+          <label><input type="checkbox" name="resource" value="재원"><span>재원</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="inq-q">
+        <legend>관심 있는 사례 <span>복수 선택</span></legend>
+        <div class="chips">
+          <label><input type="checkbox" name="case" value="농촌창업도약+"><span>농촌창업도약+</span></label>
+          <label><input type="checkbox" name="case" value="세상에서 가장 안전한 목욕탕"><span>세상에서 가장 안전한 목욕탕</span></label>
+          <label><input type="checkbox" name="case" value="해방프로젝트"><span>해방프로젝트</span></label>
+          <label><input type="checkbox" name="case" value="드림브릿지"><span>드림브릿지</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="inq-q">
+        <legend>희망 시작 시기</legend>
+        <div class="chips">
+          <label><input type="radio" name="timing" value="올해 안"><span>올해 안</span></label>
+          <label><input type="radio" name="timing" value="내년 상반기"><span>내년 상반기</span></label>
+          <label><input type="radio" name="timing" value="내년 하반기"><span>내년 하반기</span></label>
+          <label><input type="radio" name="timing" value="아직 미정"><span>아직 미정</span></label>
+        </div>
+      </fieldset>
+
+      <label class="inq-msg">더 알려 주고 싶은 내용
+        <textarea id="f-message" name="message" rows="4" placeholder="예: 충북 공장 인근 지역의 청소년 진로 교육에 관심이 있습니다."></textarea>
+      </label>
+      <label class="hp" aria-hidden="true">비워 두세요<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+
+      <div class="inq-consent">
+        <label><input id="f-consent" type="checkbox" name="consent" value="동의" required><span><b>개인정보 수집·이용에 동의합니다. <em>*</em></b></span></label>
+        <p>수집 항목: 이름, 기업명, 부서·직함, 이메일, 연락처 · 이용 목적: 협력 문의 확인과 회신 · 문의 처리 후 관련 법령과 월드비전 개인정보처리방침에 따라 파기합니다. 동의하지 않으면 문의를 보낼 수 없습니다.</p>
+      </div>
+
+      <div class="inq-foot">
+        <button type="submit" class="inq-send">문의 보내기 <span aria-hidden="true">→</span></button>
+        <p class="inq-status" id="inq-status" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+
     <div class="contact">
       <div>
         <span class="eyebrow">Corporate partnership</span>
@@ -1387,7 +1513,44 @@ footer .w{padding-block:26px;display:grid;gap:6px}
 
 <script>
 /* 링크가 정해지면 여기에만 입력하세요. 비어 있으면 해당 버튼은 숨겨집니다. */
-var LINKS = { newsletter: '', inquiry: '' };
+var LINKS = { newsletter: '', inquiry: '#inquiry' };
+/* 문의 접수 주소. Google Apps Script 웹 앱 URL을 넣으면 문의가 구글 시트에 쌓입니다. 비어 있으면 실제로 보내지 않습니다. */
+var FORM_ENDPOINT = '';
+
+(function(){
+  var form = document.getElementById('inquiry'); if (!form) return;
+  var status = document.getElementById('inq-status');
+  var btn = form.querySelector('.inq-send');
+  function say(msg, kind){ status.textContent = msg; status.className = 'inq-status ' + (kind || ''); }
+  function picked(name){ return Array.prototype.map.call(form.querySelectorAll('[name="' + name + '"]:checked'), function(i){ return i.value; }).join(', '); }
+  form.addEventListener('input', function(e){ if (e.target.getAttribute('aria-invalid')) e.target.removeAttribute('aria-invalid'); if (status.classList.contains('err')) say(''); });
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var bad = [];
+    [['f-name','이름'],['f-company','기업명'],['f-email','이메일']].forEach(function(p){
+      var el = document.getElementById(p[0]);
+      var ok = el.value.trim() && (el.type !== 'email' || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim()));
+      el.setAttribute('aria-invalid', ok ? 'false' : 'true'); if (!ok) bad.push(p[1]);
+    });
+    var consent = document.getElementById('f-consent');
+    if (!consent.checked) bad.push('개인정보 수집·이용 동의');
+    if (bad.length) { say(bad.join(', ') + '을(를) 확인해 주세요.', 'err'); (form.querySelector('[aria-invalid="true"]') || consent).focus(); return; }
+    if (form.elements['website'].value) return;
+    function v(id){ return document.getElementById(id).value.trim(); }
+    if (!FORM_ENDPOINT) { say('온라인 접수 창구를 준비하고 있습니다. 지금은 월드비전 대표전화 02-2078-7000으로 문의해 주세요.', 'err'); return; }
+    var data = new URLSearchParams({
+      name: v('f-name'), company: v('f-company'), title: v('f-title'),
+      email: v('f-email'), phone: v('f-phone'),
+      region: picked('region'), issue: picked('issue'), resource: picked('resource'), cases: picked('case'), timing: picked('timing'),
+      message: v('f-message'), consent: '동의', page: location.href
+    });
+    btn.disabled = true; say('보내는 중입니다…');
+    fetch(FORM_ENDPOINT, { method: 'POST', mode: 'no-cors', body: data })
+      .then(function(){ form.reset(); say('문의가 접수되었습니다. 담당자가 확인 후 연락드리겠습니다.', 'ok'); })
+      .catch(function(){ say('보내지 못했습니다. 잠시 후 다시 시도하거나 대표전화 02-2078-7000으로 문의해 주세요.', 'err'); })
+      .then(function(){ btn.disabled = false; });
+  });
+})();
 
 document.querySelectorAll('[data-link]').forEach(function(a){
   var url = LINKS[a.getAttribute('data-link')];
