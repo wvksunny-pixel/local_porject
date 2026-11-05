@@ -9,13 +9,12 @@
 문의 버튼과 뉴스레터 돌아가기 링크는 `index.html` 맨 아래 스크립트의 `LINKS` 값에 주소를 넣으면 나타납니다.
 
 ## 바로가기
-- `#why-local` 왜 지금 로컬인가
-- `#guide` 로컬 사회공헌 가이드
+- `#why-local` 왜 지금 로컬일까요
+- `#corporate` 기업이 가진 것으로 시작하기
 - `#case-economy` 농촌창업도약+
 - `#case-community` 세상에서 가장 안전한 목욕탕
 - `#case-future` 해방프로젝트
-- `#next` 드림브릿지 (확장 모델)
-- `#contact` 문의
+- `#why-wv` 월드비전의 역할과 문의
 
 ## 협력 문의 접수
 페이지의 문의 양식은 `index.html` 맨 아래 `FORM_ENDPOINT`가 비어 있으면 실제로 보내지 않고 대표전화를 안내합니다.

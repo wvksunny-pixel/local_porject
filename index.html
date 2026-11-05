@@ -6,13 +6,13 @@
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>LOCAL, BUT IMPACTFUL.</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="지역소멸, 지역마다 다른 문제를 기업의 자원과 연결해 함께 푸는 월드비전의 로컬 임팩트 사업을 소개합니다.">
+<meta name="description" content="기업을 위한 로컬 사회공헌 가이드. 사업장이 있는 지역에서, 기업이 가진 것으로 시작하는 월드비전과의 협력.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
-/* Layout: 굵은 괘선으로 나눈 세로 밴드. 흐름은 MAIN → WHY LOCAL → PROJECTS → FOR CORPORATE → WHY WORLD VISION(오렌지) → CONTACT */
+/* Layout: 다섯 개의 넓은 밴드(HERO · WHY LOCAL · FOR CORPORATE · CASES · WHY WORLD VISION). 여백이 많은 에디토리얼, 오렌지는 강조에만 */
 :root{
   --paper:#F7F2E8; --paper-2:#EEE6D5; --ink:#17140F; --ink-2:#51493D; --rule:#17140F; --hair:#C2B7A2;
   --wv:#FF6B00; --wv-deep:#C94F00; --on-wv:#17140F; --wv-tint:#FFE4CF;
@@ -35,628 +35,230 @@ html{scroll-behavior:smooth}
 body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.75;letter-spacing:-.01em;-webkit-font-smoothing:antialiased;word-break:keep-all}
 .w{max-width:1140px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .band{border-bottom:3px solid var(--rule)}
-.band>.w{padding-block:clamp(48px,7vw,96px)}
-h1,h2,h3,h4,h5{margin:0;text-wrap:balance}
-p,ul,ol{margin:0}
+.band>.w{padding-block:clamp(64px,9vw,120px)}
+h1,h2,h3,h4{margin:0;text-wrap:balance}
+p,ul,ol,figure{margin:0}
 ul,ol{padding:0;list-style:none}
 a{color:inherit}
+button{font-family:inherit}
 :focus-visible{outline:2px solid var(--wv);outline-offset:3px}
-[id]{scroll-margin-top:64px}
-.eyebrow{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);font-feature-settings:"ss02"}
-.eyebrow b{letter-spacing:.14em}
-.eyebrow b{color:var(--wv-deep);font-weight:500}
-.disp{font-family:var(--display);font-weight:900;text-transform:uppercase;line-height:.86;letter-spacing:0}
-.sec-h{font-size:clamp(28px,3.6vw,42px);font-weight:800;line-height:1.32;letter-spacing:-.035em;margin-top:20px}
-.lede{font-size:clamp(16.5px,1.6vw,18.5px);color:var(--ink-2);max-width:62ch;line-height:1.75}
-.lede strong{color:var(--ink);font-weight:700}
-.src{font-family:var(--mono);font-size:11.5px;color:var(--ink-2);line-height:1.65;letter-spacing:0}
-.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,56px)}
-.kr{font-size:clamp(22px,2.6vw,30px);font-weight:800;line-height:1.4;letter-spacing:-.035em}
-.quote{font-weight:800;font-size:clamp(18px,1.9vw,21px);line-height:1.5;letter-spacing:-.03em}
-.quote::before{content:"“";color:var(--wv)}
-.quote::after{content:"”";color:var(--wv)}
+[id]{scroll-margin-top:60px}
+@media (max-width:600px){br.pc{display:none}}
 
-/* masthead + nav */
+.eyebrow{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.eyebrow b{color:var(--wv-deep);font-weight:500;letter-spacing:.14em}
+.disp{font-family:var(--display);font-weight:900;text-transform:uppercase;line-height:.86}
+.sec-h{font-size:clamp(28px,3.8vw,46px);font-weight:800;line-height:1.3;letter-spacing:-.04em;margin-top:22px}
+.lede{font-size:clamp(16.5px,1.6vw,19px);color:var(--ink-2);line-height:1.75;max-width:52ch;margin-top:18px}
+.lede strong{color:var(--ink);font-weight:700}
+.src{font-family:var(--mono);font-size:11.5px;color:var(--ink-2);line-height:1.65}
+
+/* masthead */
 .mast{background:var(--wv);color:var(--on-wv)}
 .mast .w{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding-block:12px}
-.mast .eyebrow{color:var(--on-wv)}
 .mast .logo{display:block;height:28px;width:auto;max-width:none}
-@media (max-width:600px){br.pc{display:none}}
-@media (max-width:600px){.mast .logo{height:22px}}
+.mast .eyebrow{color:var(--on-wv)}
 nav.toc{border-bottom:1px solid var(--rule);position:sticky;top:env(safe-area-inset-top,0px);background:var(--paper);z-index:5}
-nav.toc .w{display:flex;gap:4px 22px;flex-wrap:nowrap;overflow-x:auto;padding-block:11px;scrollbar-width:none}
+nav.toc .w{display:flex;gap:4px 24px;overflow-x:auto;padding-block:11px;scrollbar-width:none}
 nav.toc .w::-webkit-scrollbar{display:none}
 nav.toc a{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--ink-2);white-space:nowrap}
 nav.toc a:hover,nav.toc a.cur{color:var(--wv-deep)}
 nav.toc a.back{color:var(--wv-deep)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+@media (max-width:600px){.mast .logo{height:22px}}
 
-/* 01 main */
-.hero .w{display:grid;gap:clamp(24px,4vw,40px);padding-block:clamp(36px,6vw,72px)}
-.hero h1{font-size:clamp(72px,15vw,196px)}
+/* 1 hero */
+.hero .w{padding-block:clamp(48px,7vw,96px)}
+.hero h1{font-size:clamp(76px,15.5vw,200px);margin-top:20px}
 .hero h1 span{color:var(--wv);display:block}
-.hero-foot{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:clamp(20px,4vw,56px);align-items:end;border-top:1px solid var(--rule);padding-top:22px}
-.explore{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:3px solid var(--rule)}
-.explore a{display:block;text-decoration:none;padding:16px 18px 14px;border-left:1px solid var(--hair);min-width:0}
-.explore a:first-child{border-left:0;padding-left:0}
-.explore .eyebrow{display:block}
-.explore b{font-family:var(--display);font-weight:900;font-size:clamp(28px,3.4vw,42px);text-transform:uppercase;line-height:1;display:block;margin:6px 0 6px}
-.explore b em{font-style:normal;color:var(--wv)}
-.explore span.t{display:block;font-size:15px;font-weight:600}
-.explore span.go{display:block;font-size:13px;color:var(--wv-deep);margin-top:6px;font-weight:600}
-.explore a:hover b{color:var(--wv-deep)}
+.hero-foot{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:end;margin-top:clamp(32px,5vw,56px);border-top:1px solid var(--rule);padding-top:24px}
+.hero-q{font-size:clamp(26px,3.4vw,40px);font-weight:800;letter-spacing:-.045em;line-height:1.35}
+.hero-foot .lede{margin-top:0}
+@media (prefers-reduced-motion:no-preference){.hero h1 span{animation:rise .7s cubic-bezier(.2,.7,.2,1) both .15s}@keyframes rise{from{transform:translateY(.18em)}to{transform:none}}}
 
-/* 02 why local */
-.prob{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:3px solid var(--rule);margin-top:40px}
-.prob article{padding:22px 22px 10px;border-left:1px solid var(--hair);min-width:0;display:flex;flex-direction:column}
-.prob article:first-child{border-left:0;padding-left:0}
-.prob .ax{font-family:var(--display);font-weight:900;font-size:clamp(30px,3.2vw,38px);text-transform:uppercase;line-height:1;display:block}
-.prob .ax em{font-style:normal;color:var(--wv)}
-.prob h3{font-size:19px;font-weight:800;line-height:1.45;letter-spacing:-.03em;margin:12px 0 10px}
-.prob p.t{font-size:15.5px;color:var(--ink-2);line-height:1.75}
-.sigbox{margin-top:18px;padding-top:14px;border-top:1px solid var(--hair)}
-.sigbox .eyebrow{display:block;margin-bottom:8px;font-size:11px}
-.sigbox .issue{font-size:14px;color:var(--ink-2);margin-top:10px;line-height:1.6}
-.sigbox .issue b{color:var(--ink);font-weight:600}
-.fold{margin-top:40px;border:2px solid var(--rule)}
-.fold>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:700;font-size:16px}
-.fold>summary::-webkit-details-marker{display:none}
-.fold>summary::after{content:"+";font-family:var(--display);font-weight:900;font-size:30px;line-height:1;color:var(--wv-deep)}
-.fold[open]>summary::after{content:"−"}
-.fold>summary .eyebrow{font-size:11px}
-.fold-in{padding:4px 20px 24px;border-top:1px solid var(--hair)}
-.nums{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-bottom:1px solid var(--rule);margin-top:18px;border-top:3px solid var(--rule)}
-.nums div{padding:16px 12px 14px;border-left:1px solid var(--hair);min-width:0}
-.nums div:first-child{border-left:0;padding-left:0}
-.nums strong{display:block;font-family:var(--display);font-weight:900;font-size:clamp(38px,5vw,60px);line-height:.95;font-variant-numeric:tabular-nums}
-.nums .hl{background:var(--wv);color:var(--on-wv);padding-left:14px}
-.nums .hl span{color:var(--on-wv)}
-.nums span{font-size:13px;color:var(--ink-2);line-height:1.5;display:block;margin-top:6px}
-.bars{display:grid;gap:10px;margin-top:14px}
-.bar{display:grid;grid-template-columns:7em minmax(0,1fr) 6em;align-items:center;gap:12px;font-size:14px}
-.bar .track{height:12px;background:var(--paper-2);position:relative}
-.bar .fill{position:absolute;inset:0 auto 0 0;background:var(--ink-2)}
-.bar.me .fill{background:var(--wv)}
-.bar.me{font-weight:700}
-.bar .v{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right;font-size:12.5px}
+/* 2 why local */
+.why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:clamp(40px,5vw,64px);border-top:3px solid var(--rule)}
+.why article{padding:28px 28px 8px;border-left:1px solid var(--hair);min-width:0}
+.why article:first-child{border-left:0;padding-left:0}
+.why .ax{font-family:var(--display);font-weight:900;font-size:clamp(34px,3.6vw,46px);text-transform:uppercase;line-height:1;display:block}
+.why .ax em{font-style:normal;color:var(--wv)}
+.why h3{font-size:20px;font-weight:800;letter-spacing:-.035em;line-height:1.45;margin-top:18px}
+.why p{font-size:15.5px;color:var(--ink-2);line-height:1.75;margin-top:10px}
+.why blockquote{margin:22px 0 0;padding-top:14px;border-top:1px solid var(--hair);font-size:15px;font-weight:700;letter-spacing:-.03em;line-height:1.55}
+.why blockquote::before{content:"현장의 목소리";display:block;font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.08em;color:var(--wv-deep);margin-bottom:6px}
 
-/* 03 projects */
-.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,2vw,20px);margin-top:40px}
-.card{border:2px solid var(--rule);display:flex;flex-direction:column;min-width:0;background:var(--paper)}
-.card-top{background:var(--band);color:var(--band-fg);padding:16px 18px}
-.card-top .eyebrow{color:var(--band-fg)}
-.card-top .eyebrow b{color:var(--wv)}
-.card-top h3{font-size:21px;font-weight:800;letter-spacing:-.035em;line-height:1.35;margin-top:6px}
-.card-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:12px;flex:1}
-.card-body p{font-size:15px;line-height:1.7}
-.card-body .who{font-size:13px;color:var(--ink-2);line-height:1.6}
-.card .stat{border-top:1px solid var(--hair);padding-top:12px;margin-top:auto}
-.card .stat strong{font-family:var(--display);font-weight:900;font-size:36px;line-height:1;display:block;color:var(--wv-deep)}
-.card .stat span{font-size:13px;color:var(--ink-2);display:block;margin-top:4px}
-.badge{align-self:flex-start;font-size:12px;font-weight:600;border:1px solid var(--wv-deep);color:var(--wv-deep);padding:2px 9px}
-.go-btn{display:flex;justify-content:space-between;align-items:center;text-decoration:none;background:var(--wv);color:var(--on-wv);font-weight:700;font-size:15px;padding:12px 16px}
-.go-btn:hover{background:var(--wv-deep)}
+/* 3 for corporate */
+.res{margin-top:clamp(40px,5vw,64px);border-top:3px solid var(--rule)}
+.res-row{display:grid;grid-template-columns:minmax(0,1fr) 56px minmax(0,1.5fr) minmax(0,1fr);gap:20px;align-items:center;padding:26px 0;border-bottom:1px solid var(--hair)}
+.res-k b{display:block;font-family:var(--display);font-weight:900;font-size:clamp(26px,2.8vw,34px);text-transform:uppercase;line-height:1}
+.res-k span{display:block;font-size:17px;font-weight:800;letter-spacing:-.035em;margin-top:8px}
+.res-row>i{font-style:normal;font-family:var(--display);font-weight:900;font-size:34px;color:var(--wv);text-align:center}
+.res-ideas{display:flex;flex-wrap:wrap;gap:8px}
+.res-ideas li{font-size:15px;font-weight:700;letter-spacing:-.02em;background:var(--paper-2);padding:8px 14px}
+.res-case{text-align:right;font-size:13.5px;line-height:1.5}
+.res-case a{display:inline-block;text-decoration:none;font-weight:700;color:var(--wv-deep);border-bottom:1px solid currentColor;padding-bottom:1px}
+.res-case span{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--ink-2);margin-bottom:4px;text-transform:uppercase}
+.res-case .none{color:var(--ink-2);font-weight:600;font-family:var(--body);font-size:13.5px;letter-spacing:-.01em;text-transform:none}
 
-.case{margin-top:28px;border:2px solid var(--rule);background:var(--paper)}
-.case>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 16px;align-items:center;padding:18px 22px;background:var(--band);color:var(--band-fg)}
-.case>summary::-webkit-details-marker{display:none}
-.case>summary .eyebrow{color:var(--band-fg)}
-.case>summary .eyebrow b{color:var(--wv)}
-.case>summary h3{font-size:clamp(20px,2.4vw,26px);font-weight:800;letter-spacing:-.035em;line-height:1.35;grid-column:1}
-.case>summary .tog{grid-row:1/span 2;grid-column:2;font-size:14px;font-weight:700;background:var(--wv);color:var(--on-wv);padding:8px 14px;white-space:nowrap}
-.case>summary .tog::after{content:" 펼치기 +"}
-.case[open]>summary .tog::after{content:" 접기 −"}
-.dt{padding:6px 22px 24px}
-.row{display:grid;grid-template-columns:minmax(0,12em) minmax(0,1fr);gap:clamp(12px,3vw,32px);padding:22px 0;border-bottom:1px solid var(--hair)}
-.row:last-child{border-bottom:0}
-.row>h4{font-size:17px;font-weight:800;letter-spacing:-.03em;line-height:1.4}
-.row>h4 small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--wv-deep);font-weight:500;margin-bottom:6px}
-.row p{font-size:15.5px;line-height:1.75}
-.row p+p{margin-top:10px}
-.lead{font-size:clamp(18px,2vw,21px);font-weight:700;letter-spacing:-.03em;line-height:1.55}
-.flow{display:flex;flex-wrap:wrap;gap:6px 6px;align-items:center}
-.flow span{font-size:14px;font-weight:600;border:1px solid var(--rule);padding:5px 11px}
-.flow i{font-style:normal;color:var(--wv-deep);font-weight:700}
-.roles li{display:grid;grid-template-columns:minmax(0,13em) minmax(0,1fr);gap:12px;padding:10px 0;border-top:1px solid var(--hair);font-size:15px;line-height:1.6}
-.roles li:first-child{border-top:0;padding-top:0}
-.roles li b{font-weight:700}
-.roles li span{color:var(--ink-2)}
-.roles li.me b{color:var(--wv-deep)}
-.big{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:3px solid var(--rule);border-bottom:1px solid var(--rule)}
-.big div{padding:16px 14px 14px;border-left:1px solid var(--hair);min-width:0}
-.big div:first-child{border-left:0;padding-left:0}
-.big strong{display:block;font-family:var(--display);font-weight:900;font-size:clamp(34px,4.4vw,54px);line-height:.95;font-variant-numeric:tabular-nums}
-.big strong i{font-style:normal;color:var(--wv)}
-.big span{display:block;font-size:13.5px;color:var(--ink-2);margin-top:8px;line-height:1.5}
-.big .hl{background:var(--wv);color:var(--on-wv);padding-left:14px}
-.big .hl strong i,.big .hl span{color:var(--on-wv)}
-.mini{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:14px}
-.mini div{background:var(--paper-2);padding:12px 14px}
-.mini strong{font-family:var(--display);font-weight:900;font-size:28px;line-height:1;display:block}
-.mini span{font-size:12.5px;color:var(--ink-2);display:block;margin-top:4px;line-height:1.5}
-.steps3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--rule)}
-.steps3 div{padding:14px 16px;min-width:0}
-.steps3 div+div{border-left:1px solid var(--hair)}
-.steps3 .n{font-family:var(--display);font-weight:900;font-size:24px;line-height:1;color:var(--wv-deep);display:block}
-.steps3 b{display:block;margin:6px 0 2px;font-weight:700}
-.steps3 span{font-size:14px;color:var(--ink-2);display:block;line-height:1.6}
-.join{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.join div{border:1px solid var(--rule);padding:14px 16px}
-.join b{display:block;font-size:15.5px;font-weight:700}
-.join span{font-size:14px;color:var(--ink-2);line-height:1.6;display:block;margin-top:4px}
-.join.ext div{border-color:var(--wv-deep);background:var(--wv-tint)}
-.pq{font-weight:800;font-size:17px;line-height:1.6;letter-spacing:-.03em;border-left:3px solid var(--wv);padding-left:14px;border-radius:0}
-.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border-top:1px solid var(--hair)}
-.facts div{padding:12px 12px 12px 0;border-bottom:1px solid var(--hair);min-width:0}
-.facts strong{font-family:var(--display);font-weight:900;font-size:34px;line-height:1;display:block}
-.facts strong i{font-style:normal;color:var(--wv-deep)}
-.facts span{font-size:13.5px;color:var(--ink-2);line-height:1.55;display:block;margin-top:4px}
-.model{background:var(--wv-tint);border-left:4px solid var(--wv);padding:14px 16px;font-size:15.5px;line-height:1.7;border-radius:0}
-.model b{font-weight:700}
-
-/* 02 why local */
-.why3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:3px solid var(--rule);margin-top:40px}
-.why3 article{padding:24px 24px 12px;border-left:1px solid var(--hair);min-width:0}
-.why3 article:first-child{border-left:0;padding-left:0}
-.why3 .n{font-family:var(--display);font-weight:900;font-size:40px;line-height:1;color:var(--wv)}
-.why3 h3{font-size:20px;font-weight:800;letter-spacing:-.035em;line-height:1.45;margin:14px 0 12px}
-.why3 p{font-size:15.5px;color:var(--ink-2);line-height:1.8;max-width:38ch}
-.chainx{display:grid;gap:0;margin-top:14px;counter-reset:cx}
-.chainx li{padding:9px 0 9px 14px;border-left:3px solid var(--wv);position:relative;font-size:14.5px;line-height:1.55}
-.chainx li+li{margin-top:2px}
-.chainx li b{display:block;font-weight:800;letter-spacing:-.02em}
-.chainx li span{color:var(--ink-2)}
-.sigstrip{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:center;margin-top:48px;padding:clamp(20px,3vw,28px);background:var(--band);color:var(--band-fg)}
-.sigstrip .eyebrow,.sigstrip .eyebrow b{color:var(--band-fg)}
-.sigstrip .eyebrow b{color:var(--wv)}
-.sig-lead p{font-size:16px;line-height:1.75;margin-top:12px;max-width:44ch}
-.sig-nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
-.sig-nums div{padding:4px 14px;border-left:1px solid rgba(127,127,127,.45)}
-.sig-nums div:first-child{border-left:0;padding-left:0}
-.sig-nums strong{display:block;font-family:var(--display);font-weight:900;font-size:clamp(40px,4.6vw,58px);line-height:.95}
-.sig-nums strong i{font-style:normal;font-size:.5em}
-.sig-nums .hl strong{color:var(--wv)}
-.sig-nums span{display:block;font-size:12.5px;margin-top:6px;line-height:1.45;opacity:.85}
-.sig3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,2vw,20px);margin-top:16px}
-.sig3 div{border-top:1px solid var(--rule);padding-top:12px}
-.sig3 .ax{font-family:var(--display);font-weight:900;font-size:20px;text-transform:uppercase;color:var(--wv-deep)}
-.sig3 .quote{font-size:16.5px;margin-top:6px}
-.bridge{margin-top:44px;font-size:clamp(19px,2.2vw,24px);line-height:1.6;letter-spacing:-.03em;color:var(--ink-2);border-left:4px solid var(--wv);padding-left:18px;border-radius:0}
-.bridge strong{color:var(--ink);font-weight:800}
-
-/* 03 local csr guide */
-.types{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2vw,24px);margin-top:40px}
-.types article{border:2px solid var(--rule);display:flex;flex-direction:column;background:var(--paper);min-width:0}
-.t-head{background:var(--band);color:var(--band-fg);padding:18px 20px}
-.t-head b{font-family:var(--display);font-weight:900;font-size:clamp(26px,2.8vw,34px);text-transform:uppercase;line-height:1;color:var(--wv);display:block}
-.t-head h3{font-size:20px;font-weight:800;letter-spacing:-.035em;margin-top:12px}
-.t-head p{font-size:14px;margin-top:4px;opacity:.85}
-.types ul{padding:6px 20px 8px;flex:1}
-.types li{display:grid;grid-template-columns:8.5em minmax(0,1fr);gap:12px;padding:11px 0;border-top:1px solid var(--hair);font-size:14.5px;line-height:1.6}
-.types li:first-child{border-top:0}
-.types li b{font-weight:800;letter-spacing:-.02em}
-.types li span{color:var(--ink-2)}
-.t-case{display:block;margin:0 20px 18px;padding:12px 14px;background:var(--wv-tint);border-left:3px solid var(--wv);text-decoration:none;font-size:14px;font-weight:700;line-height:1.5;border-radius:0}
-.t-case span{display:block;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;color:var(--wv-deep);text-transform:uppercase}
-.t-case::after{content:" →";color:var(--wv-deep)}
-.t-case:hover{background:var(--wv);color:var(--on-wv)}
-.t-case:hover span,.t-case:hover::after{color:var(--on-wv)}
-
-.guide-sub{font-size:clamp(20px,2.2vw,24px);font-weight:800;letter-spacing:-.035em;margin-top:56px}
-.guide-sub+.conv{margin-top:18px}
-
-.bb-two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px;max-width:640px}
-.bb-two div{background:var(--paper);color:var(--ink);padding:16px 18px}
-.bb-two b{display:block;font-family:var(--display);font-weight:900;font-size:28px;text-transform:uppercase;line-height:1;color:var(--wv-deep)}
-.bb-two span{display:block;font-size:16px;font-weight:700;letter-spacing:-.03em;line-height:1.5;margin-top:8px}
-@media (max-width:480px){.bb-two{grid-template-columns:minmax(0,1fr)}}
-
-.wv-cover{position:relative;margin:0;background:#17140F;overflow:hidden}
-.wv-cover img{display:block;width:100%;height:clamp(420px,62vw,760px);object-fit:cover;object-position:40% 55%;max-width:none}
-.wv-cover::after{content:"";position:absolute;inset:0;background:linear-gradient(to right,rgba(23,20,15,.72) 0%,rgba(23,20,15,.25) 55%,rgba(23,20,15,0) 100%),linear-gradient(to top,rgba(23,20,15,.55),rgba(23,20,15,0) 40%)}
-.wv-cover figcaption{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;justify-content:space-between;max-width:1140px;margin:0 auto;padding-block:clamp(24px,4vw,48px);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));color:#F7F2E8}
-.cv-issue{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;border-top:1px solid rgba(247,242,232,.6);padding-top:10px;align-self:stretch}
-.cv-title{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(64px,12vw,168px);line-height:.84;color:#FF6B00;margin-top:auto}
-.cv-title i{font-style:normal;color:#F7F2E8;font-weight:700}
-.cv-line{font-size:clamp(18px,2.2vw,26px);font-weight:800;letter-spacing:-.035em;line-height:1.45;margin-top:18px}
-.cv-cap{font-size:12.5px;opacity:.85;margin-top:clamp(20px,4vw,40px);border-top:1px solid rgba(247,242,232,.35);padding-top:10px;align-self:stretch}
-@media (prefers-reduced-motion:no-preference){.wv-cover img{transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}.wv-cover:hover img{transform:scale(1.02)}}
-
-.net-btn{margin-top:14px;font:700 14px var(--body);background:var(--on-wv);color:var(--wv);border:0;padding:10px 16px;cursor:pointer}
-.net-btn:hover{background:var(--paper);color:var(--wv-deep)}
-.scrim{position:fixed;inset:0;background:rgba(23,20,15,.5);z-index:40}
-.drawer{position:fixed;top:0;right:0;bottom:0;z-index:41;width:min(440px,100%);background:var(--paper);color:var(--ink);overflow-y:auto;padding:calc(20px + env(safe-area-inset-top,0px)) max(24px,env(safe-area-inset-right,0px)) calc(28px + env(safe-area-inset-bottom,0px)) 24px;border-left:4px solid var(--wv);box-shadow:-12px 0 32px rgba(0,0,0,.18)}
-.drawer:not([hidden]){animation:drIn .35s cubic-bezier(.2,.7,.2,1)}
-@keyframes drIn{from{transform:translateX(40px);opacity:0}to{transform:none;opacity:1}}
-.drawer-head{display:flex;justify-content:space-between;align-items:center}
-.drawer-x{font:400 28px/1 var(--body);background:none;border:0;color:var(--ink);cursor:pointer;padding:4px 8px}
-.drawer h2{font-size:24px;font-weight:800;letter-spacing:-.035em;margin-top:14px}
-.drawer-lede{font-size:14.5px;color:var(--ink-2);line-height:1.75;margin-top:10px}
-.net-sum{display:grid;grid-template-columns:1fr 1fr;margin-top:18px;border-top:3px solid var(--rule);border-bottom:1px solid var(--rule)}
-.net-sum div{padding:12px 0}
-.net-sum div+div{border-left:1px solid var(--hair);padding-left:14px}
-.net-sum strong{display:block;font-family:var(--display);font-weight:900;font-size:40px;line-height:1;color:var(--wv-deep)}
-.net-sum span{font-size:13px;color:var(--ink-2)}
-.net-groups{margin-top:8px}
-.net-groups section{padding:14px 0;border-bottom:1px solid var(--hair)}
-.net-groups h3{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.08em;color:var(--wv-deep);margin-bottom:8px}
-.net-groups ul{display:flex;flex-wrap:wrap;gap:6px}
-.net-groups li{font-size:14px;font-weight:600;border:1px solid var(--rule);padding:4px 10px}
-.net-groups li.hl{background:var(--wv);border-color:var(--wv);color:var(--on-wv)}
-.net-groups li em{font-style:normal;font-weight:500;font-size:12px;margin-left:6px;opacity:.85}
-@media (prefers-reduced-motion:reduce){.drawer:not([hidden]){animation:none}}
-
-.pm-why{display:grid;gap:0;margin-top:14px;background:var(--paper);color:var(--ink)}
-.pm-why li{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:10px;padding:10px 14px;border-top:1px solid var(--hair);font-size:14px;line-height:1.55}
-.pm-why li:first-child{border-top:0}
-.pm-why b{font-weight:800;color:var(--wv-deep);letter-spacing:-.02em}
-.pm-proof{margin-top:12px;font-size:14px;line-height:1.7}
-
-.ps{margin-top:40px;background:var(--band);color:var(--band-fg)}
-.ps-head,.ps-row{display:grid;grid-template-columns:minmax(0,1fr) 64px minmax(0,1.1fr)}
-.ps-head>div{padding:clamp(22px,3vw,34px) clamp(18px,2.6vw,30px)}
-.ps-a{opacity:.75}
-.ps-k{display:block;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
-.ps-head b{display:block;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(40px,5.4vw,72px);line-height:.88;margin:12px 0 10px}
-.ps-a b{color:transparent;-webkit-text-stroke:1.2px currentColor}
-.ps-b{background:var(--paper);color:var(--ink)}
-.ps-b b{color:var(--wv)}
-.ps-s{font-size:14px;font-weight:700;letter-spacing:-.02em}
-.ps-vs{display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:900;font-size:26px;text-transform:uppercase;color:var(--wv)}
-.ps-row{position:relative;border-top:1px solid rgba(127,127,127,.35)}
-.ps-l{position:absolute;left:clamp(18px,2.6vw,30px);top:14px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;opacity:.65}
-.ps-x{padding:38px clamp(18px,2.6vw,30px) 18px;font-size:clamp(15px,1.5vw,17px);line-height:1.5;opacity:.7;text-decoration:line-through;text-decoration-thickness:1px;text-decoration-color:rgba(127,127,127,.7)}
-.ps-row>i{display:flex;align-items:center;justify-content:center;font-style:normal;font-family:var(--display);font-weight:900;font-size:26px;color:var(--wv)}
-.ps-y{background:var(--paper);color:var(--ink);padding:38px clamp(18px,2.6vw,30px) 18px;font-size:clamp(17px,1.8vw,21px);font-weight:800;letter-spacing:-.035em;line-height:1.45;border-top:1px solid var(--hair)}
-@media (max-width:700px){
-  .ps-head,.ps-row{grid-template-columns:minmax(0,1fr)}
-  .ps-vs{padding:6px 0}
-  .ps-row>i{transform:rotate(90deg);padding:2px 0}
-  .ps-x{padding-bottom:6px}
-  .ps-y{padding-top:16px}
-  .ps-y br,.ps-x br{display:none}
-}
-
-.gb{margin-top:56px;background:var(--band);color:var(--band-fg);padding:clamp(28px,4vw,52px) clamp(20px,3vw,40px)}
-.gb-k{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--wv)}
-.gb-title{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(56px,10vw,150px);line-height:.84;margin-top:16px;color:var(--wv)}
-.gb-title .o{color:transparent;-webkit-text-stroke:1.5px var(--band-fg)}
-.gb-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:clamp(16px,3vw,40px);align-items:end;margin-top:26px;padding-top:20px;border-top:1px solid rgba(127,127,127,.45)}
-.gb-ko{font-size:clamp(22px,2.6vw,30px);font-weight:900;letter-spacing:-.04em}
-.gb-txt{font-size:15.5px;line-height:1.8;opacity:.9}
-.gb-steps{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));margin-top:36px;position:relative}
-.gb-steps::before{content:"";position:absolute;left:0;right:0;top:7px;height:2px;background:linear-gradient(to right,rgba(127,127,127,.5),var(--wv))}
-.gb-steps li{position:relative;padding-top:24px;padding-right:10px;min-width:0}
-.gb-steps li::before{content:"";position:absolute;top:0;left:0;width:16px;height:16px;border-radius:50%;background:var(--band);border:2px solid var(--band-fg)}
-.gb-steps li:last-child::before{background:var(--wv);border-color:var(--wv);box-shadow:0 0 0 5px rgba(255,107,0,.25)}
-.gb-n{display:block;font-family:var(--mono);font-size:11px;opacity:.7}
-.gb-t{display:block;font-size:14px;font-weight:700;letter-spacing:-.02em;line-height:1.45;margin-top:4px}
-.gb-steps li:last-child .gb-t{color:var(--wv)}
-.gb-roles{margin-top:22px;display:grid;gap:6px}
-.gb-bar{height:22px;display:flex;align-items:center;padding:0 10px;font-size:11.5px;font-weight:700}
-.gb-bar.wv{background:linear-gradient(to right,var(--wv) 0%,var(--wv) 35%,rgba(255,107,0,0) 100%);color:var(--on-wv)}
-.gb-bar.lc{background:linear-gradient(to right,rgba(127,127,127,0) 0%,rgba(247,242,232,.85) 100%);justify-content:flex-end;color:var(--band)}
-@media (max-width:900px){
-  .gb-body{grid-template-columns:minmax(0,1fr)}
-  .gb-steps{grid-template-columns:minmax(0,1fr);gap:0}
-  .gb-steps::before{left:7px;right:auto;top:0;bottom:0;width:2px;height:auto;background:linear-gradient(to bottom,rgba(127,127,127,.5),var(--wv))}
-  .gb-steps li{padding:0 0 16px 32px}
-  .gb-roles{display:none}
-}
-
-.anywhere{margin-top:16px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;padding:16px 18px;border-left:4px solid var(--wv);background:var(--wv-tint);border-radius:0}
-.anywhere b{font-size:clamp(18px,2vw,22px);font-weight:900;letter-spacing:-.04em}
-.anywhere>span{font-size:15px;color:var(--ink-2);flex:1 1 280px}
-.anywhere .net-btn{margin-top:0;background:var(--ink);color:var(--paper)}
-.anywhere .net-btn:hover{background:var(--wv);color:var(--on-wv)}
-
-.paths .tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px}
-.paths .tags i{font-style:normal;font-size:12px;font-weight:700;border:1px solid var(--wv-deep);color:var(--wv-deep);padding:2px 8px}
-
-/* inquiry form */
-.inq{margin-top:40px;border:2px solid var(--rule);background:var(--paper);padding:clamp(20px,3vw,36px)}
-.inq-head h3{font-size:clamp(22px,2.6vw,30px);font-weight:800;letter-spacing:-.04em;line-height:1.4;margin-top:12px}
-.inq fieldset{border:0;margin:0;padding:0}
-.inq legend{font-size:16px;font-weight:800;letter-spacing:-.03em;padding:0;margin-bottom:10px}
-.inq legend span{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--ink-2);margin-left:6px}
-.inq-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 16px;margin-top:28px;padding-top:20px!important;border-top:3px solid var(--rule)!important}
-.inq-grid legend{grid-column:1/-1;float:left;width:100%}
-.inq label{font-size:13.5px;font-weight:700;color:var(--ink-2);display:flex;flex-direction:column;gap:6px}
-.inq em{font-style:normal;color:var(--wv-deep)}
-.inq input[type=text],.inq input[type=email],.inq input[type=tel],.inq textarea{font:500 15.5px var(--body);color:var(--ink);background:var(--paper-2);border:1px solid var(--hair);border-bottom:2px solid var(--ink);padding:11px 12px;border-radius:0;width:100%;min-width:0}
-.inq input:focus,.inq textarea:focus{outline:none;border-bottom-color:var(--wv);background:var(--paper)}
-.inq [aria-invalid="true"]{border-bottom-color:#C62828!important;background:#FDECEA}
-.inq-q{margin-top:26px!important;padding-top:20px!important;border-top:1px solid var(--hair)!important}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips label{flex-direction:row;cursor:pointer}
-.chips input{position:absolute;opacity:0;width:1px;height:1px}
-.chips span{display:inline-block;font-size:14px;font-weight:700;color:var(--ink);border:1px solid var(--rule);padding:8px 14px;transition:background .15s,color .15s}
-.chips label:hover span{border-color:var(--wv-deep)}
-.chips input:checked+span{background:var(--wv);border-color:var(--wv);color:var(--on-wv)}
-.chips input:focus-visible+span{outline:2px solid var(--wv);outline-offset:2px}
-.inq-msg{margin-top:26px;padding-top:20px;border-top:1px solid var(--hair)}
-.inq-msg textarea{resize:vertical;line-height:1.6}
-.hp{position:absolute!important;left:-9999px}
-.inq-consent{margin-top:22px;background:var(--paper-2);padding:14px 16px}
-.inq-consent label{flex-direction:row;align-items:center;gap:10px;color:var(--ink);cursor:pointer}
-.inq-consent input{width:18px;height:18px;accent-color:var(--wv)}
-.inq-consent p{font-size:12.5px;color:var(--ink-2);line-height:1.65;margin-top:8px}
-.inq-foot{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:22px}
-.inq-send{font:800 16px var(--body);background:var(--wv);color:var(--on-wv);border:0;padding:15px 26px;cursor:pointer}
-.inq-send:hover{background:var(--ink);color:var(--paper)}
-.inq-send[disabled]{opacity:.6;cursor:progress}
-.inq-status{font-size:14px;font-weight:700;line-height:1.6;flex:1 1 260px}
-.inq-status.err{color:#C62828}
-.inq-status.ok{color:var(--wv-deep)}
-@media (max-width:900px){.inq-grid{grid-template-columns:minmax(0,1fr)}}
-
-/* 05 next model */
-.next{margin-top:36px;border:2px dashed var(--wv-deep);background:var(--paper)}
-.next-head{background:var(--paper-2);color:var(--ink)}
-.next-head .eyebrow{color:var(--ink-2)}
-.next-head .eyebrow b{color:var(--wv-deep)}
-
-@media (max-width:900px){
-  .why3,.sigstrip,.sig3,.types{grid-template-columns:minmax(0,1fr)}
-  .why3 article{border-left:0;padding-left:0;border-bottom:1px solid var(--hair);padding-bottom:22px}
-  .why3 p{max-width:none}
-}
-@media (max-width:600px){.types li{grid-template-columns:minmax(0,1fr);gap:2px}.sig-nums div{padding:4px 10px}}
-
-/* 03 backbone definition */
-.bdef{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(20px,4vw,48px);margin-top:28px;padding:clamp(20px,3vw,28px);background:var(--paper-2);border-top:3px solid var(--wv)}
-.bdef-q p{font-size:15.5px;line-height:1.8;margin-top:10px;color:var(--ink-2)}
-.bdef-q p strong{color:var(--ink);font-weight:700}
-.bdef-steps{counter-reset:bd;display:grid;gap:0}
-.bdef-steps li{display:grid;grid-template-columns:2.4em minmax(0,1fr);column-gap:10px;padding:11px 0;border-top:1px solid var(--hair)}
-.bdef-steps li:first-child{border-top:0;padding-top:0}
-.bdef-steps li::before{counter-increment:bd;content:counter(bd,decimal-leading-zero);grid-row:span 2;font-family:var(--display);font-weight:900;font-size:24px;line-height:1;color:var(--wv-deep)}
-.bdef-steps b{font-size:16px;font-weight:800;letter-spacing:-.03em}
-.bdef-steps span{font-size:14px;color:var(--ink-2);line-height:1.6}
-a.inl{color:var(--wv-deep);font-weight:700;text-decoration:none;white-space:nowrap}
-a.inl:hover{text-decoration:underline}
-@media (max-width:900px){.bdef{grid-template-columns:minmax(0,1fr)}}
-
-.news{margin:18px 0 0}
-.news img{display:block;width:100%;height:auto;aspect-ratio:1179/752;object-fit:cover}
-.news figcaption{font-size:13px;color:var(--ink-2);line-height:1.6;margin-top:8px}
-.press{margin-top:12px;display:grid;gap:6px}
-.press a{font-size:14px;font-weight:600;color:var(--wv-deep);text-decoration:none}
-.press a:hover{text-decoration:underline}
-
-/* 03 case studies */
-.cs-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,28px);margin-top:40px}
+/* 4 cases */
+.cs-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,28px);margin-top:clamp(40px,5vw,64px)}
 .cs-card{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;background:var(--paper);border:2px solid var(--rule);min-width:0;transition:border-color .2s,box-shadow .2s,transform .25s;-webkit-tap-highlight-color:transparent}
 .cs-card:focus-visible{outline:3px solid var(--wv);outline-offset:3px}
-.cs-vis{position:relative;display:block;aspect-ratio:4/3;max-width:100%;overflow:hidden;background:var(--band);color:var(--band-fg);background-size:cover;background-position:center}
-.cs-vis>*{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
-.cs-num{position:absolute;top:14px;left:16px;font-family:var(--mono);font-size:12px;letter-spacing:.14em}
-.cs-big{position:absolute;left:16px;bottom:38px;font-family:var(--display);font-weight:900;font-size:clamp(56px,6vw,92px);line-height:.85;color:var(--wv);transform-origin:left bottom}
-.cs-big small{font-family:var(--body);font-size:16px;font-weight:700;color:var(--band-fg);margin-left:6px;letter-spacing:-.02em}
-.cs-cap{position:absolute;left:16px;right:16px;bottom:14px;font-size:13px;line-height:1.4}
-.cs-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none}
-.cs-vis.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(23,20,15,.86) 0%,rgba(23,20,15,.35) 48%,rgba(23,20,15,.05) 100%);z-index:1}
-.cs-num,.cs-big,.cs-cap{z-index:2}
-.cs-vis.photo .cs-num,.cs-vis.photo .cs-cap,.cs-vis.photo .cs-big small{color:#F7F2E8}
-@media (hover:hover){.cs-card:hover .cs-img{transform:scale(1.05)}}
-.ba{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px}
-.ba figure{margin:0;position:relative}
-.ba img{display:block;width:100%;height:auto;aspect-ratio:49/30;object-fit:cover}
-.ba figcaption{position:absolute;left:0;top:0;font-family:var(--display);font-weight:900;font-size:18px;text-transform:uppercase;background:var(--band);color:var(--band-fg);padding:3px 10px}
-.ba figure+figure figcaption{background:var(--wv);color:var(--on-wv)}
-@media (max-width:600px){.ba{grid-template-columns:minmax(0,1fr)}}
-.cs-txt{display:flex;flex-direction:column;gap:6px;padding:18px 18px 16px;flex:1}
-.cs-tag{align-self:flex-start;font-family:var(--mono);font-size:11px;letter-spacing:.06em;background:var(--band);color:var(--band-fg);padding:3px 8px;line-height:1.4}
-.cs-tag.ghost{background:transparent;color:var(--wv-deep);border:1px solid var(--wv-deep)}
-.cs-who{font-size:15px;font-weight:800;letter-spacing:-.03em;line-height:1.4;margin-top:6px}
-.cs-who em{font-style:normal;font-weight:500;font-size:12.5px;color:var(--ink-2);margin-left:6px;white-space:nowrap}
-.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.pair>div{border:1px solid var(--rule);padding:16px;display:flex;flex-direction:column;gap:8px}
-.pair>div:first-child{border:2px solid var(--wv)}
-.pair b{font-size:17px;font-weight:800;letter-spacing:-.03em}
-.pair>div>span:last-child{font-size:14.5px;color:var(--ink-2);line-height:1.65}
-.steps4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid var(--rule);margin-top:12px}
-.steps4 div{padding:12px 14px;min-width:0}
-.steps4 div+div{border-left:1px solid var(--hair)}
-.steps4 .n{font-family:var(--display);font-weight:900;font-size:22px;line-height:1;color:var(--wv-deep);display:block}
-.steps4 b{display:block;margin:4px 0 2px;font-weight:700}
-.steps4 span{font-size:13.5px;color:var(--ink-2);display:block;line-height:1.55}
-.sub{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--wv-deep);margin-bottom:10px}
-@media (max-width:900px){.steps4{grid-template-columns:repeat(2,minmax(0,1fr))}.steps4 div:nth-child(3){border-left:0}.steps4 div:nth-child(n+3){border-top:1px solid var(--hair)}}
-@media (max-width:600px){.pair{grid-template-columns:minmax(0,1fr)}}
-.cs-ax{font-family:var(--display);font-weight:900;font-size:20px;text-transform:uppercase;line-height:1;color:var(--wv-deep)}
-.cs-name{font-size:21px;font-weight:800;letter-spacing:-.035em;line-height:1.35}
-.cs-one{font-size:15px;color:var(--ink-2);line-height:1.6}
-.cs-more{margin-top:auto;padding-top:12px;font-size:14px;font-weight:700;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--hair)}
+.cs-vis{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;background:var(--band);color:var(--band-fg)}
+.cs-vis img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.cs-vis.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(23,20,15,.85),rgba(23,20,15,.1) 60%);z-index:1}
+.cs-big{position:absolute;left:18px;bottom:16px;z-index:2;font-family:var(--display);font-weight:900;font-size:clamp(56px,6vw,88px);line-height:.85;color:var(--wv)}
+.cs-big small{font-family:var(--body);font-size:15px;font-weight:700;color:#F7F2E8;margin-left:6px;letter-spacing:-.02em}
+.cs-vis:not(.photo) .cs-big small{color:var(--band-fg)}
+.cs-txt{display:flex;flex-direction:column;gap:8px;padding:20px 20px 18px;flex:1}
+.cs-ax{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--wv-deep)}
+.cs-name{font-size:22px;font-weight:800;letter-spacing:-.04em;line-height:1.35}
+.cs-one{font-size:15px;color:var(--ink-2);line-height:1.65}
+.cs-more{margin-top:auto;padding-top:14px;font-size:14px;font-weight:700;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--hair)}
 .cs-more::after{content:"+";font-family:var(--display);font-weight:900;font-size:26px;line-height:1;transition:transform .25s}
 .cs-card[aria-selected="true"]{border-color:var(--wv);box-shadow:0 0 0 2px var(--wv)}
 .cs-card[aria-selected="true"] .cs-more{color:var(--wv-deep)}
 .cs-card[aria-selected="true"] .cs-more::after{transform:rotate(45deg)}
-.cs-cards.has-sel .cs-card[aria-selected="false"]{opacity:.62}
-@media (hover:hover){
-  .cs-card:hover{transform:translateY(-3px)}
-  .cs-card:hover .cs-big{transform:scale(1.05)}
-  .cs-cards.has-sel .cs-card[aria-selected="false"]:hover{opacity:1}
-}
+.cs-cards.has-sel .cs-card[aria-selected="false"]{opacity:.6}
+@media (hover:hover){.cs-card:hover{transform:translateY(-3px)}.cs-card:hover .cs-vis img{transform:scale(1.05)}.cs-cards.has-sel .cs-card[aria-selected="false"]:hover{opacity:1}}
+
 .cs-panel{margin-top:28px;border:2px solid var(--wv);background:var(--paper);animation:csIn .45s cubic-bezier(.2,.7,.2,1)}
-.cs-head{background:var(--band);color:var(--band-fg);padding:clamp(20px,3vw,30px) 22px}
+@keyframes csIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.cs-head{background:var(--band);color:var(--band-fg);padding:clamp(22px,3vw,32px) clamp(18px,3vw,32px)}
 .cs-head .eyebrow{color:var(--band-fg)}
 .cs-head .eyebrow b{color:var(--wv)}
-.cs-head h3{font-size:clamp(26px,3.4vw,40px);font-weight:800;letter-spacing:-.04em;line-height:1.25;margin-top:8px}
+.cs-head h3{font-size:clamp(26px,3.4vw,40px);font-weight:800;letter-spacing:-.045em;line-height:1.25;margin-top:10px}
 .cs-head p{font-size:clamp(16px,1.7vw,19px);margin-top:6px;opacity:.9}
-@keyframes csIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){.cs-panel{animation:none}.cs-card,.cs-vis>*{transition:none}}
-@media (max-width:900px){
-  .cs-cards{grid-template-columns:minmax(0,1fr)}
-  .cs-vis{aspect-ratio:16/9}
-  .cs-cards.has-sel .cs-card[aria-selected="false"]{opacity:.75}
-}
-@media (max-width:600px){.cs-head{padding:20px 16px}}
+.cs-body{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:0}
+.cs-body>div{padding:clamp(20px,3vw,32px);min-width:0}
+.cs-body>div+div{border-left:1px solid var(--hair);background:var(--paper-2)}
+.blk+.blk{margin-top:26px}
+.blk h4{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--wv-deep);margin-bottom:8px}
+.blk p{font-size:15.5px;line-height:1.75}
+.roles li{display:grid;grid-template-columns:minmax(0,10.5em) minmax(0,1fr);gap:12px;padding:9px 0;border-top:1px solid var(--hair);font-size:14.5px;line-height:1.55}
+.roles li:first-child{border-top:0;padding-top:0}
+.roles li b{font-weight:800;letter-spacing:-.02em}
+.roles li span{color:var(--ink-2)}
+.roles li.me b{color:var(--wv-deep)}
+.big{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:3px solid var(--rule)}
+.big div{padding:14px 12px 4px 0;min-width:0}
+.big div+div{padding-left:12px;border-left:1px solid var(--hair)}
+.big strong{display:block;font-family:var(--display);font-weight:900;font-size:clamp(34px,3.6vw,48px);line-height:.95;color:var(--ink)}
+.big strong i{font-style:normal;color:var(--wv-deep)}
+.big span{display:block;font-size:13px;color:var(--ink-2);margin-top:6px;line-height:1.5}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.ba figure{position:relative}
+.ba img{display:block;width:100%;height:auto;aspect-ratio:49/30;object-fit:cover}
+.ba figcaption{position:absolute;left:0;top:0;font-family:var(--display);font-weight:900;font-size:16px;text-transform:uppercase;background:var(--band);color:var(--band-fg);padding:2px 9px}
+.ba figure+figure figcaption{background:var(--wv);color:var(--on-wv)}
+.photo-1{display:block;width:100%;height:auto;margin-top:14px}
+.cap{font-size:12.5px;color:var(--ink-2);margin-top:6px;line-height:1.55}
+.yours{background:var(--wv-tint);border-left:4px solid var(--wv);padding:14px 16px;border-radius:0}
+.yours p{font-size:15px;font-weight:700;letter-spacing:-.025em;line-height:1.6}
+.press{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px 14px}
+.press a{font-size:13px;font-weight:600;color:var(--wv-deep)}
 
-/* 04 corporate */
-.conv{margin-top:40px;border-top:3px solid var(--rule)}
-.conv-head{display:grid;grid-template-columns:210px minmax(0,1fr);gap:16px;padding:10px 0;border-bottom:1px solid var(--rule);font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;color:var(--ink-2)}
-.conv-head .ch{display:grid;grid-template-columns:minmax(0,1fr) 32px minmax(0,1.3fr) 120px;gap:16px}
-.conv-head .ch span:nth-child(3){color:var(--wv-deep)}
-.conv-head .ch span:nth-child(4){text-align:right}
-.conv-row{display:grid;grid-template-columns:210px minmax(0,1fr);gap:16px;padding:20px 0;border-bottom:1px solid var(--hair)}
-.conv-cap{margin:0}
-.conv-cap b{font-family:var(--display);font-weight:900;font-size:clamp(26px,2.8vw,34px);text-transform:uppercase;line-height:1;display:block}
-.conv-row:first-of-type .conv-cap b{color:var(--wv)}
-.conv-cap span{display:block;font-size:13.5px;font-weight:600;color:var(--ink-2);margin-top:6px;line-height:1.5}
-.conv ul{display:grid;gap:0}
-.conv li{display:grid;grid-template-columns:minmax(0,1fr) 32px minmax(0,1.3fr) 120px;gap:16px;align-items:center;padding:12px 0;border-top:1px solid var(--hair)}
-.conv li:first-child{border-top:0;padding-top:0}
-.conv .in{font-size:14px;color:var(--ink-2);line-height:1.5}
-.conv .in b{display:block;font-size:16px;font-weight:800;color:var(--ink);letter-spacing:-.03em}
-.conv li>i{font-style:normal;font-family:var(--display);font-weight:900;font-size:28px;color:var(--wv);text-align:center;line-height:1}
-.conv .out{font-size:14.5px;line-height:1.5;background:var(--wv-tint);padding:10px 14px;border-left:3px solid var(--wv);border-radius:0}
-.conv .out strong{display:block;font-family:var(--display);font-weight:900;font-size:clamp(24px,2.4vw,30px);line-height:1.05;color:var(--wv-deep);margin-bottom:2px}
-.conv li>a{font-size:12.5px;font-weight:700;color:var(--wv-deep);text-decoration:none;text-align:right}
-.conv li>a::after{content:" →"}
-.conv li>a:hover{text-decoration:underline}
-@media (max-width:900px){
-  .conv-head{display:none}
-  .conv-row{grid-template-columns:minmax(0,1fr);gap:12px}
-  .conv li{grid-template-columns:minmax(0,1fr);gap:6px}
-  .conv li>i{text-align:left;transform:rotate(90deg);width:1em}
-  .conv li>a{text-align:left}
-}
-.assets{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:40px;border-top:3px solid var(--rule)}
-.assets article{padding:20px 18px 10px;border-left:1px solid var(--hair);min-width:0}
-.assets article:first-child{border-left:0;padding-left:0}
-.assets b{font-family:var(--display);font-weight:900;font-size:clamp(28px,3vw,36px);text-transform:uppercase;line-height:1;display:block}
-.assets article:first-child b{color:var(--wv)}
-.assets .what{display:block;font-size:14px;color:var(--ink-2);margin:8px 0 14px;font-weight:600}
-.assets ul li{font-size:14.5px;line-height:1.65;padding:10px 0;border-top:1px solid var(--hair)}
-.assets ul li em{font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--wv-deep);display:block;text-transform:uppercase}
-.pull{background:var(--band);color:var(--band-fg);margin-top:48px;padding:clamp(24px,4vw,40px)}
-.pull-en{display:block;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(44px,7vw,92px);line-height:.9;color:var(--wv);margin-bottom:18px}
-.pull-en i{font-style:normal;font-weight:700;color:var(--band-fg);opacity:.85}
-.pull p{font-weight:800;font-size:clamp(18px,2.2vw,28px);line-height:1.45;letter-spacing:-.035em;white-space:nowrap}
-@media (max-width:900px){.pull p{white-space:normal}}
-.pull p em{font-style:normal;color:var(--wv)}
+/* 5 why world vision */
+.bb{background:var(--wv);color:var(--on-wv)}
+.cover{position:relative;background:#17140F;overflow:hidden}
+.cover img{display:block;width:100%;height:clamp(380px,52vw,640px);object-fit:cover;object-position:40% 55%;max-width:none}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(to right,rgba(23,20,15,.75),rgba(23,20,15,.15) 65%),linear-gradient(to top,rgba(23,20,15,.5),rgba(23,20,15,0) 45%)}
+.cover figcaption{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;justify-content:flex-end;max-width:1140px;margin:0 auto;padding-block:clamp(28px,4vw,56px);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));color:#F7F2E8}
+.cover .cv-k{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#FF6B00}
+.cover .cv-t{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(60px,11vw,150px);line-height:.84;margin-top:14px}
+.cover .cv-t i{font-style:normal;font-weight:700;color:#FF6B00}
+.cover .cv-c{font-size:12.5px;opacity:.8;margin-top:20px}
+.bb .w{padding-block:clamp(56px,8vw,104px)}
+.bb .eyebrow,.bb .eyebrow b{color:var(--on-wv)}
+.bb .sec-h{margin-top:16px}
+.caps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:clamp(36px,5vw,56px);border-top:3px solid var(--on-wv)}
+.caps article{padding:22px 22px 6px;border-left:1px solid var(--on-wv);min-width:0}
+.caps article:first-child{border-left:0;padding-left:0}
+.caps b{font-family:var(--display);font-weight:900;font-size:26px;text-transform:uppercase;line-height:1;display:block}
+.caps h3{font-size:18px;font-weight:800;letter-spacing:-.035em;margin:12px 0 8px}
+.caps p{font-size:14.5px;line-height:1.7}
+.net-btn{margin-top:12px;font:700 13.5px var(--body);background:var(--on-wv);color:var(--wv);border:0;padding:9px 14px;cursor:pointer}
+.net-btn:hover{background:var(--paper);color:var(--wv-deep)}
+.steps{display:flex;flex-wrap:wrap;gap:6px 0;align-items:center;margin-top:32px;font-family:var(--display);font-weight:900;font-size:clamp(18px,2vw,24px);text-transform:uppercase}
+.steps span+span::before{content:"→";margin:0 10px;font-weight:700;opacity:.6}
+.steps-cap{font-size:13px;margin-top:6px}
 
-/* 05 why world vision */
-.bb{background:var(--wv);color:var(--on-wv);border-bottom:3px solid var(--rule)}
-.bb .w{padding-block:clamp(52px,7vw,100px)}
-.bb .eyebrow,.bb .eyebrow b,.bb .src{color:var(--on-wv)}
-.bb h2.disp{font-size:clamp(60px,10vw,132px);margin-top:14px}
-.bb .lede{color:var(--on-wv)}
-.bbh{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;font-family:var(--display);font-weight:900;font-size:clamp(30px,3.6vw,44px);text-transform:uppercase;line-height:1;margin-top:64px;padding-top:18px;border-top:3px solid var(--on-wv)}
-.bbh span{font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.1em}
-.bbh small{font-family:var(--body);font-size:17px;font-weight:800;text-transform:none;letter-spacing:-.03em}
-.actors{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:26px;border-top:1px solid var(--on-wv)}
-.actors div{padding:16px 16px 10px;border-left:1px solid var(--on-wv);min-width:0}
-.actors div:first-child{border-left:0;padding-left:0}
-.actors em{font-style:normal;font-size:16px;font-weight:800;display:block}
-.actors b{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:2px}
-.actors span{font-size:14.5px;display:block;line-height:1.6;margin-top:8px}
-.key{margin-top:24px;font-size:clamp(17px,1.8vw,20px);font-weight:700;line-height:1.6;letter-spacing:-.03em;max-width:46ch}
-.steps6{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;margin-top:26px;background:var(--paper);color:var(--ink);border:3px solid var(--on-wv)}
-.steps6 li{padding:18px 14px 16px;border-left:1px solid var(--hair);min-width:0}
-.steps6 li:first-child{border-left:0}
-.steps6 .n{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--wv-deep)}
-.steps6 .k{display:block;font-size:19px;font-weight:800;letter-spacing:-.03em;margin-top:6px}
-.steps6 b{font-family:var(--display);font-weight:900;font-size:clamp(20px,2vw,24px);text-transform:uppercase;display:block;line-height:1;color:var(--ink-2)}
-.steps6 p{font-size:14px;line-height:1.6;margin-top:10px}
-.steps6 .pt{display:inline-block;margin-top:10px;font-size:12px;font-weight:600;background:var(--wv-tint);color:var(--ink);padding:2px 7px}
-.why-wv{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;margin-top:26px;border-top:1px solid var(--on-wv)}
-.why-wv div{padding:20px 22px 18px 0;border-bottom:1px solid var(--on-wv);min-width:0}
-.why-wv div:nth-child(even){padding-left:22px;border-left:1px solid var(--on-wv)}
-.why-wv b{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;display:block}
-.why-wv h4{font-size:19px;font-weight:800;letter-spacing:-.03em;margin:6px 0 8px}
-.why-wv p{font-size:15px;line-height:1.7}
-.proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,2vw,20px);margin-top:26px}
-.proof article{background:var(--paper);color:var(--ink);padding:20px 20px 0;display:flex;flex-direction:column;min-width:0}
-.proof h4{font-size:19px;font-weight:800;letter-spacing:-.03em;line-height:1.35;margin:6px 0 12px}
-.pmap li{padding:8px 0;border-top:1px solid var(--hair);font-size:14px;line-height:1.5}
-.pmap li b{display:block;font-weight:700}
-.pmap li span{color:var(--ink-2)}
-.pmap li.me b{color:var(--wv-deep)}
-.res{margin:auto -20px 0;padding:14px 20px 16px;background:var(--band);color:var(--band-fg);margin-top:16px}
-.res strong{font-family:var(--display);font-weight:900;font-size:30px;line-height:1;display:block;color:var(--wv)}
-.res span{font-size:13px;line-height:1.55;display:block;margin-top:6px}
-.vs{margin-top:26px;overflow-x:auto;background:var(--paper);color:var(--ink)}
-.vs table{border-collapse:collapse;width:100%;min-width:600px;font-size:15px;line-height:1.6}
-.vs th,.vs td{text-align:left;vertical-align:top;padding:12px 16px;border-top:1px solid var(--hair)}
-.vs thead th{border-top:0;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;color:var(--ink-2)}
-.vs thead th.me{background:var(--band);color:var(--band-fg)}
-.vs tbody th{font-size:14px;color:var(--ink-2);font-weight:600;width:8em}
-.vs td.me{background:var(--wv-tint);font-weight:700}
-.exit{margin-top:26px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:clamp(20px,4vw,48px);align-items:center}
-.exit .bye{font-weight:900;font-size:clamp(30px,4vw,48px);line-height:1.2;letter-spacing:-.04em}
-.exit ol{display:flex;flex-wrap:wrap;gap:6px 8px;counter-reset:x;margin-top:14px}
-.exit li{font-size:13px;font-weight:600;border:1px solid var(--on-wv);padding:3px 10px}
-.exit li::before{counter-increment:x;content:counter(x) " ";font-family:var(--mono);font-weight:500}
-
-/* 06 contact */
-.cta h2{font-size:clamp(60px,10.5vw,144px)}
-.cta h2 span{color:var(--wv)}
-.paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,2vw,20px);margin-top:32px}
-.paths div{border:1px solid var(--rule);padding:18px 20px}
-.paths b{font-family:var(--display);font-weight:900;font-size:26px;text-transform:uppercase;line-height:1;display:block;color:var(--wv-deep)}
-.paths h3{font-size:18px;font-weight:800;letter-spacing:-.03em;margin:8px 0 6px}
-.paths p{font-size:14.5px;color:var(--ink-2);line-height:1.7}
-.paths .ex{display:block;margin-top:10px;font-size:13px;color:var(--ink);font-weight:600}
-.contact{margin-top:32px;background:var(--wv);color:var(--on-wv);padding:clamp(22px,3vw,32px);display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px;align-items:center}
-.contact .kr{font-size:clamp(20px,2.2vw,26px)}
-.contact .eyebrow{color:var(--on-wv);display:block;margin-bottom:8px}
+.cta{margin-top:clamp(48px,6vw,80px);background:var(--paper);color:var(--ink);padding:clamp(24px,4vw,48px)}
+.cta .disp{font-size:clamp(52px,8vw,108px)}
+.cta .disp span{color:var(--wv)}
+.cta-row{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:end;margin-top:24px}
+.cta-q{font-size:clamp(20px,2.4vw,28px);font-weight:800;letter-spacing:-.04em;line-height:1.45}
+.cta-row .lede{margin-top:10px}
 .btns{display:flex;flex-direction:column;gap:10px}
-.btn{display:flex;justify-content:space-between;align-items:center;gap:8px;font:700 16px var(--body);text-decoration:none;padding:14px 18px;border:2px solid var(--on-wv)}
-.btn.solid{background:var(--on-wv);color:var(--wv)}
-.btn.line{color:var(--on-wv)}
-.reach{font-size:14px;line-height:1.7}
-.reach .addr{font-family:var(--mono);font-size:15px;font-weight:500;user-select:all}
-.sign{font-family:var(--display);font-weight:900;font-size:clamp(24px,3.2vw,36px);text-transform:uppercase;margin-top:44px;border-top:1px solid var(--rule);padding-top:16px}
-.sign span{color:var(--wv)}
+.btn{display:flex;justify-content:space-between;align-items:center;gap:8px;font:800 16px var(--body);text-decoration:none;padding:15px 20px;border:2px solid var(--ink);cursor:pointer;background:none;color:var(--ink);text-align:left}
+.btn.solid{background:var(--wv);border-color:var(--wv);color:var(--on-wv)}
+.btn.solid:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.reach{font-size:13.5px;color:var(--ink-2)}
+.reach b{font-family:var(--mono);font-weight:500;color:var(--ink);user-select:all}
+
+/* inquiry form */
+.inq{margin-top:28px;padding-top:28px;border-top:3px solid var(--rule)}
+.inq fieldset{border:0;margin:0;padding:0}
+.inq legend{font-size:15.5px;font-weight:800;letter-spacing:-.03em;padding:0;margin-bottom:10px}
+.inq legend span{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--ink-2);margin-left:6px}
+.inq-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 16px}
+.inq-grid legend{grid-column:1/-1}
+.inq label{font-size:13.5px;font-weight:700;color:var(--ink-2);display:flex;flex-direction:column;gap:6px}
+.inq em{font-style:normal;color:var(--wv-deep)}
+.inq input[type=text],.inq input[type=email],.inq textarea{font:500 15.5px var(--body);color:var(--ink);background:var(--paper-2);border:1px solid var(--hair);border-bottom:2px solid var(--ink);padding:11px 12px;border-radius:0;width:100%;min-width:0}
+.inq input:focus,.inq textarea:focus{outline:none;border-bottom-color:var(--wv);background:var(--paper)}
+.inq [aria-invalid="true"]{border-bottom-color:#C62828!important}
+.inq-q{margin-top:22px!important}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{flex-direction:row;cursor:pointer}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips span{display:inline-block;font-size:14px;font-weight:700;color:var(--ink);border:1px solid var(--rule);padding:7px 13px}
+.chips input:checked+span{background:var(--wv);border-color:var(--wv);color:var(--on-wv)}
+.chips input:focus-visible+span{outline:2px solid var(--wv);outline-offset:2px}
+.inq-msg{margin-top:22px}
+.inq-msg textarea{resize:vertical;line-height:1.6}
+.hp{position:absolute!important;left:-9999px}
+.inq-consent{margin-top:18px;background:var(--paper-2);padding:14px 16px}
+.inq-consent label{flex-direction:row;align-items:center;gap:10px;color:var(--ink);cursor:pointer}
+.inq-consent input{width:18px;height:18px;accent-color:var(--wv)}
+.inq-consent p{font-size:12.5px;color:var(--ink-2);line-height:1.65;margin-top:8px}
+.inq-foot{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:18px}
+.inq-send{font:800 16px var(--body);background:var(--ink);color:var(--paper);border:0;padding:14px 24px;cursor:pointer}
+.inq-send:hover{background:var(--wv);color:var(--on-wv)}
+.inq-send[disabled]{opacity:.6;cursor:progress}
+.inq-status{font-size:14px;font-weight:700;line-height:1.6;flex:1 1 260px}
+.inq-status.err{color:#C62828}
+.inq-status.ok{color:var(--wv-deep)}
+
+/* network drawer */
+.scrim{position:fixed;inset:0;background:rgba(23,20,15,.5);z-index:40}
+.drawer{position:fixed;top:0;right:0;bottom:0;z-index:41;width:min(420px,100%);background:var(--paper);color:var(--ink);overflow-y:auto;padding:calc(20px + env(safe-area-inset-top,0px)) max(24px,env(safe-area-inset-right,0px)) calc(28px + env(safe-area-inset-bottom,0px)) 24px;border-left:4px solid var(--wv)}
+.drawer:not([hidden]){animation:drIn .35s cubic-bezier(.2,.7,.2,1)}
+@keyframes drIn{from{transform:translateX(40px);opacity:0}to{transform:none;opacity:1}}
+.drawer-head{display:flex;justify-content:space-between;align-items:center}
+.drawer-x{font:400 28px/1 var(--body);background:none;border:0;color:var(--ink);cursor:pointer;padding:4px 8px}
+.drawer h2{font-size:24px;font-weight:800;letter-spacing:-.04em;margin-top:12px}
+.net-groups{margin-top:12px}
+.net-groups section{padding:14px 0;border-bottom:1px solid var(--hair)}
+.net-groups h3{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.08em;color:var(--wv-deep);margin-bottom:8px}
+.net-groups ul{display:flex;flex-wrap:wrap;gap:6px}
+.net-groups li{font-size:14px;font-weight:600;border:1px solid var(--rule);padding:4px 10px}
+
 footer{background:var(--paper-2)}
 footer .w{padding-block:26px;display:grid;gap:6px}
 
-@media (max-width:980px){
-  .steps6{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .steps6 li:nth-child(4){border-left:0}
-  .steps6 li:nth-child(n+4){border-top:1px solid var(--hair)}
-}
 @media (max-width:900px){
-  .two,.hero-foot,.prob,.cards,.proof,.paths,.contact,.exit{grid-template-columns:minmax(0,1fr)}
-  .prob article{border-left:0;padding-left:0;border-bottom:1px solid var(--hair);padding-bottom:22px}
-  .nums{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .nums div{border-left:0;padding-left:0;border-bottom:1px solid var(--hair)}
-  .nums div.hl{grid-column:1/-1;border-bottom:0;padding-left:14px}
-  .big{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .big div:nth-child(3){border-left:0;padding-left:0}
-  .big div:nth-child(n+3){border-top:1px solid var(--hair)}
-  .big .hl{padding-left:14px!important}
-  .mini{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .row{grid-template-columns:minmax(0,1fr);gap:10px}
-  .assets,.actors{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .assets article,.actors div{border-left:0;padding-left:0;border-bottom:1px solid var(--hair);padding-right:14px}
-  .actors div{border-bottom-color:var(--on-wv)}
-  .why-wv{grid-template-columns:minmax(0,1fr)}
-  .why-wv div:nth-child(even){padding-left:0;border-left:0}
+  .hero-foot,.why,.cs-cards,.cs-body,.caps,.cta-row,.inq-grid{grid-template-columns:minmax(0,1fr)}
+  .why article{border-left:0;padding-left:0;border-bottom:1px solid var(--hair);padding-bottom:24px}
+  .res-row{grid-template-columns:minmax(0,1fr);gap:12px}
+  .res-row>i{text-align:left;transform:rotate(90deg);width:1em;font-size:26px}
+  .res-case{text-align:left}
+  .cs-body>div+div{border-left:0;border-top:1px solid var(--hair)}
+  .cs-vis{aspect-ratio:16/9}
+  .caps article{border-left:0;padding-left:0;border-bottom:1px solid var(--on-wv);padding-bottom:18px}
 }
-@media (max-width:600px){
-  body{font-size:16px}
-  .explore{grid-template-columns:minmax(0,1fr)}
-  .explore a{border-left:0;padding-left:0;border-bottom:1px solid var(--hair)}
-  .steps6{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .steps6 li:nth-child(n){border-left:1px solid var(--hair);border-top:1px solid var(--hair)}
-  .steps6 li:nth-child(odd){border-left:0}
-  .steps6 li:nth-child(-n+2){border-top:0}
-  .steps3,.join{grid-template-columns:minmax(0,1fr)}
-  .steps3 div+div{border-left:0;border-top:1px solid var(--hair)}
-  .roles li{grid-template-columns:minmax(0,1fr);gap:2px}
-  .assets,.actors{grid-template-columns:minmax(0,1fr)}
-  .case>summary{grid-template-columns:minmax(0,1fr)}
-  .case>summary .tog{grid-row:auto;grid-column:1;justify-self:start;margin-top:6px}
-  .dt{padding:4px 16px 20px}
-  .bar{grid-template-columns:5.5em minmax(0,1fr) 5.2em}
-}
-@media (prefers-reduced-motion:no-preference){
-  .hero h1 span{animation:rise .7s cubic-bezier(.2,.7,.2,1) both .15s}
-  @keyframes rise{from{transform:translateY(.18em)}to{transform:none}}
-}
+@media (max-width:600px){.roles li{grid-template-columns:minmax(0,1fr);gap:2px}.big{grid-template-columns:minmax(0,1fr)}.big div+div{padding-left:0;border-left:0;border-top:1px solid var(--hair)}}
+@media (prefers-reduced-motion:reduce){.cs-panel,.drawer:not([hidden]){animation:none}.cs-card,.cs-vis img{transition:none}}
 </style>
 
 <header class="mast">
@@ -669,859 +271,400 @@ footer .w{padding-block:26px;display:grid;gap:6px}
   <div class="w">
     <a href="#" class="back" data-link="newsletter" hidden>← 뉴스레터</a>
     <a href="#why-local">Why local</a>
-    <a href="#guide">CSR guide</a>
-    <a href="#projects">Cases</a>
-    <a href="#next">Next model</a>
+    <a href="#corporate">For corporate</a>
+    <a href="#cases">Cases</a>
     <a href="#why-wv">Why World Vision</a>
-    <a href="#contact">Contact</a>
   </div>
 </nav>
 
-<!-- SECTION 01. INTRO -->
+<!-- 1. HERO -->
 <section class="band hero" id="main">
   <div class="w">
     <span class="eyebrow"><b>Local CSR guide</b> · 기업을 위한 로컬 사회공헌 가이드</span>
     <h1 class="disp">Local,<br>but<span>impactful.</span></h1>
     <div class="hero-foot">
-      <p class="kr">우리 회사가 있는 지역에서,<br>무엇을 할 수 있을까요?</p>
-      <div>
-        <p class="lede">공장과 사업장은 지역의 일자리와 경제를 만듭니다.<br class="pc">임직원은 그 지역에서 일하고, 아이를 키우며 살아갑니다.</p>
-        <p class="lede" style="margin-top:12px"><strong>기업이 이미 관계를 맺고 있는 지역이<br class="pc">로컬 사회공헌의 가장 좋은 출발점입니다.</strong></p>
-      </div>
+      <p class="hero-q">우리 회사가 있는 지역에서,<br>무엇을 할 수 있을까요?</p>
+      <p class="lede">공장과 사업장이 있는 곳에서, 임직원이 살아가는 곳에서.<br class="pc"><strong>기업이 이미 관계를 맺은 지역이 가장 좋은 출발점입니다.</strong></p>
     </div>
-    <nav class="explore" aria-label="페이지 바로가기">
-      <a href="#why-local"><span class="eyebrow">Why local</span><b><em>01</em> Why now</b><span class="t">지역에서 무슨 일이 일어나고 있나요</span><span class="go">살펴보기 →</span></a>
-      <a href="#guide"><span class="eyebrow">Local CSR guide</span><b><em>02</em> What we can do</b><span class="t">우리 회사의 자원으로 할 수 있는 일</span><span class="go">살펴보기 →</span></a>
-      <a href="#projects"><span class="eyebrow">Case studies</span><b><em>03</em> How it works</b><span class="t">실제로 이렇게 바뀌었습니다</span><span class="go">살펴보기 →</span></a>
-    </nav>
   </div>
 </section>
 
-<!-- SECTION 02. WHY LOCAL -->
+<!-- 2. WHY LOCAL -->
 <section class="band" id="why-local">
   <div class="w">
     <span class="eyebrow"><b>Why local</b></span>
-    <h2 class="sec-h">왜 지금,<br>로컬에 주목해야 할까요?</h2>
-
-    <div class="why3">
+    <h2 class="sec-h">왜 지금 로컬일까요?</h2>
+    <p class="lede">지역소멸은 사람 수만의 문제가 아닙니다.<br class="pc">일자리, 공동체, 아이들의 배움이 함께 흔들립니다.</p>
+    <div class="why">
       <article>
-        <span class="n">01</span>
-        <h3>기업이 있는 곳에<br>지역사회가 있습니다.</h3>
-        <p>많은 기업의 공장과 물류센터는 지역에 자리하고 있습니다. 그 지역의 사람들이 임직원이 되고, 이웃이 되고, 고객이 됩니다. 지역이 약해지면 일할 사람을 구하기 어렵고, 임직원 가족이 살아갈 환경도 함께 흔들립니다.</p>
+        <span class="ax"><em>01</em> Jobs</span>
+        <h3>일할 곳이 줄면,<br>청년이 떠납니다.</h3>
+        <p>창업하고 일하며 자리 잡을 기반이 약하면 지역에 머물 이유도 사라집니다.</p>
+        <blockquote>쏟아지는 청년유입 사업, 정착은 개인의 몫</blockquote>
       </article>
       <article>
-        <span class="n">02</span>
-        <h3>지역의 문제는<br>서로 연결돼 있습니다.</h3>
-        <p>지역소멸은 사람 수가 줄어드는 것만의 문제가 아닙니다. 하나가 무너지면 다른 것도 함께 약해집니다.</p>
-        <ol class="chainx" aria-label="지역 문제가 이어지는 흐름">
-          <li><b>일자리가 줄면</b><span>청년이 지역을 떠납니다</span></li>
-          <li><b>사람이 줄면</b><span>버스, 가게, 목욕탕 같은 생활 시설이 문을 닫습니다</span></li>
-          <li><b>모일 곳이 사라지면</b><span>이웃과 지역 조직의 관계가 약해집니다</span></li>
-          <li><b>배울 곳이 줄면</b><span>아이들이 꿈꿀 수 있는 직업과 경험이 좁아집니다</span></li>
-        </ol>
+        <span class="ax"><em>02</em> Community</span>
+        <h3>모일 곳이 사라지면,<br>관계도 약해집니다.</h3>
+        <p>목욕탕, 가게, 지역 조직이 문을 닫으면 이웃을 살피던 연결도 함께 끊깁니다.</p>
+        <blockquote>관계에는 투자하지 않는 사회</blockquote>
       </article>
       <article>
-        <span class="n">03</span>
-        <h3>지역마다<br>필요한 해법은 다릅니다.</h3>
-        <p>어떤 지역에는 창업한 청년이 팔 곳이 필요하고, 어떤 지역에는 어르신이 안전하게 씻을 공간이 필요합니다. 버스가 3시간에 한 대 다니는 지역의 아이들에게는 스스로 움직일 수단이 필요합니다. 같은 지원을 모든 지역에 똑같이 나누는 방식으로는 풀기 어렵습니다.</p>
+        <span class="ax"><em>03</em> Future</span>
+        <h3>사는 곳에 따라,<br>아이들의 경험이 달라집니다.</h3>
+        <p>버스가 드물고 배울 곳이 먼 지역에서는 꿈꿀 수 있는 직업의 폭도 좁아집니다.</p>
+        <blockquote>학교를 벗어나면 닿지 않는 AI 교육</blockquote>
       </article>
     </div>
-
-    <div class="sigstrip">
-      <div class="sig-lead">
-        <span class="eyebrow"><b>Signal</b> · 현장과 학계가 같은 곳을 가리킵니다</span>
-        <p>사랑의열매가 현장 전문가 100명의 목소리를 분석했더니, 현장에서 먼저 감지한 변화 열 개 중 일곱 개가 학계 전문가가 꼽은 사회이슈와 이어졌습니다.</p>
-      </div>
-      <div class="sig-nums" role="list">
-        <div role="listitem"><strong>100<i>명</i></strong><span>현장 전문가</span></div>
-        <div role="listitem"><strong>104<i>개</i></strong><span>현장 신호</span></div>
-        <div role="listitem" class="hl"><strong>69<i>%</i></strong><span>학계 이슈와 연결 (직접·부분 합산)</span></div>
-      </div>
-    </div>
-    <div class="sig3">
-      <div><span class="ax">Economy</span><p class="quote">쏟아지는 청년유입 사업, 정착은 개인의 몫</p></div>
-      <div><span class="ax">Community</span><p class="quote">‘새로운 조직 발굴’에 밀려 붕괴하는 지역기반 조직</p></div>
-      <div><span class="ax">Future</span><p class="quote">학교를 벗어나면 닿지 않는 AI 교육</p></div>
-    </div>
-
-    <details class="fold" id="signal">
-      <summary><span>근거 자료 · 사랑의열매 SIGNAL 분석 자세히 보기</span></summary>
-      <div class="fold-in">
-        <div class="nums" role="list">
-          <div role="listitem"><strong>100</strong><span>현장 전문가 (5개 영역)</span></div>
-          <div role="listitem"><strong>104</strong><span>최종 도출한 현장 신호</span></div>
-          <div role="listitem"><strong>16</strong><span>학계 전문가</span></div>
-          <div role="listitem"><strong>89</strong><span>학계가 꼽은 사회이슈</span></div>
-          <div role="listitem" class="hl"><strong>69%</strong><span>학계 이슈와 연결된 현장 신호 (72개)</span></div>
-        </div>
-        <p class="src" style="margin-top:10px">69%는 직접 연결과 부분 연결을 합산한 수치입니다. 5개 영역: 미래세대 · 디지털·AI · 인구·지역 · 기후·안전 · 마음건강</p>
-        <ul class="roles" style="margin-top:22px">
-          <li><b>“쏟아지는 청년유입 사업, 정착은 개인의 몫”</b><span>학계 이슈 '정서적·지지적 관계 단절 : 정착 네트워크 지원'과 직접 연결</span></li>
-          <li><b>“‘새로운 조직 발굴’에 밀려 붕괴하는 지역기반 조직”</b><span>학계 이슈 '로컬 비영리 공익활동 위기'와 직접 연결 · 함께 나온 신호 “관계에는 투자하지 않는 사회”</span></li>
-          <li><b>“학교를 벗어나면 닿지 않는 AI 교육”</b><span>학계 이슈 'AI 대전환기, 청소년의 핵심 역량 강화'와 직접 연결</span></li>
-        </ul>
-        <div class="two" style="margin-top:28px">
-          <div>
-            <span class="eyebrow">영역별 연결 비율</span>
-            <div class="bars">
-              <div class="bar"><span>미래세대</span><span class="track"><span class="fill" style="width:96%"></span></span><span class="v">96% 22/23</span></div>
-              <div class="bar"><span>마음건강</span><span class="track"><span class="fill" style="width:74%"></span></span><span class="v">74% 17/23</span></div>
-              <div class="bar me"><span>인구·지역</span><span class="track"><span class="fill" style="width:68%"></span></span><span class="v">68% 13/19</span></div>
-              <div class="bar"><span>디지털·AI</span><span class="track"><span class="fill" style="width:67%"></span></span><span class="v">67% 12/18</span></div>
-              <div class="bar"><span>기후·안전</span><span class="track"><span class="fill" style="width:38%"></span></span><span class="v">38% 8/21</span></div>
-            </div>
-          </div>
-          <div>
-            <span class="eyebrow">분석이 내린 결론</span>
-            <p class="kr" style="font-size:22px;margin-top:12px">기업 사회공헌의 다음 질문은<br>‘무엇을’이 아니라 ‘어떻게’입니다.</p>
-          </div>
-        </div>
-        <p class="src" style="margin-top:20px">자료: 사랑의열매 「SIGNAL 브리핑」, 임팩트리서치랩 「기업 실무자를 위한 SIGNAL 사용법」, 「SIGNAL × 사회이슈분석 2027」 (2026.10.29)</p>
-      </div>
-    </details>
-
-    <p class="bridge">문제는 충분히 확인됐습니다.<br><strong>이제 질문은 ‘우리 기업은 무엇을 할 수 있을까?’입니다.</strong></p>
+    <p class="src" style="margin-top:22px">현장의 목소리: 사랑의열매 SIGNAL Field-Voice 100 (2026 기업사회공헌 컨퍼런스)</p>
   </div>
 </section>
 
-<!-- SECTION 03. LOCAL CSR GUIDE -->
-<section class="band" id="guide">
+<!-- 3. FOR CORPORATE -->
+<section class="band" id="corporate">
   <div class="w">
-    <span class="eyebrow"><b>Local CSR guide</b></span>
-    <h2 class="sec-h">우리 회사의 자원으로 시작하는<br>로컬 사회공헌</h2>
-    <p class="lede" style="margin-top:16px">기부금이나 물품만이 방법은 아닙니다.<br class="pc">기업이 매일 하는 일이 지역에서는 가장 필요한 해법이 될 수 있습니다.</p>
-
-    <div class="types">
-      <article>
-        <div class="t-head"><b>Manufacturing</b><h3>제조업 · 생산시설</h3><p>공장과 기술자가 지역에 있습니다.</p></div>
-        <ul>
-          <li><b>직무 체험</b><span>지역 청소년이 공장과 연구소를 직접 보고, 일하는 사람을 만나는 진로 체험</span></li>
-          <li><b>기술교육</b><span>사내 기술 교육 과정을 지역 청년과 특성화고 학생에게 열기</span></li>
-          <li><b>청년 멘토링</b><span>현장 엔지니어가 지역 청년의 취업과 정착을 함께 고민하는 멘토로</span></li>
-          <li><b>안전·환경 전문성 공유</b><span>사업장의 안전 관리 노하우로 노후 생활시설을 점검하고 개선</span></li>
-        </ul>
-        <a class="t-case" href="#case-future"><span>실제 사례</span>아모레퍼시픽의 기업 투어와 진로 멘토링 · 해방프로젝트</a>
-      </article>
-      <article>
-        <div class="t-head"><b>Logistics &amp; retail</b><h3>물류 · 유통기업</h3><p>상품을 고르고, 옮기고, 파는 힘이 있습니다.</p></div>
-        <ul>
-          <li><b>지역 창업팀 판로</b><span>팝업스토어와 온라인몰 기획전으로 지역 창업기업의 첫 판매처 열기</span></li>
-          <li><b>지역 생산품 유통</b><span>MD 관점의 상품 개발과 위생·품질 관리로 지역 제품을 시장에 맞게</span></li>
-          <li><b>물류 역량 활용</b><span>배송, 포장, 재고 관리 노하우를 지역 소상공인과 나누기</span></li>
-        </ul>
-        <a class="t-case" href="#case-economy"><span>실제 사례</span>현대백화점그룹의 상품 개발·유통 지원 · 농촌창업도약+</a>
-      </article>
-      <article>
-        <div class="t-head"><b>Tech &amp; IT</b><h3>IT · 기술기업</h3><p>기술과 플랫폼, 그것을 다루는 사람이 있습니다.</p></div>
-        <ul>
-          <li><b>AI 교육</b><span>학교 밖에서 AI를 접하기 어려운 지역 아이들을 찾아가는 교육</span></li>
-          <li><b>디지털 역량 강화</b><span>교육 콘텐츠와 디지털 기기로 섬·산간 지역의 학습 거점 만들기</span></li>
-          <li><b>기술·플랫폼 지원</b><span>지역 기관이 쓸 수 있는 도구와 데이터, 기술 자문 제공</span></li>
-        </ul>
-        <a class="t-case" href="#case-dreambridge"><span>함께할 모델</span>진도·통영 섬 지역 AI 교육 · 드림브릿지</a>
-      </article>
-      <article>
-        <div class="t-head"><b>People</b><h3>임직원 중심 기업</h3><p>각 분야의 전문가인 임직원이 있습니다.</p></div>
-        <ul>
-          <li><b>전문성 나눔</b><span>디자인, 브랜딩, 마케팅 같은 본업의 기술을 지역 문제에 쓰기</span></li>
-          <li><b>진로 멘토링</b><span>일터를 보여 주고, 지역 아이들과 청년의 진로를 함께 그리기</span></li>
-          <li><b>지역사회 참여</b><span>임직원이 지역을 직접 찾아 활동하며 지역과 관계 맺기</span></li>
-          <li><b>재능기부</b><span>개인의 전문성을 모아 지역 조직과 주민을 돕기</span></li>
-        </ul>
-        <a class="t-case" href="#case-community"><span>실제 사례</span>이노션의 디자인·브랜딩 · 세상에서 가장 안전한 목욕탕</a>
-      </article>
-    </div>
-
-    <h3 class="guide-sub">실제로 이렇게 바뀌었습니다</h3>
-    <div class="conv">
-      <div class="conv-head" aria-hidden="true"><span>기업의 자본</span><span class="ch"><span>기업이 내놓은 것</span><span></span><span>지역에서 바뀐 것</span><span>사례</span></span></div>
-      <section class="conv-row">
-        <h3 class="conv-cap"><b>Core business</b><span>업(業) · 기술 · 제품 · 디자인 · 유통</span></h3>
-        <ul>
-          <li><p class="in"><b>이노션</b>디자인 · 브랜딩</p><i aria-hidden="true">→</i><p class="out"><strong>10.7% → 1.2%</strong>노후 목욕탕이 주민 건강 인프라로. 낙상 경험률 감소</p><a href="#case-community">목욕탕</a></li>
-          <li><p class="in"><b>현대백화점그룹</b>상품 개발 · 위생 관리 · 유통</p><i aria-hidden="true">→</i><p class="out"><strong>15곳</strong>농촌 창업기업이 시장에 나갈 제품과 판로를 준비</p><a href="#case-economy">농촌창업도약+</a></li>
-        </ul>
-      </section>
-      <section class="conv-row">
-        <h3 class="conv-cap"><b>People</b><span>임직원 · 전문가 · 고객</span></h3>
-        <ul>
-          <li><p class="in"><b>아모레퍼시픽</b>임직원 진로 멘토링 · 기업 투어</p><i aria-hidden="true">→</i><p class="out"><strong>+16.6%</strong>진도 중학생 29명의 진로 인식 상승</p><a href="#case-future">해방프로젝트</a></li>
-          <li><p class="in"><b>참여 기업</b>임직원의 지역 방문</p><i aria-hidden="true">→</i><p class="out"><strong>500여 명</strong>부안을 찾은 임직원이 갯벌 보전과 지역 관계인구로</p><a href="#why-wv">부안 갯벌</a></li>
-        </ul>
-      </section>
-      <section class="conv-row">
-        <h3 class="conv-cap"><b>Market</b><span>브랜드 · 채널 · 소비자 접점</span></h3>
-        <ul>
-          <li><p class="in"><b>현대백화점그룹</b>유통 채널 · 팝업스토어</p><i aria-hidden="true">→</i><p class="out"><strong>판로</strong>지역 창업기업의 제품이 고객을 만나는 자리</p><a href="#case-economy">농촌창업도약+</a></li>
-          <li><p class="in"><b>참여 기업</b>고객 참여 캠페인</p><i aria-hidden="true">→</i><p class="out"><strong>약 800평</strong>시민이 함께 지킨 부안 갯벌</p><a href="#why-wv">부안 갯벌</a></li>
-        </ul>
-      </section>
-      <section class="conv-row">
-        <h3 class="conv-cap"><b>Resource</b><span>재원 · 공간 · 인프라</span></h3>
-        <ul>
-          <li><p class="in"><b>이노션</b>기금</p><i aria-hidden="true">→</i><p class="out"><strong>SROI 3.17배</strong>공간을 바꾼 재원이 21.5억 원의 사회적 가치로</p><a href="#case-community">목욕탕</a></li>
-          <li><p class="in"><b>참여 기업</b>ESG 재원</p><i aria-hidden="true">→</i><p class="out"><strong>약 2,200평</strong>기업이 함께 지킨 부안 갯벌</p><a href="#why-wv">부안 갯벌</a></li>
-        </ul>
-      </section>
-    </div>
-    <div class="pull">
-      <span class="pull-en">Business <i>as a</i> solution.</span>
-      <p>기업의 본업이 지역의 문제와 만나면, 사회공헌은 <em>지역에 필요한 해법</em>이 됩니다.</p>
+    <span class="eyebrow"><b>For corporate</b></span>
+    <h2 class="sec-h">기업이 가진 것으로,<br>지역에서 시작하기</h2>
+    <p class="lede">기부금이나 물품만이 방법은 아닙니다.<br class="pc">기업이 매일 하는 일이 지역에 가장 필요한 해법이 될 수 있습니다.</p>
+    <div class="res">
+      <div class="res-row">
+        <div class="res-k"><b>Factory</b><span>공장 · 생산기술</span></div>
+        <i aria-hidden="true">→</i>
+        <ul class="res-ideas"><li>청소년 직무 체험</li><li>지역 청년 기술교육</li><li>안전 관리 노하우 공유</li></ul>
+        <p class="res-case"><span>Idea</span><span class="none">함께 설계할 새 모델</span></p>
+      </div>
+      <div class="res-row">
+        <div class="res-k"><b>Logistics</b><span>물류 · 유통망</span></div>
+        <i aria-hidden="true">→</i>
+        <ul class="res-ideas"><li>지역 창업팀 판로</li><li>지역 생산품 상품화</li><li>팝업 · 온라인 기획전</li></ul>
+        <p class="res-case"><span>Case</span><a href="#case-economy">현대백화점그룹 · 농촌창업도약+</a></p>
+      </div>
+      <div class="res-row">
+        <div class="res-k"><b>Expertise</b><span>기술 · 전문성</span></div>
+        <i aria-hidden="true">→</i>
+        <ul class="res-ideas"><li>공간 디자인 · 브랜딩</li><li>디지털 · AI 교육</li><li>기술 자문</li></ul>
+        <p class="res-case"><span>Case</span><a href="#case-community">이노션 · 세상에서 가장 안전한 목욕탕</a></p>
+      </div>
+      <div class="res-row">
+        <div class="res-k"><b>People</b><span>사람 · 임직원</span></div>
+        <i aria-hidden="true">→</i>
+        <ul class="res-ideas"><li>진로 멘토링</li><li>일터 공개 · 기업 투어</li><li>지역 참여 활동</li></ul>
+        <p class="res-case"><span>Case</span><a href="#case-future">아모레퍼시픽 · 해방프로젝트</a></p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- SECTION 04. CASE STUDIES -->
-<section class="band" id="projects">
+<!-- 4. CASE STUDIES -->
+<section class="band" id="cases">
   <div class="w">
     <span class="eyebrow"><b>Case studies</b></span>
     <h2 class="sec-h">백본이 움직이면,<br>지역에서 이런 일이 일어납니다.</h2>
-    <div class="bdef">
-      <div class="bdef-q">
-        <span class="eyebrow"><b>Backbone</b> · 백본이란?</span>
-        <p>지역 문제는 한 기관의 힘으로 풀기 어렵습니다. 정책은 정부에, 재원과 기술은 기업에, 전문성은 현장 조직에, 지역을 지켜 갈 힘은 주민에게 흩어져 있기 때문입니다.</p>
-        <p><strong>백본(Backbone)은 이 주체들이 한 사업 안에서 함께 움직이도록 처음부터 끝까지 가운데서 연결하고 조율하는 조직</strong>입니다. 몸을 받치는 등뼈처럼, 각자 잘하는 일에 집중할 수 있게 사업의 중심을 잡아 줍니다.</p>
-      </div>
-      <ol class="bdef-steps" aria-label="백본이 하는 일">
-        <li><b>문제를 정의하고</b><span>현장에서 지역이 정말 풀고 싶은 문제를 찾습니다.</span></li>
-        <li><b>맞는 파트너를 잇고</b><span>그 문제에 필요한 기업, 기관, 전문가를 연결합니다.</span></li>
-        <li><b>끝까지 조율하고</b><span>역할, 재원, 일정을 하나의 실행 구조로 맞춥니다.</span></li>
-        <li><b>지역에 남깁니다</b><span>사업이 끝나도 주민과 지자체가 이어 가는 구조를 만듭니다.</span></li>
-      </ol>
-    </div>
-    <p class="lede" style="margin-top:28px">아래 세 사례는 이렇게 서로 다른 자원이 하나로 연결된 결과입니다. 지역마다 다른 문제를 발견하고, 기업과 정부, 지역사회가 가진 자원을 이었습니다. <a href="#why-wv" class="inl">월드비전의 백본 방식 자세히 보기 →</a></p>
+    <p class="lede">백본(Backbone)은 여러 기관이 한 사업으로 움직이도록<br class="pc">처음부터 끝까지 가운데서 연결하고 조율하는 역할입니다.</p>
 
     <div class="cs-cards" role="tablist" aria-label="사업 사례">
       <button class="cs-card" type="button" role="tab" id="tab-economy" aria-controls="case-economy" aria-selected="false" data-case="case-economy">
-        <span class="cs-vis" data-img="assets/rural-startup-networking.jpg">
-          <span class="cs-num">01 · Local economy</span>
-          <span class="cs-big">15<small>개 기업</small></span>
-          <span class="cs-cap">2026 농촌창업 경진대회로 선발한 1기</span>
-        </span>
+        <span class="cs-vis photo"><img src="assets/rural-startup-networking.jpg" alt="" loading="lazy"><span class="cs-big">15<small>개 기업</small></span></span>
         <span class="cs-txt">
-          <span class="cs-tag">2026 1기 운영</span>
-          <span class="cs-who">농림축산식품부 × 현대백화점그룹 × 월드비전<em>외 3개 기관</em></span>
+          <span class="cs-ax">Local economy · 2026 1기</span>
           <span class="cs-name">농촌창업도약+</span>
-          <span class="cs-one">경진대회로 선발한 농촌 창업기업 15곳을, 제품 개발부터 유통과 판로까지 함께 키웁니다.</span>
+          <span class="cs-one">농촌 창업기업 15곳을 제품 개발부터 판로까지 함께 키웁니다.</span>
           <span class="cs-more">자세히 보기</span>
         </span>
       </button>
       <button class="cs-card" type="button" role="tab" id="tab-community" aria-controls="case-community" aria-selected="false" data-case="case-community">
-        <span class="cs-vis" data-img="assets/iljuk-after.jpg">
-          <span class="cs-num">02 · Local community</span>
-          <span class="cs-big">1.2<small>%</small></span>
-          <span class="cs-cap">낙상 경험률 10.7%에서 1.2%로</span>
-        </span>
+        <span class="cs-vis photo"><img src="assets/iljuk-after.jpg" alt="" loading="lazy"><span class="cs-big">1.2<small>% 낙상 경험률</small></span></span>
         <span class="cs-txt">
-          <span class="cs-tag">시즌1 완료 · 시즌2 준비</span>
-          <span class="cs-who">안성시 × 이노션 × 월드비전<em>외 7개 기관</em></span>
+          <span class="cs-ax">Local community · 경기 안성</span>
           <span class="cs-name">세상에서 가장 안전한 목욕탕</span>
-          <span class="cs-one">이용자 80%가 65세 이상인 노후 목욕탕을, 낙상 경험률 1.2%의 돌봄 거점으로 바꿨습니다.</span>
+          <span class="cs-one">노후 목욕탕을 고령 주민의 건강과 돌봄 거점으로 바꿨습니다.</span>
           <span class="cs-more">자세히 보기</span>
         </span>
       </button>
       <button class="cs-card" type="button" role="tab" id="tab-future" aria-controls="case-future" aria-selected="false" data-case="case-future">
-        <span class="cs-vis" data-img="">
-          <span class="cs-num">03 · Local future</span>
-          <span class="cs-big">10,156<small>km</small></span>
-          <span class="cs-cap">진도 중학생 29명이 자전거로 달린 거리</span>
-        </span>
+        <span class="cs-vis"><span class="cs-big">10,156<small>km</small></span></span>
         <span class="cs-txt">
-          <span class="cs-tag">2025 파일럿 완료</span>
-          <span class="cs-who">월드비전 × 오리진디자인 × 아모레퍼시픽<em>외 3개 기관</em></span>
+          <span class="cs-ax">Local future · 전남 진도</span>
           <span class="cs-name">해방프로젝트</span>
-          <span class="cs-one">버스가 3시간에 한 대 다니는 진도에서, 아이들의 이동과 진로를 넓혔습니다.</span>
+          <span class="cs-one">버스가 3시간에 한 대 다니는 마을의 중학생들이 자전거로 세상을 넓혔습니다.</span>
           <span class="cs-more">자세히 보기</span>
         </span>
       </button>
     </div>
 
-    <!-- CASE 01 -->
     <div class="cs-panel" id="case-economy" role="tabpanel" aria-labelledby="tab-economy" hidden>
       <div class="cs-head">
-        <span class="eyebrow"><b>Case 01</b> · Local economy · 2026 1기 운영 · 2026~2029</span>
+        <span class="eyebrow"><b>Case 01</b> · 2026~2029 · 1기 운영 중</span>
         <h3>농촌창업도약+</h3>
         <p>정책과 시장을 연결하면, 지원이 사업이 됩니다.</p>
       </div>
-      <div class="dt">
-        <div class="row">
-          <h4><small>01 Problem</small>지역에서 발견한 문제</h4>
-          <div>
-            <p>좋은 농산물과 아이디어가 있어도 시장에 닿지 못하면 지역의 사업이 되기 어렵습니다. 지역에서 창업한 팀이 가장 먼저 부딪히는 벽은 '팔 곳'입니다.</p>
-            <p>농촌 인구가 고령화하면서 지역 간 격차가 커지고 농촌 경제의 활력도 약해지고 있습니다. 정부가 지정한 인구감소지역은 전국 89곳입니다.</p>
+      <div class="cs-body">
+        <div>
+          <div class="blk"><h4>Problem</h4><p>좋은 농산물과 아이디어가 있어도 시장에 닿지 못하면 지역의 사업이 되지 못합니다.</p></div>
+          <div class="blk"><h4>Solution</h4><p>농림축산식품부 경진대회로 농촌 창업기업 15곳을 선발하고, 멘토링과 시제품 개발을 거쳐 유통과 판로까지 단계별로 지원합니다.</p>
+            <img class="photo-1" src="assets/rural-startup-networking.jpg" alt="농촌창업 도약+ 네트워킹 데이 현판을 든 조명환 월드비전 회장, 송미령 농림축산식품부 장관, 장호진 현대지에프홀딩스 사장" loading="lazy" width="1179" height="752">
+            <p class="cap">1기 네트워킹 데이 (2026.8) ⓒ월드비전</p>
+          </div>
+          <div class="blk"><h4>Result</h4>
+            <div class="big"><div><strong>15<i>곳</i></strong><span>1기 농촌 창업기업</span></div><div><strong>4<i>년</i></strong><span>2026~2029 기수별 운영</span></div><div><strong>5<i>개</i></strong><span>함께한 기관</span></div></div>
+            <div class="press"><a href="https://www.mediapen.com/news/view/1114676" target="_blank" rel="noopener">미디어펜 보도 ↗</a><a href="https://www.christiantoday.co.kr/news/376671" target="_blank" rel="noopener">크리스천투데이 보도 ↗</a></div>
           </div>
         </div>
-        <div class="row">
-          <h4><small>02 Solution</small>사업으로 푼 방법</h4>
-          <div>
-            <div class="flow"><span>경진대회 발굴</span><i>→</i><span>멘토링</span><i>→</i><span>제품 고도화</span><i>→</i><span>시장 검증</span><i>→</i><span>더현대 팝업</span><i>→</i><span>판로</span></div>
-            <p style="margin-top:14px">2026년 농림축산식품부 농촌창업 경진대회로 1기 15개 기업을 선발했습니다. 농촌 어메니티 창업 8곳, 로컬푸드 농촌창업 7곳입니다. 선발된 기업은 사전 진단을 받고 매달 정기 멘토링을 받으며, 시제품 제작과 고도화, 고객 테스트를 거쳐 시장 진입까지 단계별로 지원받습니다.</p>
-            <p>2026년 8월에는 경기 가평의 현대백화점그룹 인재개발원에서 1기 네트워킹 데이를 열었습니다. 사업은 2026년부터 2029년까지 4년 동안 기수별로 이어집니다.</p>
-            <figure class="news">
-              <img src="assets/rural-startup-networking.jpg" alt="농촌창업 도약+ 네트워킹 데이 현판을 함께 든 조명환 월드비전 회장, 송미령 농림축산식품부 장관, 장호진 현대지에프홀딩스 사장" loading="lazy" width="1179" height="752">
-              <figcaption>농촌창업 도약+ 네트워킹 데이 (2026.8). 왼쪽부터 조명환 월드비전 회장, 송미령 농림축산식품부 장관, 장호진 현대지에프홀딩스 사장. ⓒ월드비전</figcaption>
-            </figure>
-            <ul class="press">
-              <li><a href="https://www.christiantoday.co.kr/news/376671" target="_blank" rel="noopener">크리스천투데이 · 월드비전, 농식품부·현대백화점그룹과 '농촌창업 도약+' ↗</a></li>
-              <li><a href="https://www.mediapen.com/news/view/1114676" target="_blank" rel="noopener">미디어펜 · 정부·현대백화점·월드비전 손잡았다…우수 농촌 스타트업 15곳 집중 육성 ↗</a></li>
-              <li><a href="https://www.chuksannews.co.kr/news/article.html?no=273034" target="_blank" rel="noopener">축산신문 · 농촌창업 우수기업 15곳 키운다…민관 손잡고 보육·판로 지원 ↗</a></li>
+        <div>
+          <div class="blk"><h4>Partners</h4>
+            <ul class="roles">
+              <li><b>농림축산식품부</b><span>유망 기업 발굴</span></li>
+              <li><b>현대백화점그룹</b><span>상품 개발 · 위생 관리 · 유통 · 판로</span></li>
+              <li><b>사회적협동조합 멘토리</b><span>인큐베이팅 · 정기 멘토링</span></li>
+              <li><b>한국식품산업클러스터진흥원</b><span>시제품 제작실 · 판로 입점</span></li>
+              <li class="me"><b>월드비전</b><span>공동 기획 · 전문 멘토단 구성 · 성과 관리 · 전체 PM</span></li>
             </ul>
           </div>
-        </div>
-        <div class="row">
-          <h4><small>03 Partners</small>참여 기관과 역할</h4>
-          <ul class="roles">
-            <li><b>농림축산식품부</b><span>경진대회로 유망 기업 발굴 · 2027년부터 지방정부와 연계한 최대 1억 원 사업화 자금 계획</span></li>
-            <li><b>현대백화점그룹</b><span>상품 개발 · 위생 관리 · 유통 · 판로. 현대백화점·현대홈쇼핑·현대그린푸드 임직원이 MD·마케팅·위생·품질 멘토링</span></li>
-            <li><b>사회적협동조합 멘토리</b><span>기업별 인큐베이팅과 정기 멘토링</span></li>
-            <li><b>한국식품산업클러스터진흥원</b><span>청년식품창업센터 시제품 제작실 1년 무상 이용 · 푸드 폴리스 마켓 입점</span></li>
-            <li><b>한국농어촌공사</b><span>현장 운영 · 창업기업과의 접점</span></li>
-          </ul>
-        </div>
-        <div class="row">
-          <h4><small>04 World Vision</small>월드비전의 연결과 조정</h4>
-          <div>
-            <p>월드비전은 사업을 함께 기획하고 민관 협력의 바탕을 만들었습니다. 상품 개발, 브랜딩, 판로, 농촌 관광 분야의 전문 멘토단을 꾸려 기업 진단부터 시제품 제작, 투자 유치까지 지원하고, 성과 관리 체계를 설계해 측정합니다. 전체 사업 관리(PM)도 맡고 있습니다.</p>
-            <p class="pq" style="margin-top:14px">정부 사업에 기업을 붙인 것이 아니라, 정책의 목표와 기업의 업(業)이 서로 필요한 구조를 설계했습니다.</p>
-          </div>
-        </div>
-        <div class="row">
-          <h4><small>05 Change</small>성과와 변화</h4>
-          <div>
-            <p>1기 15개 기업은 멘토링과 제품 고도화를 거쳐 더현대 팝업과 유통 채널로 이어질 예정입니다. 사업은 아래 지표로 성과를 확인하도록 설계했습니다.</p>
-            <div class="join" style="margin-top:12px">
-              <div><b>청년 일자리 창출 수</b></div>
-              <div><b>창업 업체 매출</b></div>
-              <div><b>유통 채널 연계 건수</b></div>
-              <div><b>멘토링 등 외부 자원 연계 건수</b></div>
-            </div>
-            <p style="margin-top:18px"><b>같은 방식의 부안 부싯돌 프로젝트</b> · 부안군, 부안 신활력플러스, 사회적협동조합 멘토리, 명륜진사갈비와 함께 청년의 로컬 취·창업을 지원했습니다.</p>
-            <div class="mini">
-              <div><strong>110명</strong><span>참여 청년 (1~3기)</span></div>
-              <div><strong>1,200+</strong><span>현장 인터뷰·조사 참여자</span></div>
-              <div><strong>1,800+</strong><span>시제품·실험 결과물</span></div>
-              <div><strong>1,300+</strong><span>테스트 참여자</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <h4><small>06 Your turn</small>다른 기업이라면</h4>
-          <div class="join ext">
-            <div><b>유통망</b><span>오프라인 팝업과 온라인몰 기획전으로 판매 기회 제공</span></div>
-            <div><b>상품 개발</b><span>MD·바이어 관점에서 제품 완성도 높이기</span></div>
-            <div><b>멘토링</b><span>임직원이 창업팀의 멘토로 참여</span></div>
-            <div><b>홍보</b><span>미디어·SNS로 지역 제품 알리기</span></div>
-          </div>
+          <div class="blk yours"><h4>If you are</h4><p>유통·식품 기업이라면, 판로와 상품 개발 노하우가 지역 창업기업의 첫 매출이 됩니다.</p></div>
         </div>
       </div>
     </div>
 
-    <!-- CASE 02 -->
     <div class="cs-panel" id="case-community" role="tabpanel" aria-labelledby="tab-community" hidden>
       <div class="cs-head">
-        <span class="eyebrow"><b>Case 02</b> · Local community · 경기 안성시 일죽면 · 시즌1 완료</span>
+        <span class="eyebrow"><b>Case 02</b> · 경기 안성시 일죽면 · 시즌1 완료</span>
         <h3>세상에서 가장 안전한 목욕탕</h3>
         <p>사라지는 목욕탕을, 지역의 건강 인프라로.</p>
       </div>
-      <div class="dt">
-        <div class="row">
-          <h4><small>01 Problem</small>지역에서 발견한 문제</h4>
-          <div>
-            <p>1997년에 지어진 뒤 27년 동안 리모델링하지 않은 목욕탕이었습니다. 이용자의 80%가 65세 이상이었고, 미끄러운 바닥과 탈수, 급격한 체온 변화가 실제 안전 위험이었습니다.</p>
+      <div class="cs-body">
+        <div>
+          <div class="blk"><h4>Problem</h4><p>1997년에 지어진 뒤 27년간 리모델링이 없던 목욕탕. 이용자의 80%가 65세 이상이었고, 미끄러운 바닥이 실제 위험이었습니다.</p>
             <div class="ba">
               <figure><img src="assets/iljuk-before.jpg" alt="리모델링 전 일죽 목욕탕의 어둡고 낡은 돌 욕조" loading="lazy" width="980" height="600"><figcaption>Before</figcaption></figure>
               <figure><img src="assets/iljuk-after.jpg" alt="리모델링 후 밝은 조명과 초록 타일, 앉아서 씻을 수 있는 자리를 갖춘 일죽 목욕탕" loading="lazy" width="980" height="600"><figcaption>After</figcaption></figure>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <h4><small>02 Solution</small>사업으로 푼 방법</h4>
-          <div>
-            <p>새 시설을 짓지 않고, 고령 주민이 이미 매일 찾는 공간에서 돌봄을 시작했습니다. 낡은 목욕탕을 안전·위생·돌봄·커뮤니티 거점으로 바꾸고, 주민이 서로를 살피는 구조를 함께 만들었습니다.</p>
-            <div class="steps3" style="margin-top:14px">
-              <div><span class="n">01</span><b>공간이 바뀌고</b><span>안전과 위생을 갖춘 공간으로</span></div>
-              <div><span class="n">02</span><b>관계가 생기고</b><span>주민이 만나고 서로를 살피는 곳으로</span></div>
-              <div><span class="n">03</span><b>돌봄이 일상이 됐습니다</b><span>주민 건강리더가 이웃의 위험 징후를 찾습니다</span></div>
-            </div>
+          <div class="blk"><h4>Solution</h4><p>새로 짓지 않고, 고령 주민이 매일 찾는 공간에서 돌봄을 시작했습니다. 공간을 바꾸고, 주민 건강리더가 이웃을 살피는 구조를 만들었습니다.</p></div>
+          <div class="blk"><h4>Result · 외부 기관 3개년 측정</h4>
+            <div class="big"><div><strong>10.7<i>→</i>1.2<i>%</i></strong><span>낙상 경험률</span></div><div><strong>3.17<i>배</i></strong><span>SROI</span></div><div><strong>27<i>명</i></strong><span>주민 건강리더 '일죽동친'</span></div></div>
           </div>
         </div>
-        <div class="row">
-          <h4><small>03 Partners</small>참여 기관과 역할</h4>
-          <ul class="roles">
-            <li><b>안성시 · 일죽면</b><span>공간 제공, 행정, 시설 승인</span></li>
-            <li><b>이노션</b><span>디자인, 브랜딩, 기금</span></li>
-            <li><b>경기도·안성시 사회적경제 지원기관</b><span>지역 안의 물적·인적 자원 연계</span></li>
-            <li><b>지역 의료복지사회적협동조합</b><span>건강, 돌봄, 주민 조직화</span></li>
-            <li><b>사랑의열매 · 한국사회가치평가 · 한양대학교</b><span>기부금 관리, 외부 성과 검증, 포럼</span></li>
-          </ul>
-        </div>
-        <div class="row">
-          <h4><small>04 World Vision</small>월드비전의 연결과 조정</h4>
-          <div>
-            <p>월드비전은 문제를 정의하고, 10개 기관을 연결하고, 지역의 취약계층을 사업과 이어 주고, 전체 사업을 관리(PM)했습니다.</p>
-            <p class="pq" style="margin-top:14px">기업의 업을 기부한 것이 아니라, 지역 문제를 푸는 핵심 해법으로 연결했습니다.</p>
+        <div>
+          <div class="blk"><h4>Partners · 10개 기관</h4>
+            <ul class="roles">
+              <li><b>안성시 · 일죽면</b><span>공간 · 행정 · 시설 승인</span></li>
+              <li><b>이노션</b><span>디자인 · 브랜딩 · 기금</span></li>
+              <li><b>지역 의료복지사회적협동조합</b><span>건강 · 돌봄 · 주민 조직화</span></li>
+              <li><b>한국사회가치평가 · 한양대학교</b><span>외부 성과 검증</span></li>
+              <li class="me"><b>월드비전</b><span>문제 정의 · 기관 연결 · 취약계층 연계 · 전체 PM</span></li>
+            </ul>
           </div>
-        </div>
-        <div class="row">
-          <h4><small>05 Change</small>성과와 변화</h4>
-          <div>
-            <div class="big">
-              <div class="hl"><strong>10.7<i>→</i>1.2<i>%</i></strong><span>낙상 경험률</span></div>
-              <div><strong>3.17<i>배</i></strong><span>SROI (투입 대비 사회적 가치)</span></div>
-              <div><strong>21.5<i>억</i></strong><span>사회적 가치 (원)</span></div>
-              <div><strong>27<i>명</i></strong><span>주민 건강리더 '일죽동친'</span></div>
-            </div>
-            <div class="mini">
-              <div><strong>38건</strong><span>건강리더가 발견한 위험 징후</span></div>
-              <div><strong>6,780명</strong><span>취약계층 목욕 지원</span></div>
-              <div><strong>35,675명</strong><span>전체 이용객</span></div>
-              <div><strong>3개년</strong><span>독립된 외부 전문기관 측정</span></div>
-            </div>
-            <p style="margin-top:16px">2025년 9월 한양대 글로벌사회혁신단과 컬렉티브임팩트포럼을 함께 열었고, 2025 올해의 도시설계대상 최우수상을 비롯해 국내외에서 수상했습니다. 운영 방법은 「세상에서 가장 안전한 목욕탕」 오픈소스로 공개했습니다.</p>
-            <p>시즌2는 공간이 아니라 문제에서 출발합니다. 여러 지방정부와 현장을 답사하며 주민이 가장 해결하고 싶은 문제부터 찾고 있습니다.</p>
-          </div>
-        </div>
-        <div class="row">
-          <h4><small>06 Your turn</small>다른 기업이라면</h4>
-          <div class="join ext">
-            <div><b>디자인</b><span>안전하고 쓰기 쉬운 공간 만들기</span></div>
-            <div><b>브랜딩</b><span>지역의 정체성을 담은 이름과 이야기</span></div>
-            <div><b>공간기획</b><span>주민의 필요에서 출발한 공간 활용</span></div>
-            <div><b>커뮤니케이션 · 기금</b><span>문제를 알리는 크리에이티브와 사업 재원</span></div>
-          </div>
+          <div class="blk yours"><h4>If you are</h4><p>디자인·건설·공간 전문 기업이라면, 지역의 낡은 생활시설이 다시 쓰이는 공간이 됩니다.</p></div>
         </div>
       </div>
     </div>
 
-    <!-- CASE 03 -->
     <div class="cs-panel" id="case-future" role="tabpanel" aria-labelledby="tab-future" hidden>
       <div class="cs-head">
-        <span class="eyebrow"><b>Case 03</b> · Local future · 전라남도 진도군 · 2025 파일럿 완료</span>
+        <span class="eyebrow"><b>Case 03</b> · 전라남도 진도군 · 2025 완료</span>
         <h3>진도군 트윈세대 해방프로젝트</h3>
         <p>이동의 장벽이 성장의 장벽이 되지 않도록.</p>
       </div>
-      <div class="dt">
-        <div class="row">
-          <h4><small>01 Problem</small>지역에서 발견한 문제</h4>
-          <div>
-            <div class="facts">
-              <div><strong>3<i>시간</i></strong><span>진도 대중교통 평균 배차 간격 (서울 버스 평균 7분)</span></div>
-              <div><strong>50<i>분</i></strong><span>군내면 아이들이 걸어서 편의점까지 가는 시간</span></div>
-              <div><strong>3<i>곳</i></strong><span>아이들이 주로 가는 곳: 집, 학교, 편의점</span></div>
-              <div><strong>29<i>명</i></strong><span>군내중학교 전교생</span></div>
-            </div>
-            <p style="margin-top:14px">학생들의 집은 학교에서 걸어서 다닐 수 없는 거리에 흩어져 있고, 버스는 3시간에 한 대 다닙니다. 부모님은 생계로 바빠 원할 때 데려다주기 어렵습니다. 가 보지 못한 곳의 직업은 꿈꾸기 어렵습니다. 경험이 줄면 시야가 좁아지고, 꿈과 자신감도 함께 작아집니다.</p>
+      <div class="cs-body">
+        <div>
+          <div class="blk"><h4>Problem</h4><p>진도 군내중학교 아이들이 가는 곳은 집, 학교, 편의점뿐이었습니다. 버스는 3시간에 한 대. 가 보지 못한 곳의 직업은 꿈꾸기 어렵습니다.</p></div>
+          <div class="blk"><h4>Solution</h4><p>전교생 29명에게 자전거를 지원하고, 네 번의 프로그램으로 스스로 이동하고 도전하는 힘을 길렀습니다. 서울 아모레퍼시픽을 방문해 진로 멘토링도 받았습니다.</p></div>
+          <div class="blk"><h4>Result · 사전·사후 설문</h4>
+            <div class="big"><div><strong>10,156<i>km</i></strong><span>자전거로 이동한 거리</span></div><div><strong>54<i>개</i></strong><span>새로 알게 된 직업</span></div><div><strong>+16.6<i>%</i></strong><span>진로 인식 지표 평균</span></div></div>
           </div>
         </div>
-        <div class="row">
-          <h4><small>02 Solution</small>사업으로 푼 방법</h4>
-          <div>
-            <p>아이들 각자에게 자전거를 지원하고, 2025년 5~6월 네 번의 프로그램으로 스스로 이동하고 도전하는 힘을 길렀습니다.</p>
-            <div class="steps4">
-              <div><span class="n">01</span><b>인식</b><span>내가 가지 못한 곳과 그 이유 적어 보기</span></div>
-              <div><span class="n">02</span><b>준비</b><span>나만의 해방자전거 꾸미기와 시승</span></div>
-              <div><span class="n">03</span><b>실행</b><span>서울 방문, 아모레퍼시픽 기업 투어와 진로 멘토링</span></div>
-              <div><span class="n">04</span><b>다짐</b><span>해방 선포식과 성과 공유</span></div>
-            </div>
+        <div>
+          <div class="blk"><h4>Partners</h4>
+            <ul class="roles">
+              <li><b>오리진디자인</b><span>공동 기획 · 운영 · 기관 조율</span></li>
+              <li><b>아모레퍼시픽</b><span>기업 투어 · 진로 멘토링</span></li>
+              <li><b>진도군교육지원청 · 군내중학교</b><span>참여와 교과 연계</span></li>
+              <li><b>서울용산경찰서</b><span>서울 활동 안전 지원</span></li>
+              <li class="me"><b>월드비전</b><span>공동 기획 · 사업 방향과 측정 기준 설계 · 재원</span></li>
+            </ul>
           </div>
-        </div>
-        <div class="row">
-          <h4><small>03 Partners</small>참여 기관과 역할</h4>
-          <ul class="roles">
-            <li><b>오리진디자인</b><span>공동 기획, 운영, 기관 사이 조율</span></li>
-            <li><b>아모레퍼시픽</b><span>기업 투어와 진로 멘토링</span></li>
-            <li><b>진도군교육지원청 · 군내중학교</b><span>프로젝트 참여와 협조, 교과 프로그램 연계</span></li>
-            <li><b>서울용산경찰서</b><span>서울 활동 안전 교육과 이동 지원</span></li>
-          </ul>
-        </div>
-        <div class="row">
-          <h4><small>04 World Vision</small>월드비전의 연결과 조정</h4>
-          <p>월드비전은 오리진디자인과 함께 사업을 기획하고, 인구소멸지역 아동을 위한 사업의 방향과 목적, 변화를 측정할 기준을 함께 설계했습니다. 사업 재원도 월드비전이 마련했습니다.</p>
-        </div>
-        <div class="row">
-          <h4><small>05 Change</small>성과와 변화</h4>
-          <div>
-            <div class="big">
-              <div class="hl"><strong>10,156<i>km</i></strong><span>자전거로 이동한 거리 (1인 평균 350km)</span></div>
-              <div><strong>171<i>명</i></strong><span>새로 만난 사람</span></div>
-              <div><strong>54<i>개</i></strong><span>새로 알게 된 직업</span></div>
-              <div><strong>64<i>곳</i></strong><span>새로 가 본 장소</span></div>
-            </div>
-            <div class="mini">
-              <div><strong>+17.9%</strong><span>이동 인식·역량 4개 지표 평균</span></div>
-              <div><strong>+15.3%</strong><span>자기효능감 7개 지표 평균</span></div>
-              <div><strong>+16.6%</strong><span>진로 인식 6개 지표 평균</span></div>
-              <div><strong>2~6배</strong><span>부모님 도움 없이 스스로 이동한 횟수</span></div>
-            </div>
-            <p style="margin-top:14px">가장 크게 오른 항목은 "미래에 어떤 직업을 가질지 계획이 있다"(+23.5%)와 "실패해도 다시 도전할 수 있는 용기가 있다"(+21.1%)였습니다.</p>
-            <p class="src" style="margin-top:6px">참여 학생 29명 사전·사후 설문 기준 · 자료: 해방프로젝트 임팩트리포트(2025)</p>
-          </div>
-        </div>
-        <div class="row">
-          <h4><small>06 Your turn</small>다른 기업이라면</h4>
-          <div>
-            <p style="margin-bottom:14px">아모레퍼시픽은 일터를 열고 임직원이 직접 아이들의 진로 멘토가 됐습니다. 다른 인구감소지역에서도 이런 방식으로 함께할 수 있습니다.</p>
-            <div class="join ext">
-              <div><b>기업 방문 · 진로 멘토링</b><span>일터를 보여 주고 임직원이 멘토로</span></div>
-              <div><b>이동 수단 · 안전 장비</b><span>아이들이 스스로 움직일 수 있는 도구 지원</span></div>
-              <div><b>다른 인구감소지역으로 확장</b><span>진도에서 검증한 프로그램을 새 지역에</span></div>
-              <div><b>임팩트 측정과 공유</b><span>사전·사후 변화를 함께 측정하고 알리기</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- SECTION 05. NEXT MODEL -->
-<section class="band" id="next">
-  <div class="w">
-    <span class="eyebrow"><b>Next model</b> · 함께할 기업을 찾는 확장 모델</span>
-    <h2 class="sec-h">이런 지역에도<br>새로운 협력을 만들 수 있습니다.</h2>
-    <div class="next" id="case-dreambridge">
-      <div class="cs-head next-head">
-        <span class="eyebrow"><b>Dreambridge</b> · 전라남도 진도군 · 경상남도 통영시</span>
-        <h3>드림브릿지</h3>
-        <p>AI 시대의 기회가 사는 곳에 따라 달라지지 않도록.</p>
-      </div>
-      <div class="dt">
-        <div class="row">
-          <h4><small>Model</small>사업 모델 안내</h4>
-          <p class="model"><b>드림브릿지는 진도와 통영에서 설계한 사업 모델입니다.</b> 아직 기업과 함께 진행한 사례는 아니며, 이 모델을 더 많은 지역으로 넓힐 기업 파트너를 찾고 있습니다.</p>
-        </div>
-        <div class="row">
-          <h4><small>01 Problem</small>지역에서 발견한 문제</h4>
-          <div>
-            <div class="facts">
-              <div><strong>256<i>개</i></strong><span>진도군을 이루는 섬 (유인도 45개)</span></div>
-              <div><strong>0<i>곳</i></strong><span>진도군 안의 진로체험 전용 시설</span></div>
-              <div><strong>D<i>등급</i></strong><span>진도군 교통약자 교통안전지수 (80개 동급 지자체 중 64위)</span></div>
-              <div><strong>0.76<i>명</i></strong><span>통영시 합계출산율 (2023 인구감소 관심지역)</span></div>
-            </div>
-            <p style="margin-top:14px">진도는 약 2만 9천 명이 사는 인구감소지역으로, 1차 산업 비중이 70%가 넘어 아이들이 만날 수 있는 직업이 한정적입니다. 통영의 한산면·산양읍·욕지면 같은 섬 지역은 방과 후 교육 시설이 부족하고 이동이 어렵습니다. 산업과 교육, 진로 기회가 수도권에 몰려 있어 AI·디지털 체험 교육도 고르게 닿지 않습니다.</p>
-          </div>
-        </div>
-        <div class="row">
-          <h4><small>02 Solution</small>사업으로 푸는 방법</h4>
-          <div>
-            <div class="join">
-              <div><b>AI 진로체험 '꿈제작소'</b><span>진로 탐색 → AI 윤리 교육과 활용 실습 → 나만의 꿈 동화책 만들기 → 발표</span></div>
-              <div><b>교통안전 '안전체험소'</b><span>XR 실감형 교통안전 교육 → AI 보행 안전 평가 → 개인별 결과 보고서 → 안전용품</span></div>
-            </div>
-            <p style="margin-top:14px">만 9~18세 아동·청소년 80명을 대상으로, 섬에 사는 아이를 우선 선발하도록 설계했습니다.</p>
-          </div>
-        </div>
-        <div class="row">
-          <h4><small>03 Partners</small>함께하는 지역 기관</h4>
-          <ul class="roles">
-            <li><b>진도군 · 학교 중심</b><span>교육지원청 추천을 받은 학교에 찾아가 운영</span></li>
-            <li><b>통영시 · 복지시설 중심</b><span>지역 사회복지시설을 '디지털 돌봄 거점'으로 활용</span></li>
-          </ul>
-        </div>
-        <div class="row">
-          <h4><small>04 World Vision</small>월드비전의 연결과 조정</h4>
-          <p>월드비전은 광주전남·경남울산사업본부의 지역 네트워크로 교육청, 학교, 복지시설을 연결하고, 모집·선정 기준과 지역별 운영을 관리합니다.</p>
-        </div>
-        <div class="row">
-          <h4><small>05 Change</small>기대하는 변화</h4>
-          <div class="join">
-            <div><b>다른 지역에도 쓸 수 있는 협력 방식</b><span>AI 교육을 위한 민관 협력 절차 만들기</span></div>
-            <div><b>변화를 확인하는 데이터</b><span>사전·사후 설문으로 디지털 친숙도와 안전 인식 변화 측정</span></div>
-          </div>
-        </div>
-        <div class="row">
-          <h4><small>06 Join</small>기업이 참여할 수 있는 영역</h4>
-          <div class="join ext">
-            <div><b>AI·디지털 교육 기술</b><span>기업의 AI 기술과 플랫폼으로 교육의 질 높이기</span></div>
-            <div><b>교육 콘텐츠 · 디지털 기기</b><span>섬 지역 거점에 콘텐츠와 기기 지원</span></div>
-            <div><b>임직원 멘토링</b><span>AI를 실제 업무에 쓰는 임직원이 진로 멘토로</span></div>
-            <div><b>프로그램 공동 개발</b><span>기업의 업을 담은 새 커리큘럼 함께 만들기</span></div>
-            <div><b>도서·산간 지역 확장</b><span>진도·통영 모델을 더 많은 섬과 산간 지역으로</span></div>
-          </div>
+          <div class="blk yours"><h4>If you are</h4><p>어떤 업종이든, 일터를 열고 임직원이 멘토가 되는 것만으로 지역 아이들의 꿈이 넓어집니다.</p></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SECTION 06. WHY WORLD VISION -->
+<!-- 5. WHY WORLD VISION -->
 <section class="bb" id="why-wv">
-  <figure class="wv-cover">
+  <figure class="cover">
     <img src="assets/buan-tidal-flat.jpg" alt="해 질 녘 전북 부안 갯벌 위로 길게 뻗은 나무 데크" width="1536" height="864" loading="lazy">
     <figcaption>
-      <span class="cv-issue">World Vision · Local impact · Vol. 2026.11</span>
-      <span class="cv-title">Bridge <i>&amp;</i><br>Backbone.</span>
-      <span class="cv-line">흩어진 자원을 잇는 다리,<br>끝까지 곁에 남는 중심.</span>
-      <span class="cv-cap">전북 부안 갯벌 — 지자체와 기업, 시민이 함께 지켜 온 곳</span>
+      <span class="cv-k">Why World Vision</span>
+      <span class="cv-t">Bridge <i>&amp;</i><br>Backbone.</span>
+      <span class="cv-c">전북 부안 갯벌 — 지자체와 기업, 시민이 함께 지켜 온 곳</span>
     </figcaption>
   </figure>
   <div class="w">
     <span class="eyebrow"><b>Why World Vision</b></span>
-    <h2 class="disp">Why World<br>Vision?</h2>
-    <p class="kr" style="margin-top:28px">지역을 이해하고, 파트너를 연결하고,<br>실행을 함께합니다.</p>
-    <p class="lede" style="margin-top:14px">앞의 사례에서 월드비전은 후원금을 전달하는 데서 멈추지 않았습니다.<br class="pc">목욕탕에서는 문제를 정의하고 10개 기관을 이었고, 농촌창업도약+에서는 멘토단을 꾸리고 성과 관리를 설계했습니다.<br class="pc">해방프로젝트에서는 파트너와 함께 사업을 기획하고 재원을 마련했습니다.</p>
+    <h2 class="sec-h">지역을 알고, 파트너를 연결하고,<br>실행합니다.</h2>
 
-    <h3 class="bbh"><span>01</span>Bridge &amp; Backbone <small>흩어진 자원을 잇고, 끝까지 조율합니다</small></h3>
-    <p class="lede" style="margin-top:16px">지역 문제를 풀 자원은 이미 있습니다.<br>다만 각자 다른 곳에 있어서 서로 만나지 못할 뿐입니다.</p>
-    <div class="bb-two">
-      <div><b>Bridge</b><span>필요한 기관과 기업을<br>찾아서 연결합니다.</span></div>
-      <div><b>Backbone</b><span>사업이 끝날 때까지<br>역할과 일정을 맞춥니다.</span></div>
+    <div class="caps">
+      <article><b>Know</b><h3>지역을 압니다</h3><p>전국 14개 지역사업본부와 600명 이상의 국내 직원이 현장에 있습니다.</p><button type="button" class="net-btn" data-open="network" aria-controls="network" aria-expanded="false">전국 네트워크 보기 →</button></article>
+      <article><b>Connect</b><h3>파트너를 잇습니다</h3><p>문제에 맞는 기업, 지자체, 전문기관을 찾아 하나의 사업으로 묶습니다.</p></article>
+      <article><b>Run</b><h3>끝까지 조율합니다</h3><p>역할과 일정, 재원을 맞추고 성과를 측정합니다. 파트너는 본업에 집중합니다.</p></article>
+      <article><b>Sustain</b><h3>지역에 남깁니다</h3><p>사업이 끝나도 주민과 지자체가 이어 갈 수 있는 구조를 만듭니다.</p></article>
     </div>
-    <div class="actors">
-      <div><em>정부 · 지방정부</em><b>Government</b><span>정책, 제도, 공공자원, 지역 정보</span></div>
-      <div><em>기업</em><b>Corporate</b><span>재원, 기술, 업(業), 임직원, 고객</span></div>
-      <div><em>현장 · 소셜섹터</em><b>Field</b><span>당사자, 전문성, 핵심 해법</span></div>
-      <div><em>지역사회</em><b>Community</b><span>주민, 지역 자산, 관계, 오래 이어 갈 힘</span></div>
-    </div>
-    <p class="key">월드비전의 가장 큰 자산은 재원을 집행하는 능력보다, 서로 다른 주체가 함께 일하게 만드는 능력입니다.</p>
+    <p class="steps" aria-label="월드비전 6-Step 백본 모델"><span>Discover</span><span>Translate</span><span>Connect</span><span>Orchestrate</span><span>Measure</span><span>Sustain</span></p>
+    <p class="steps-cap">월드비전 6-Step Backbone Model</p>
 
-    <h3 class="bbh"><span>02</span>6-Step Backbone Model <small>지역 문제를 사업으로 바꾸는 여섯 단계</small></h3>
-    <ol class="steps6" aria-label="월드비전 6-Step 백본 모델">
-      <li><span class="n">Step 01</span><span class="k">발견</span><b>Discover</b><p>지역의 문제와 기회를 현장에서 찾습니다.</p><span class="pt">주민의 일상에서 출발</span></li>
-      <li><span class="n">Step 02</span><span class="k">번역</span><b>Translate</b><p>지역의 문제를 기업의 사회공헌 방향과 정부의 정책 목표에 맞는 사업 모델로 설계합니다.</p><span class="pt">사회공헌 전략 · 정책 목표에 맞춰</span></li>
-      <li><span class="n">Step 03</span><span class="k">연결</span><b>Connect</b><p>문제에 맞는 기업, 기관, 전문가를 찾아 연결합니다.</p><span class="pt">규모보다 적합도</span></li>
-      <li><span class="n">Step 04</span><span class="k">조정</span><b>Orchestrate</b><p>파트너마다 역할, 재원, 일정을 나누고 하나의 실행 구조로 맞춥니다.</p><span class="pt">현장 실행까지 책임</span></li>
-      <li><span class="n">Step 05</span><span class="k">측정</span><b>Measure</b><p>무엇이 실제로 달라졌는지 측정하고 증명합니다.</p><span class="pt">외부 검증까지</span></li>
-      <li><span class="n">Step 06</span><span class="k">지속</span><b>Sustain</b><p>사업이 끝나도 지역이 스스로 운영할 수 있는 구조를 남깁니다.</p><span class="pt">주민이 직접 운영</span></li>
-    </ol>
-
-    <h3 class="bbh"><span>03</span>What we bring <small>월드비전이 할 수 있는 일</small></h3>
-    <div class="why-wv">
-      <div><b>Field network</b><h4>전국에 있는 현장 네트워크</h4><p>전국 14개 지역사업본부와 600명 이상의 국내 직원이 지역 현장에 있습니다. 드림브릿지도 광주전남·경남울산사업본부를 통해 교육지원청과 학교, 복지시설을 연결하도록 설계했습니다.</p><button type="button" class="net-btn" data-open="network" aria-controls="network" aria-expanded="false">전국 현장 네트워크 보기 <span aria-hidden="true">→</span></button></div>
-      <div><b>PM</b><h4>파트너의 역할과 자원을 조정하는 힘</h4><p>참여 기관이 많을수록 목표와 일정, 예산 기준이 서로 다릅니다. 정부는 정책 성과를, 기업은 사회공헌 전략과 내부 결재를, 현장은 당사자의 필요를 먼저 봅니다. 가운데서 이를 맞추는 곳이 없으면 사업은 쉽게 멈추거나 각자 따로 움직입니다.</p>
-        <ul class="pm-why">
-          <li><b>한 방향으로</b><span>공동 목표와 성과 지표를 함께 정합니다</span></li>
-          <li><b>각자 잘하는 일에</b><span>역할을 나눠 파트너가 본업에 집중하게 합니다</span></li>
-          <li><b>끝까지</b><span>일정과 재원을 관리하고 성과를 측정해 보고합니다</span></li>
-        </ul>
-        <p class="pm-proof">목욕탕에서는 10개 기관이 3년 동안 한 사업으로 움직여 외부 검증 성과까지 냈고, 농촌창업도약+에서는 정부 공모·기업 유통·멘토링이 경진대회부터 판로까지 하나의 흐름으로 이어졌습니다. 두 사업 모두 월드비전이 전체 사업 관리(PM)를 맡았습니다.</p></div>
-      <div><b>Governance</b><h4>사업이 끝나도 지역에 남는 운영 구조</h4><p>외부 재원은 언젠가 끝나지만 지자체와 주민은 남습니다. 목욕탕에서는 주민 건강리더 27명이 이웃을 살피고, 부안의 갯벌 보전 모델은 지방정부가 반복해서 쓰는 정책이 됐습니다. 행정안전부·농림축산식품부와도 다년간 협의하며 이런 구조를 담은 지역소멸 대응 사업모델을 만들고 있습니다.</p></div>
-      <div><b>Long-term</b><h4>국제 지역개발에서 쌓은 긴 호흡</h4><p>월드비전은 해외 지역개발사업에서 15~20년 동안 한 지역과 함께합니다. 주민과 지방정부가 스스로 운영할 수 있을 때를 자립의 기준으로 삼고, 그때 지역을 떠납니다.</p></div>
-    </div>
-
-    <div class="ps" role="table" aria-label="사업 기간 중심의 지원과 월드비전이 만드는 구조 비교">
-      <div class="ps-head" role="row">
-        <div class="ps-a" role="columnheader"><span class="ps-k">Before</span><b>A project<br>ends.</b><span class="ps-s">사업 기간 중심의 지원</span></div>
-        <div class="ps-vs" aria-hidden="true">vs</div>
-        <div class="ps-b" role="columnheader"><span class="ps-k">With World Vision</span><b>A system<br>stays.</b><span class="ps-s">월드비전이 만드는 구조</span></div>
-      </div>
-      <div class="ps-row" role="row"><span class="ps-l" role="rowheader">01 · 기간</span><p class="ps-x" role="cell">1년 단위,<br>예산이 있을 때만</p><i aria-hidden="true">→</i><p class="ps-y" role="cell">재원이 끝난 뒤까지<br>설계합니다</p></div>
-      <div class="ps-row" role="row"><span class="ps-l" role="rowheader">02 · 중심</span><p class="ps-x" role="cell">사업을 수행하는<br>외부 기관</p><i aria-hidden="true">→</i><p class="ps-y" role="cell">지역에 남는 지자체,<br>주민, 지역 조직</p></div>
-      <div class="ps-row" role="row"><span class="ps-l" role="rowheader">03 · 남는 것</span><p class="ps-x" role="cell">결과 보고서와<br>참여 인원</p><i aria-hidden="true">→</i><p class="ps-y" role="cell">계속 돌아가는 운영 구조와<br>소통 창구</p></div>
-      <div class="ps-row" role="row"><span class="ps-l" role="rowheader">04 · 끝나는 방식</span><p class="ps-x" role="cell">재원 종료와 함께<br>중단</p><i aria-hidden="true">→</i><p class="ps-y" role="cell">주민과 지방정부가<br>이어서 운영</p></div>
-    </div>
-
-    <h3 class="bbh"><span>04</span>Proof <small>사례로 보는 연결 구조</small></h3>
-    <div class="proof">
-      <article>
-        <span class="eyebrow">경기 안성시 일죽면</span>
-        <h4>세상에서 가장 안전한 목욕탕</h4>
-        <ul class="pmap">
-          <li><b>안성시 · 일죽면</b><span>공간, 행정, 시설 승인</span></li>
-          <li><b>이노션</b><span>디자인, 브랜딩, 기금</span></li>
-          <li><b>지역 의료복지사회적협동조합</b><span>건강, 돌봄, 주민 조직화</span></li>
-          <li><b>한국사회가치평가 · 한양대</b><span>외부 성과 검증, 포럼</span></li>
-          <li class="me"><b>월드비전</b><span>문제 정의, 파트너 연결, 전체 PM</span></li>
-        </ul>
-        <div class="res"><strong>SROI 3.17배</strong><span>낙상 경험률 10.7% → 1.2% · 외부 기관 3개년 측정</span></div>
-      </article>
-      <article>
-        <span class="eyebrow">농촌 창업</span>
-        <h4>농촌창업도약+</h4>
-        <ul class="pmap">
-          <li><b>농림축산식품부</b><span>정책, 예산, 공모, 장관상</span></li>
-          <li><b>한국농어촌공사</b><span>현장 운영, 창업기업 접점</span></li>
-          <li><b>현대백화점그룹</b><span>MD, 유통, 팝업, 판로</span></li>
-          <li><b>멘토리</b><span>창업 진단, 멘토링, 인큐베이팅</span></li>
-          <li class="me"><b>월드비전</b><span>공동 기획, 연결, 전체 PM</span></li>
-        </ul>
-        <div class="res"><strong>15개 기업</strong><span>2026 1기 선발 · 경진대회 → 멘토링 → 시제품 → 판로</span></div>
-      </article>
-      <article>
-        <span class="eyebrow">전북 부안군</span>
-        <h4>한평生 갯벌 보전 프로젝트</h4>
-        <ul class="pmap">
-          <li><b>부안군</b><span>행정, 정책 연계, 현장 협력</span></li>
-          <li><b>참여 기업</b><span>ESG 재원, 임직원, 고객 참여</span></li>
-          <li><b>자연환경국민신탁 · 군산대</b><span>보전 전문성</span></li>
-          <li class="me"><b>월드비전</b><span>기획, 사업 모델 설계, 연결, 전체 PM</span></li>
-        </ul>
-        <div class="res"><strong>약 3,000평</strong><span>기업·시민이 함께 지킨 갯벌 · 염생식물 3만 평 식재 · 임직원 500여 명 방문</span></div>
-      </article>
-    </div>
-
-    <div class="gb">
-      <span class="gb-k">Exit strategy · 15–20 years</span>
-      <p class="gb-title"><span class="o">Goodbye,</span><br>World Vision.</p>
-      <div class="gb-body">
-        <p class="gb-ko">“잘 가요, 월드비전.”</p>
-        <p class="gb-txt">15~20년의 지역개발이 끝나는 날, 월드비전이 목표로 하는 인사입니다.<br class="pc">잘 돕는 것보다 언젠가 떠날 수 있는 구조를 만드는 것.<br class="pc">국내 지역사업에도 같은 원칙을 적용합니다.</p>
-      </div>
-      <ol class="gb-steps" aria-label="지역개발 7단계"><li><span class="gb-n">01</span><span class="gb-t">지역 조사</span></li><li><span class="gb-n">02</span><span class="gb-t">주민과 문제 정의</span></li><li><span class="gb-n">03</span><span class="gb-t">지역 거버넌스 구축</span></li><li><span class="gb-n">04</span><span class="gb-t">해법 연결</span></li><li><span class="gb-n">05</span><span class="gb-t">지역 역량 강화</span></li><li><span class="gb-n">06</span><span class="gb-t">주민·지방정부가 직접 운영</span></li><li><span class="gb-n">07</span><span class="gb-t">자립, 다른 지역으로</span></li></ol>
-      <div class="gb-roles" aria-hidden="true">
-        <div class="gb-bar wv"><span>월드비전의 역할</span></div>
-        <div class="gb-bar lc"><span>주민·지방정부의 역할</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 07. CONTACT -->
-<section class="band cta" id="contact">
-  <div class="w">
-    <span class="eyebrow"><b>Contact</b></span>
-    <h2 class="disp" style="margin-top:14px">Have a local<br>impact <span>idea?</span></h2>
-    <p class="kr" style="margin-top:28px">우리 회사의 사업장이 있는 지역부터<br>이야기해 보세요.</p>
-    <p class="anywhere"><b>전국 어디서든 시작할 수 있습니다.</b><span>14개 지역사업본부가 사업장 가까이에 있습니다. 아래 세 가지 중 하나만 있어도 충분합니다.</span><button type="button" class="net-btn" data-open="network" aria-controls="network" aria-expanded="false">가까운 지역사업본부 보기 <span aria-hidden="true">→</span></button></p>
-    <div class="paths">
-      <div><b>Place</b><h3>사업장이나 공장이<br>있는 지역</h3><p>그 지역에서 지금 무엇이 가장 필요한지, 월드비전 지역사업본부와 함께 찾습니다.</p><span class="ex">예: 공장이 있는 군 단위 지역</span></div>
-      <div><b>Problem</b><h3>기업이 함께 풀고 싶은<br>사회문제</h3><p>지역소멸, 저출생과 고령화, 청년 유출, 돌봄 공백, 교육 격차. 우리 사회가 함께 풀어야 할 과제 가운데 기업이 집중하고 싶은 문제를 알려 주세요. 정부 정책과 연결해, 그 문제가 가장 절실한 지역을 함께 찾습니다.</p><span class="tags"><i>지역소멸</i><i>저출생·고령화</i><i>청년 유출</i><i>돌봄 공백</i><i>교육 격차</i></span><span class="ex">예: 인구감소지역 아이들의 디지털 교육 격차</span></div>
-      <div><b>Resource</b><h3>활용할 수 있는<br>기술 · 인력 · 공간 · 유통망</h3><p>우리 기업이 잘하는 일을 알려 주세요. 그 역량이 해법이 될 지역 문제를 연결합니다.</p><span class="ex">예: 유통망을 지역 창업의 판로로</span></div>
-    </div>
-    <form class="inq" id="inquiry" novalidate>
-      <div class="inq-head">
-        <span class="eyebrow"><b>Inquiry</b> · 로컬 사회공헌 협력 문의</span>
-        <h3>3분이면 충분합니다.<br>알려 주시면 담당자가 연락드립니다.</h3>
-      </div>
-
-      <fieldset class="inq-grid">
-        <legend>담당자 정보</legend>
-        <label>이름 <em>*</em><input id="f-name" name="name" type="text" autocomplete="name" required placeholder="홍길동"></label>
-        <label>기업명 <em>*</em><input id="f-company" name="company" type="text" autocomplete="organization" required placeholder="○○주식회사"></label>
-        <label>부서 · 직함<input id="f-title" name="title" type="text" autocomplete="organization-title" placeholder="ESG팀 매니저"></label>
-        <label>이메일 <em>*</em><input id="f-email" name="email" type="email" autocomplete="email" required placeholder="name@company.com"></label>
-        <label>연락처<input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="010-0000-0000"></label>
-      </fieldset>
-
-      <fieldset class="inq-q">
-        <legend>사업장이나 공장이 있는 지역 <span>복수 선택</span></legend>
-        <div class="chips">
-          <label><input type="checkbox" name="region" value="서울"><span>서울</span></label>
-          <label><input type="checkbox" name="region" value="인천·경기"><span>인천·경기</span></label>
-          <label><input type="checkbox" name="region" value="강원"><span>강원</span></label>
-          <label><input type="checkbox" name="region" value="충청"><span>충청</span></label>
-          <label><input type="checkbox" name="region" value="전라"><span>전라</span></label>
-          <label><input type="checkbox" name="region" value="경상"><span>경상</span></label>
-          <label><input type="checkbox" name="region" value="제주"><span>제주</span></label>
-          <label><input type="checkbox" name="region" value="아직 정하지 않음"><span>아직 정하지 않음</span></label>
+    <div class="cta" id="contact">
+      <h2 class="disp">Have a local<br>impact <span>idea?</span></h2>
+      <div class="cta-row">
+        <div>
+          <p class="cta-q">우리 회사의 사업장이 있는 지역부터<br>이야기해 보세요.</p>
+          <p class="lede">지역, 풀고 싶은 문제, 활용할 자원 중 하나만 있어도 시작할 수 있습니다.</p>
         </div>
-      </fieldset>
-
-      <fieldset class="inq-q">
-        <legend>관심 있는 사회문제 <span>복수 선택</span></legend>
-        <div class="chips">
-          <label><input type="checkbox" name="issue" value="지역소멸·인구감소"><span>지역소멸·인구감소</span></label>
-          <label><input type="checkbox" name="issue" value="청년 일자리·창업"><span>청년 일자리·창업</span></label>
-          <label><input type="checkbox" name="issue" value="돌봄·공동체"><span>돌봄·공동체</span></label>
-          <label><input type="checkbox" name="issue" value="아동·청소년 교육"><span>아동·청소년 교육</span></label>
-          <label><input type="checkbox" name="issue" value="디지털·AI 격차"><span>디지털·AI 격차</span></label>
-          <label><input type="checkbox" name="issue" value="기후·환경"><span>기후·환경</span></label>
+        <div class="btns">
+          <button type="button" class="btn solid" id="open-inq" aria-controls="inquiry" aria-expanded="false">협력 문의하기 <span aria-hidden="true">→</span></button>
+          <a class="btn" href="https://www.worldvision.or.kr/" target="_blank" rel="noopener">월드비전 홈페이지 <span aria-hidden="true">↗</span></a>
+          <p class="reach">월드비전 대표전화 <b>02-2078-7000</b></p>
         </div>
-      </fieldset>
-
-      <fieldset class="inq-q">
-        <legend>함께 쓸 수 있는 기업의 자원 <span>복수 선택</span></legend>
-        <div class="chips">
-          <label><input type="checkbox" name="resource" value="기술·제품"><span>기술·제품</span></label>
-          <label><input type="checkbox" name="resource" value="유통·판로"><span>유통·판로</span></label>
-          <label><input type="checkbox" name="resource" value="임직원 참여·멘토링"><span>임직원 참여·멘토링</span></label>
-          <label><input type="checkbox" name="resource" value="디자인·브랜딩"><span>디자인·브랜딩</span></label>
-          <label><input type="checkbox" name="resource" value="공간·시설"><span>공간·시설</span></label>
-          <label><input type="checkbox" name="resource" value="재원"><span>재원</span></label>
-        </div>
-      </fieldset>
-
-      <fieldset class="inq-q">
-        <legend>관심 있는 사례 <span>복수 선택</span></legend>
-        <div class="chips">
-          <label><input type="checkbox" name="case" value="농촌창업도약+"><span>농촌창업도약+</span></label>
-          <label><input type="checkbox" name="case" value="세상에서 가장 안전한 목욕탕"><span>세상에서 가장 안전한 목욕탕</span></label>
-          <label><input type="checkbox" name="case" value="해방프로젝트"><span>해방프로젝트</span></label>
-          <label><input type="checkbox" name="case" value="드림브릿지"><span>드림브릿지</span></label>
-        </div>
-      </fieldset>
-
-      <fieldset class="inq-q">
-        <legend>희망 시작 시기</legend>
-        <div class="chips">
-          <label><input type="radio" name="timing" value="올해 안"><span>올해 안</span></label>
-          <label><input type="radio" name="timing" value="내년 상반기"><span>내년 상반기</span></label>
-          <label><input type="radio" name="timing" value="내년 하반기"><span>내년 하반기</span></label>
-          <label><input type="radio" name="timing" value="아직 미정"><span>아직 미정</span></label>
-        </div>
-      </fieldset>
-
-      <label class="inq-msg">더 알려 주고 싶은 내용
-        <textarea id="f-message" name="message" rows="4" placeholder="예: 충북 공장 인근 지역의 청소년 진로 교육에 관심이 있습니다."></textarea>
-      </label>
-      <label class="hp" aria-hidden="true">비워 두세요<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
-
-      <div class="inq-consent">
-        <label><input id="f-consent" type="checkbox" name="consent" value="동의" required><span><b>개인정보 수집·이용에 동의합니다. <em>*</em></b></span></label>
-        <p>수집 항목: 이름, 기업명, 부서·직함, 이메일, 연락처 · 이용 목적: 협력 문의 확인과 회신 · 문의 처리 후 관련 법령과 월드비전 개인정보처리방침에 따라 파기합니다. 동의하지 않으면 문의를 보낼 수 없습니다.</p>
       </div>
 
-      <div class="inq-foot">
-        <button type="submit" class="inq-send">문의 보내기 <span aria-hidden="true">→</span></button>
-        <p class="inq-status" id="inq-status" role="status" aria-live="polite"></p>
-      </div>
-    </form>
-
-    <div class="contact">
-      <div>
-        <span class="eyebrow">Corporate partnership</span>
-        <p class="kr">지역의 문제를 찾고, 사업을 설계하고,<br>실행까지 함께하겠습니다.</p>
-        <p class="reach" style="margin-top:14px" data-reach>월드비전 대표전화 <span class="addr">02-2078-7000</span></p>
-      </div>
-      <div class="btns">
-        <a class="btn solid" href="#" data-link="inquiry" hidden>기업 파트너십 문의하기 <span aria-hidden="true">→</span></a>
-        <a class="btn line" href="https://www.worldvision.or.kr/" target="_blank" rel="noopener">월드비전 홈페이지 <span aria-hidden="true">↗</span></a>
-      </div>
+      <form class="inq" id="inquiry" novalidate hidden>
+        <fieldset class="inq-grid">
+          <legend>담당자 정보</legend>
+          <label>이름 <em>*</em><input id="f-name" name="name" type="text" autocomplete="name" required placeholder="홍길동"></label>
+          <label>기업명 <em>*</em><input id="f-company" name="company" type="text" autocomplete="organization" required placeholder="○○주식회사"></label>
+          <label>이메일 <em>*</em><input id="f-email" name="email" type="email" autocomplete="email" required placeholder="name@company.com"></label>
+        </fieldset>
+        <fieldset class="inq-q">
+          <legend>사업장이 있는 지역 <span>복수 선택</span></legend>
+          <div class="chips">
+            <label><input type="checkbox" name="region" value="서울"><span>서울</span></label>
+            <label><input type="checkbox" name="region" value="인천·경기"><span>인천·경기</span></label>
+            <label><input type="checkbox" name="region" value="강원"><span>강원</span></label>
+            <label><input type="checkbox" name="region" value="충청"><span>충청</span></label>
+            <label><input type="checkbox" name="region" value="전라"><span>전라</span></label>
+            <label><input type="checkbox" name="region" value="경상"><span>경상</span></label>
+            <label><input type="checkbox" name="region" value="제주"><span>제주</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="inq-q">
+          <legend>함께 쓸 수 있는 자원 <span>복수 선택</span></legend>
+          <div class="chips">
+            <label><input type="checkbox" name="resource" value="공장·생산기술"><span>공장·생산기술</span></label>
+            <label><input type="checkbox" name="resource" value="물류·유통망"><span>물류·유통망</span></label>
+            <label><input type="checkbox" name="resource" value="기술·전문성"><span>기술·전문성</span></label>
+            <label><input type="checkbox" name="resource" value="사람·임직원"><span>사람·임직원</span></label>
+          </div>
+        </fieldset>
+        <label class="inq-msg">문의 내용
+          <textarea id="f-message" name="message" rows="3" placeholder="예: 충북 공장 인근 청소년의 진로 교육에 관심이 있습니다."></textarea>
+        </label>
+        <label class="hp" aria-hidden="true">비워 두세요<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+        <div class="inq-consent">
+          <label><input id="f-consent" type="checkbox" name="consent" value="동의" required><span><b>개인정보 수집·이용에 동의합니다. <em>*</em></b></span></label>
+          <p>수집 항목: 이름, 기업명, 이메일 · 목적: 협력 문의 확인과 회신 · 처리 후 월드비전 개인정보처리방침에 따라 파기합니다.</p>
+        </div>
+        <div class="inq-foot">
+          <button type="submit" class="inq-send">문의 보내기 →</button>
+          <p class="inq-status" id="inq-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
     </div>
-    <p class="sign">Let's make it happen with <span>World Vision.</span></p>
   </div>
 </section>
 
 <div class="scrim" data-close hidden></div>
 <aside class="drawer" id="network" role="dialog" aria-modal="true" aria-labelledby="net-title" hidden>
-  <div class="drawer-head">
-    <span class="eyebrow"><b>Field network</b></span>
-    <button type="button" class="drawer-x" data-close aria-label="닫기">×</button>
-  </div>
+  <div class="drawer-head"><span class="eyebrow"><b>Field network</b></span><button type="button" class="drawer-x" data-close aria-label="닫기">×</button></div>
   <h2 id="net-title">전국 14개 지역사업본부</h2>
-  <p class="drawer-lede">사업장이 있는 지역 가까이에 월드비전 현장 조직이 있습니다. 지역 문제를 찾는 일부터 학교·기관·지자체와 연결하는 일까지, 가까운 본부가 함께합니다.</p>
-  <div class="net-sum"><div><strong>14</strong><span>지역사업본부</span></div><div><strong>600+</strong><span>국내 직원</span></div></div>
   <div class="net-groups">
     <section><h3>서울 · 인천 · 경기</h3><ul><li>서울동부사업본부</li><li>서울서부사업본부</li><li>인천경기사업본부</li><li>경기남부사업본부</li><li>경기북부사업본부</li></ul></section>
     <section><h3>강원</h3><ul><li>강원사업본부</li></ul></section>
     <section><h3>충청</h3><ul><li>대전세종충남사업본부</li><li>충북사업본부</li></ul></section>
-    <section><h3>전라</h3><ul><li class="hl">광주전남사업본부<em>진도 · 드림브릿지</em></li><li>전북사업본부</li></ul></section>
-    <section><h3>경상</h3><ul><li>대구경북사업본부</li><li>부산사업본부</li><li class="hl">경남울산사업본부<em>통영 · 드림브릿지</em></li></ul></section>
+    <section><h3>전라</h3><ul><li>광주전남사업본부</li><li>전북사업본부</li></ul></section>
+    <section><h3>경상</h3><ul><li>대구경북사업본부</li><li>부산사업본부</li><li>경남울산사업본부</li></ul></section>
     <section><h3>제주</h3><ul><li>제주나눔센터</li></ul></section>
   </div>
-  <p class="src" style="margin-top:20px">자료: 월드비전 조직도(worldvision.or.kr). 지역 구분은 이해를 돕기 위한 묶음입니다.</p>
+  <p class="src" style="margin-top:18px">자료: 월드비전 조직도 (worldvision.or.kr)</p>
 </aside>
 
 <footer>
   <div class="w">
-    <p class="src">SIGNAL 수치·인용: 사랑의열매 2026 기업사회공헌 컨퍼런스 발표자료(2026.10.29).</p>
-    <p class="src">사업 사례: 월드비전 기후&amp;소셜임팩트팀 발표 「문제와 기회를 연결하면, 지역의 미래가 됩니다」(2026 사회적가치페스타, 2026.9.21), 「공익법인과 임팩트기업이 함께 만드는 지역의 변화」(2026.9.17), 「해방프로젝트 임팩트리포트」(2025), 월드비전 사업 자료.</p>
+    <p class="src">현장의 목소리: 사랑의열매 SIGNAL (2026.10). 사례: 월드비전 기후&amp;소셜임팩트팀 발표(2026.9), 「해방프로젝트 임팩트리포트」(2025), 언론 보도(2026.8).</p>
   </div>
 </footer>
 
 <script>
-/* 링크가 정해지면 여기에만 입력하세요. 비어 있으면 해당 버튼은 숨겨집니다. */
-var LINKS = { newsletter: '', inquiry: '#inquiry' };
-/* 문의 접수 주소. Google Apps Script 웹 앱 URL을 넣으면 문의가 구글 시트에 쌓입니다. 비어 있으면 실제로 보내지 않습니다. */
+/* 주소가 정해지면 여기에 입력하세요. 비어 있으면 해당 링크는 숨겨집니다. */
+var LINKS = { newsletter: '' };
+/* 문의 접수 주소(Google Apps Script 웹 앱 URL). 비어 있으면 실제로 보내지 않고 대표전화를 안내합니다. */
 var FORM_ENDPOINT = '';
 
+document.querySelectorAll('[data-link]').forEach(function(a){
+  var url = LINKS[a.getAttribute('data-link')];
+  if (url) { a.href = url; a.hidden = false; }
+});
+
+/* 사례 카드: 한 번에 하나의 상세만 열고, 같은 카드를 다시 누르면 닫습니다. */
+var csWrap = document.querySelector('.cs-cards');
+var csCards = document.querySelectorAll('.cs-card');
+var csPanels = document.querySelectorAll('.cs-panel');
+function selectCase(id, scroll, quiet){
+  csCards.forEach(function(c){ c.setAttribute('aria-selected', String(c.getAttribute('data-case') === id)); });
+  csPanels.forEach(function(p){ p.hidden = p.id !== id; });
+  csWrap.classList.toggle('has-sel', !!id);
+  if (!quiet && history.replaceState) history.replaceState(null, '', id ? '#' + id : location.pathname + location.search);
+  if (id && scroll) document.getElementById(id).scrollIntoView({block:'start'});
+}
+csCards.forEach(function(c){
+  c.addEventListener('click', function(){
+    var id = c.getAttribute('data-case'), open = c.getAttribute('aria-selected') === 'true';
+    selectCase(open ? null : id, false);
+    if (!open) document.getElementById(id).scrollIntoView({block:'nearest'});
+  });
+});
+function openFromHash(){
+  var id = decodeURIComponent(location.hash.slice(1));
+  var el = id && document.getElementById(id);
+  if (el && el.classList.contains('cs-panel')) selectCase(id, true);
+}
+if (/^#case-/.test(location.hash)) openFromHash(); else selectCase('case-economy', false, true);
+window.addEventListener('hashchange', openFromHash);
+document.querySelectorAll('a[href^="#case-"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    var id = a.getAttribute('href').slice(1);
+    if (document.getElementById(id)) { e.preventDefault(); selectCase(id, true); }
+  });
+});
+
+/* 목차 현재 위치 표시 */
+var navLinks = document.querySelectorAll('nav.toc a[href^="#"]:not(.back)');
+if ('IntersectionObserver' in window) {
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) return;
+      navLinks.forEach(function(a){ a.classList.toggle('cur', a.getAttribute('href') === '#' + e.target.id); });
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  navLinks.forEach(function(a){ var t = document.getElementById(a.getAttribute('href').slice(1)); if (t) io.observe(t); });
+}
+
+/* 전국 네트워크 사이드 패널 */
+var drawer = document.getElementById('network'), scrim = document.querySelector('.scrim'), lastFocus = null;
+function openDrawer(btn){ lastFocus = btn; drawer.hidden = false; scrim.hidden = false; btn.setAttribute('aria-expanded','true'); drawer.querySelector('.drawer-x').focus(); }
+function closeDrawer(){ if (drawer.hidden) return; drawer.hidden = true; scrim.hidden = true; document.querySelectorAll('[data-open="network"]').forEach(function(b){ b.setAttribute('aria-expanded','false'); }); if (lastFocus) lastFocus.focus(); }
+document.querySelectorAll('[data-open="network"]').forEach(function(b){ b.addEventListener('click', function(){ openDrawer(b); }); });
+document.querySelectorAll('[data-close]').forEach(function(b){ b.addEventListener('click', closeDrawer); });
+document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeDrawer(); });
+
+/* 협력 문의 양식 */
 (function(){
-  var form = document.getElementById('inquiry'); if (!form) return;
-  var status = document.getElementById('inq-status');
-  var btn = form.querySelector('.inq-send');
+  var form = document.getElementById('inquiry'), opener = document.getElementById('open-inq');
+  var status = document.getElementById('inq-status'), btn = form.querySelector('.inq-send');
+  opener.addEventListener('click', function(){
+    var show = form.hidden; form.hidden = !show; opener.setAttribute('aria-expanded', String(show));
+    if (show) document.getElementById('f-name').focus();
+  });
   function say(msg, kind){ status.textContent = msg; status.className = 'inq-status ' + (kind || ''); }
+  function v(id){ return document.getElementById(id).value.trim(); }
   function picked(name){ return Array.prototype.map.call(form.querySelectorAll('[name="' + name + '"]:checked'), function(i){ return i.value; }).join(', '); }
   form.addEventListener('input', function(e){ if (e.target.getAttribute('aria-invalid')) e.target.removeAttribute('aria-invalid'); if (status.classList.contains('err')) say(''); });
   form.addEventListener('submit', function(e){
@@ -1536,14 +679,8 @@ var FORM_ENDPOINT = '';
     if (!consent.checked) bad.push('개인정보 수집·이용 동의');
     if (bad.length) { say('다음 항목을 확인해 주세요: ' + bad.join(', '), 'err'); (form.querySelector('[aria-invalid="true"]') || consent).focus(); return; }
     if (form.elements['website'].value) return;
-    function v(id){ return document.getElementById(id).value.trim(); }
     if (!FORM_ENDPOINT) { say('온라인 접수 창구를 준비하고 있습니다. 지금은 월드비전 대표전화 02-2078-7000으로 문의해 주세요.', 'err'); return; }
-    var data = new URLSearchParams({
-      name: v('f-name'), company: v('f-company'), title: v('f-title'),
-      email: v('f-email'), phone: v('f-phone'),
-      region: picked('region'), issue: picked('issue'), resource: picked('resource'), cases: picked('case'), timing: picked('timing'),
-      message: v('f-message'), consent: '동의', page: location.href
-    });
+    var data = new URLSearchParams({ name: v('f-name'), company: v('f-company'), email: v('f-email'), region: picked('region'), resource: picked('resource'), message: v('f-message'), consent: '동의', page: location.href });
     btn.disabled = true; say('보내는 중입니다…');
     fetch(FORM_ENDPOINT, { method: 'POST', mode: 'no-cors', body: data })
       .then(function(){ form.reset(); say('문의가 접수되었습니다. 담당자가 확인 후 연락드리겠습니다.', 'ok'); })
@@ -1551,87 +688,6 @@ var FORM_ENDPOINT = '';
       .then(function(){ btn.disabled = false; });
   });
 })();
-
-document.querySelectorAll('[data-link]').forEach(function(a){
-  var url = LINKS[a.getAttribute('data-link')];
-  if (url) { a.href = url; a.hidden = false; }
-});
-
-/* 전국 현장 네트워크 사이드 패널 */
-var drawer = document.getElementById('network'), scrim = document.querySelector('.scrim'), lastFocus = null;
-function openDrawer(btn){
-  lastFocus = btn; drawer.hidden = false; scrim.hidden = false;
-  document.querySelectorAll('[data-open="network"]').forEach(function(b){ b.setAttribute('aria-expanded','true'); });
-  drawer.querySelector('.drawer-x').focus();
-}
-function closeDrawer(){
-  if (drawer.hidden) return;
-  drawer.hidden = true; scrim.hidden = true;
-  document.querySelectorAll('[data-open="network"]').forEach(function(b){ b.setAttribute('aria-expanded','false'); });
-  if (lastFocus) lastFocus.focus();
-}
-document.querySelectorAll('[data-open="network"]').forEach(function(b){ b.addEventListener('click', function(){ openDrawer(b); }); });
-document.querySelectorAll('[data-close]').forEach(function(b){ b.addEventListener('click', closeDrawer); });
-document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeDrawer(); });
-
-/* 사례 카드: 한 번에 하나의 상세만 보여 줍니다. 같은 카드를 다시 누르면 닫힙니다. */
-var csWrap = document.querySelector('.cs-cards');
-var csCards = document.querySelectorAll('.cs-card');
-var csPanels = document.querySelectorAll('.cs-panel');
-document.querySelectorAll('.cs-vis[data-img]').forEach(function(v){
-  var src = v.getAttribute('data-img');
-  if (!src) return;
-  var img = document.createElement('img');
-  img.className = 'cs-img'; img.src = src; img.alt = ''; img.loading = 'lazy';
-  v.insertBefore(img, v.firstChild); v.classList.add('photo');
-});
-function selectCase(id, scroll, quiet){
-  csCards.forEach(function(c){ c.setAttribute('aria-selected', String(c.getAttribute('data-case') === id)); });
-  csPanels.forEach(function(p){ p.hidden = p.id !== id; });
-  csWrap.classList.toggle('has-sel', !!id);
-  if (!quiet && history.replaceState) history.replaceState(null, '', id ? '#' + id : location.pathname + location.search);
-  if (id && scroll) {
-    var card = document.querySelector('.cs-card[data-case="' + id + '"]');
-    if (card && card.scrollIntoView) card.scrollIntoView({block:'nearest', inline:'center'});
-    document.getElementById(id).scrollIntoView({block:'start'});
-  }
-}
-csCards.forEach(function(c){
-  c.addEventListener('click', function(){
-    var id = c.getAttribute('data-case');
-    var open = c.getAttribute('aria-selected') === 'true';
-    selectCase(open ? null : id, false);
-    if (!open) document.getElementById(id).scrollIntoView({block:'nearest'});
-  });
-});
-function openFromHash(){
-  var id = decodeURIComponent(location.hash.slice(1)); if (!id) return;
-  var el = document.getElementById(id); if (!el) return;
-  if (el.classList.contains('cs-panel')) selectCase(id, true);
-  else if (el.tagName === 'DETAILS') { el.open = true; el.scrollIntoView({block:'start'}); }
-}
-if (/^#case-/.test(location.hash)) openFromHash(); else selectCase('case-economy', false, true);
-window.addEventListener('hashchange', openFromHash);
-document.querySelectorAll('a[href^="#case-"],a[href="#signal"]').forEach(function(a){
-  a.addEventListener('click', function(e){
-    var id = a.getAttribute('href').slice(1), el = document.getElementById(id);
-    if (!el) return;
-    if (el.classList.contains('cs-panel')) { e.preventDefault(); selectCase(id, true); }
-    else if (el.tagName === 'DETAILS') el.open = true;
-  });
-});
-
-var navLinks = document.querySelectorAll('nav.toc a[href^="#"]:not(.back)');
-var targets = Array.prototype.map.call(navLinks, function(a){ return document.getElementById(a.getAttribute('href').slice(1)); });
-if ('IntersectionObserver' in window) {
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if (!e.isIntersecting) return;
-      navLinks.forEach(function(a){ a.classList.toggle('cur', a.getAttribute('href') === '#' + e.target.id); });
-    });
-  }, { rootMargin: '-40% 0px -55% 0px' });
-  targets.forEach(function(t){ if (t) io.observe(t); });
-}
 </script>
 
 </html>
