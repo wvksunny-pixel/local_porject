@@ -19,7 +19,7 @@
   --band:#17140F; --band-fg:#F7F2E8;
   --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
   --body:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --mono:"IBM Plex Mono","Pretendard","Apple SD Gothic Neo","Malgun Gothic",ui-monospace,monospace;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --paper:#14120F; --paper-2:#201C17; --ink:#F2EBDD; --ink-2:#BBB09D; --rule:#F2EBDD; --hair:#4B4438;
@@ -42,7 +42,8 @@ ul,ol{padding:0;list-style:none}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--wv);outline-offset:3px}
 [id]{scroll-margin-top:64px}
-.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.eyebrow{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);font-feature-settings:"ss02"}
+.eyebrow b{letter-spacing:.14em}
 .eyebrow b{color:var(--wv-deep);font-weight:500}
 .disp{font-family:var(--display);font-weight:900;text-transform:uppercase;line-height:.86;letter-spacing:0}
 .sec-h{font-size:clamp(28px,3.6vw,42px);font-weight:800;line-height:1.3;letter-spacing:-.035em;margin-top:14px}
@@ -228,7 +229,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .steps4 .n{font-family:var(--display);font-weight:900;font-size:22px;line-height:1;color:var(--wv-deep);display:block}
 .steps4 b{display:block;margin:4px 0 2px;font-weight:700}
 .steps4 span{font-size:13.5px;color:var(--ink-2);display:block;line-height:1.55}
-.sub{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--wv-deep);margin-bottom:10px}
+.sub{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--wv-deep);margin-bottom:10px}
 @media (max-width:900px){.steps4{grid-template-columns:repeat(2,minmax(0,1fr))}.steps4 div:nth-child(3){border-left:0}.steps4 div:nth-child(n+3){border-top:1px solid var(--hair)}}
 @media (max-width:600px){.pair{grid-template-columns:minmax(0,1fr)}}
 .cs-ax{font-family:var(--display);font-weight:900;font-size:20px;text-transform:uppercase;line-height:1;color:var(--wv-deep)}
