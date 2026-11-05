@@ -218,6 +218,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .cs-card.wide{grid-column:1/-1;flex-direction:row;border-style:dashed}
 .cs-card.wide .cs-vis{flex:0 0 38%;aspect-ratio:auto;min-height:220px}
 .cs-vis.market{background:#EEE6D5}
+.mk-ref{position:absolute;right:12px;bottom:10px;z-index:2;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:#F7F2E8;opacity:.85}
+.pill{display:inline-block;margin-left:8px;font-family:var(--body);font-size:12px;font-weight:700;letter-spacing:-.01em;text-transform:none;background:var(--ink);color:var(--paper);padding:3px 11px;border-radius:999px;vertical-align:1px}
+.pill.on-dark{background:var(--wv);color:var(--on-wv)}
 .mk-svg{position:absolute;inset:0;width:100%;height:100%;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
 @media (hover:hover){.cs-card:hover .mk-svg{transform:scale(1.04)}}
 .mk-ai{font-size:clamp(72px,8vw,120px);line-height:.85;color:var(--wv)}
@@ -455,23 +458,9 @@ footer .w{padding-block:26px;display:grid;gap:6px}
         </span>
       </button>
       <button class="cs-card wide" type="button" role="tab" id="tab-market" aria-controls="case-market" aria-selected="false" data-case="case-market">
-        <span class="cs-vis market" aria-hidden="true"><svg class="mk-svg" viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice">
-<defs><pattern id="stripe" width="24" height="10" patternUnits="userSpaceOnUse"><rect width="12" height="10" fill="#FF6B00"/><rect x="12" width="12" height="10" fill="#F7F2E8"/></pattern></defs>
-<rect width="400" height="260" fill="#EEE6D5"/>
-<g stroke="#17140F" stroke-width="2.5">
-<path d="M20 70 H140 V104 H20 Z" fill="url(#stripe)"/><path d="M20 104 q10 14 20 0 q10 14 20 0 q10 14 20 0 q10 14 20 0 q10 14 20 0 q10 14 20 0" fill="#FF6B00"/>
-<path d="M150 50 H260 V88 H150 Z" fill="url(#stripe)"/><path d="M150 88 q9.17 14 18.33 0 q9.17 14 18.33 0 q9.17 14 18.33 0 q9.17 14 18.33 0 q9.17 14 18.33 0 q9.17 14 18.33 0" fill="#FF6B00"/>
-<path d="M270 70 H390 V104 H270 Z" fill="url(#stripe)"/><path d="M270 104 q10 14 20 0 q10 14 20 0 q10 14 20 0 q10 14 20 0 q10 14 20 0 q10 14 20 0" fill="#FF6B00"/>
-<rect x="28" y="118" width="104" height="70" fill="#F7F2E8"/><rect x="158" y="102" width="94" height="86" fill="#F7F2E8"/><rect x="278" y="118" width="104" height="70" fill="#F7F2E8"/>
-<circle cx="50" cy="146" r="9" fill="#FF6B00"/><circle cx="72" cy="146" r="9" fill="#C94F00"/><circle cx="94" cy="146" r="9" fill="#FF6B00"/>
-<circle cx="300" cy="146" r="9" fill="#C94F00"/><circle cx="322" cy="146" r="9" fill="#FF6B00"/><circle cx="344" cy="146" r="9" fill="#C94F00"/>
-</g>
-<rect x="176" y="116" width="58" height="34" rx="4" fill="#17140F"/><text x="205" y="141" text-anchor="middle" font-family="Big Shoulders Display, Impact, sans-serif" font-weight="900" font-size="24" fill="#FF6B00">AI</text>
-<rect x="0" y="188" width="400" height="72" fill="#17140F"/>
-<text x="20" y="232" font-family="Pretendard, Malgun Gothic, sans-serif" font-weight="800" font-size="22" fill="#F7F2E8">전통시장 · 소상공인 · 아이들</text>
-</svg></span>
+        <span class="cs-vis photo market"><img src="assets/market-jumunjin.jpg" alt="" loading="lazy"><span class="mk-ref">참고 이미지</span></span>
         <span class="cs-txt">
-          <span class="cs-ax">Local economy · 제안 모델</span>
+          <span class="cs-ax">Local economy · 제안 모델 <span class="pill">함께할 파트너를 찾습니다</span></span>
           <span class="cs-name">전통시장 AI 상생 솔루션</span>
           <span class="cs-one">전통시장 소상공인의 AI 활용을 돕고, 시장을 지역 아이들의 돌봄과 나눔의 거점으로 잇는 모델입니다. 함께할 기업과 지역을 찾고 있습니다.</span>
           <span class="cs-more">자세히 보기</span>
@@ -587,12 +576,13 @@ footer .w{padding-block:26px;display:grid;gap:6px}
 
     <div class="cs-panel" id="case-market" role="tabpanel" aria-labelledby="tab-market" hidden>
       <div class="cs-head">
-        <span class="eyebrow"><b>Next model</b> · 제안 단계 · 함께할 기업 파트너 모집</span>
+        <span class="eyebrow"><b>Next model</b> · 제안 단계 <span class="pill on-dark">함께할 파트너를 찾습니다</span></span>
         <h3>전통시장 AI 상생 솔루션</h3>
         <p>시장이 바뀌면, 지역이 함께 바뀝니다.</p>
       </div>
       <div class="cs-body">
         <div>
+          <img class="photo-1" style="margin-top:0;margin-bottom:6px" src="assets/market-jumunjin.jpg" alt="강원 강릉 주문진전통시장 입구의 아케이드와 파라솔 노점이 늘어선 거리" loading="lazy" width="1280" height="853"><p class="cap" style="margin-bottom:20px">참고 이미지 · 주문진전통시장. 사진 Mobius6, Wikimedia Commons, CC BY-SA 4.0</p>
           <div class="blk"><h4>Problem</h4><p>전통시장 소상공인은 빠른 기술 변화를 따라가기 어렵고, 시장은 지역 공동체의 거점 역할을 잃어 가고 있습니다.</p></div>
           <div class="blk"><h4>Solution · 세 가지를 함께</h4>
             <ul class="three-lib">
@@ -735,7 +725,7 @@ footer .w{padding-block:26px;display:grid;gap:6px}
 
 <footer>
   <div class="w">
-    <p class="src">현장의 목소리: 사랑의열매 SIGNAL (2026.10). 사례: 월드비전 기후&amp;소셜임팩트팀 발표(2026.9), 「해방프로젝트 임팩트리포트」(2025), 언론 보도(2026.8).</p>
+    <p class="src">현장의 목소리: 사랑의열매 SIGNAL (2026.10). 사례: 월드비전 기후&amp;소셜임팩트팀 발표(2026.9), 「해방프로젝트 임팩트리포트」(2025), 언론 보도(2026.8). 전통시장 참고 이미지: Mobius6, <a href="https://commons.wikimedia.org/wiki/File:Jumunjin_Traditional_Market_20220501_001.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
   </div>
 </footer>
 
