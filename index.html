@@ -344,6 +344,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .gb-roles{display:none}
 }
 
+.anywhere{margin-top:16px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;padding:16px 18px;border-left:4px solid var(--wv);background:var(--wv-tint);border-radius:0}
+.anywhere b{font-size:clamp(18px,2vw,22px);font-weight:900;letter-spacing:-.04em}
+.anywhere>span{font-size:15px;color:var(--ink-2);flex:1 1 280px}
+.anywhere .net-btn{margin-top:0;background:var(--ink);color:var(--paper)}
+.anywhere .net-btn:hover{background:var(--wv);color:var(--on-wv)}
+
 /* 05 next model */
 .next{margin-top:36px;border:2px dashed var(--wv-deep);background:var(--paper)}
 .next-head{background:var(--paper-2);color:var(--ink)}
@@ -1328,7 +1334,7 @@ footer .w{padding-block:26px;display:grid;gap:6px}
     <span class="eyebrow"><b>Contact</b></span>
     <h2 class="disp" style="margin-top:14px">Have a local<br>impact <span>idea?</span></h2>
     <p class="kr" style="margin-top:28px">우리 회사의 사업장이 있는 지역부터<br>이야기해 보세요.</p>
-    <p class="lede" style="margin-top:12px">아래 세 가지 중 하나만 있어도 협력을 시작할 수 있습니다.</p>
+    <p class="anywhere"><b>전국 어디서든 시작할 수 있습니다.</b><span>14개 지역사업본부가 사업장 가까이에 있습니다. 아래 세 가지 중 하나만 있어도 충분합니다.</span><button type="button" class="net-btn" data-open="network" aria-controls="network" aria-expanded="false">가까운 지역사업본부 보기 <span aria-hidden="true">→</span></button></p>
     <div class="paths">
       <div><b>Place</b><h3>사업장이나 공장이<br>있는 지역</h3><p>그 지역에서 지금 무엇이 가장 필요한지, 월드비전 지역사업본부와 함께 찾습니다.</p><span class="ex">예: 공장이 있는 군 단위 지역</span></div>
       <div><b>Problem</b><h3>기업이 해결하고 싶은<br>지역 문제</h3><p>청년 정착, 돌봄, 아이들의 교육처럼 풀고 싶은 문제가 있다면, 그 문제가 가장 필요한 지역을 함께 찾습니다.</p><span class="ex">예: 섬 지역 아이들의 디지털 교육</span></div>
