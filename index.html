@@ -292,6 +292,31 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .pm-why b{font-weight:800;color:var(--wv-deep);letter-spacing:-.02em}
 .pm-proof{margin-top:12px;font-size:14px;line-height:1.7}
 
+.ps{margin-top:40px;background:var(--band);color:var(--band-fg)}
+.ps-head,.ps-row{display:grid;grid-template-columns:minmax(0,1fr) 64px minmax(0,1.1fr)}
+.ps-head>div{padding:clamp(22px,3vw,34px) clamp(18px,2.6vw,30px)}
+.ps-a{opacity:.75}
+.ps-k{display:block;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+.ps-head b{display:block;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(40px,5.4vw,72px);line-height:.88;margin:12px 0 10px}
+.ps-a b{color:transparent;-webkit-text-stroke:1.2px currentColor}
+.ps-b{background:var(--paper);color:var(--ink)}
+.ps-b b{color:var(--wv)}
+.ps-s{font-size:14px;font-weight:700;letter-spacing:-.02em}
+.ps-vs{display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:900;font-size:26px;text-transform:uppercase;color:var(--wv)}
+.ps-row{position:relative;border-top:1px solid rgba(127,127,127,.35)}
+.ps-l{position:absolute;left:clamp(18px,2.6vw,30px);top:14px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;opacity:.65}
+.ps-x{padding:38px clamp(18px,2.6vw,30px) 18px;font-size:clamp(15px,1.5vw,17px);line-height:1.5;opacity:.7;text-decoration:line-through;text-decoration-thickness:1px;text-decoration-color:rgba(127,127,127,.7)}
+.ps-row>i{display:flex;align-items:center;justify-content:center;font-style:normal;font-family:var(--display);font-weight:900;font-size:26px;color:var(--wv)}
+.ps-y{background:var(--paper);color:var(--ink);padding:38px clamp(18px,2.6vw,30px) 18px;font-size:clamp(17px,1.8vw,21px);font-weight:800;letter-spacing:-.035em;line-height:1.45;border-top:1px solid var(--hair)}
+@media (max-width:700px){
+  .ps-head,.ps-row{grid-template-columns:minmax(0,1fr)}
+  .ps-vs{padding:6px 0}
+  .ps-row>i{transform:rotate(90deg);padding:2px 0}
+  .ps-x{padding-bottom:6px}
+  .ps-y{padding-top:16px}
+  .ps-y br,.ps-x br{display:none}
+}
+
 /* 05 next model */
 .next{margin-top:36px;border:2px dashed var(--wv-deep);background:var(--paper)}
 .next-head{background:var(--paper-2);color:var(--ink)}
@@ -1203,16 +1228,16 @@ footer .w{padding-block:26px;display:grid;gap:6px}
       <div><b>Long-term</b><h4>국제 지역개발에서 쌓은 긴 호흡</h4><p>월드비전은 해외 지역개발사업에서 15~20년 동안 한 지역과 함께합니다. 주민과 지방정부가 스스로 운영할 수 있을 때를 자립의 기준으로 삼고, 그때 지역을 떠납니다.</p></div>
     </div>
 
-    <div class="vs" role="region" aria-label="단기 사업 방식과 월드비전 방식 비교" tabindex="0">
-      <table>
-        <thead><tr><th></th><th>사업 기간 중심의 지원</th><th class="me">월드비전이 만드는 구조</th></tr></thead>
-        <tbody>
-          <tr><th>기간</th><td>1년 단위, 예산이 있을 때만</td><td class="me">재원이 끝난 뒤까지 설계</td></tr>
-          <tr><th>중심</th><td>사업을 수행하는 외부 기관</td><td class="me">지역에 남는 지자체, 주민, 지역 조직</td></tr>
-          <tr><th>남는 것</th><td>결과 보고서와 참여 인원</td><td class="me">계속 돌아가는 운영 구조와 소통 창구</td></tr>
-          <tr><th>끝나는 방식</th><td>재원 종료와 함께 중단</td><td class="me">주민과 지방정부가 이어서 운영</td></tr>
-        </tbody>
-      </table>
+    <div class="ps" role="table" aria-label="사업 기간 중심의 지원과 월드비전이 만드는 구조 비교">
+      <div class="ps-head" role="row">
+        <div class="ps-a" role="columnheader"><span class="ps-k">Before</span><b>A project<br>ends.</b><span class="ps-s">사업 기간 중심의 지원</span></div>
+        <div class="ps-vs" aria-hidden="true">vs</div>
+        <div class="ps-b" role="columnheader"><span class="ps-k">With World Vision</span><b>A system<br>stays.</b><span class="ps-s">월드비전이 만드는 구조</span></div>
+      </div>
+      <div class="ps-row" role="row"><span class="ps-l" role="rowheader">01 · 기간</span><p class="ps-x" role="cell">1년 단위,<br>예산이 있을 때만</p><i aria-hidden="true">→</i><p class="ps-y" role="cell">재원이 끝난 뒤까지<br>설계합니다</p></div>
+      <div class="ps-row" role="row"><span class="ps-l" role="rowheader">02 · 중심</span><p class="ps-x" role="cell">사업을 수행하는<br>외부 기관</p><i aria-hidden="true">→</i><p class="ps-y" role="cell">지역에 남는 지자체,<br>주민, 지역 조직</p></div>
+      <div class="ps-row" role="row"><span class="ps-l" role="rowheader">03 · 남는 것</span><p class="ps-x" role="cell">결과 보고서와<br>참여 인원</p><i aria-hidden="true">→</i><p class="ps-y" role="cell">계속 돌아가는 운영 구조와<br>소통 창구</p></div>
+      <div class="ps-row" role="row"><span class="ps-l" role="rowheader">04 · 끝나는 방식</span><p class="ps-x" role="cell">재원 종료와 함께<br>중단</p><i aria-hidden="true">→</i><p class="ps-y" role="cell">주민과 지방정부가<br>이어서 운영</p></div>
     </div>
 
     <h3 class="bbh"><span>04</span>Proof <small>사례로 보는 연결 구조</small></h3>
