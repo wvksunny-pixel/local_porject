@@ -251,6 +251,17 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .bb-two span{display:block;font-size:16px;font-weight:700;letter-spacing:-.03em;line-height:1.5;margin-top:8px}
 @media (max-width:480px){.bb-two{grid-template-columns:minmax(0,1fr)}}
 
+.wv-cover{position:relative;margin:0;background:#17140F;overflow:hidden}
+.wv-cover img{display:block;width:100%;height:clamp(420px,62vw,760px);object-fit:cover;object-position:40% 55%;max-width:none}
+.wv-cover::after{content:"";position:absolute;inset:0;background:linear-gradient(to right,rgba(23,20,15,.72) 0%,rgba(23,20,15,.25) 55%,rgba(23,20,15,0) 100%),linear-gradient(to top,rgba(23,20,15,.55),rgba(23,20,15,0) 40%)}
+.wv-cover figcaption{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;justify-content:space-between;max-width:1140px;margin:0 auto;padding-block:clamp(24px,4vw,48px);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));color:#F7F2E8}
+.cv-issue{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;border-top:1px solid rgba(247,242,232,.6);padding-top:10px;align-self:stretch}
+.cv-title{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(64px,12vw,168px);line-height:.84;color:#FF6B00;margin-top:auto}
+.cv-title i{font-style:normal;color:#F7F2E8;font-weight:700}
+.cv-line{font-size:clamp(18px,2.2vw,26px);font-weight:800;letter-spacing:-.035em;line-height:1.45;margin-top:18px}
+.cv-cap{font-size:12.5px;opacity:.85;margin-top:clamp(20px,4vw,40px);border-top:1px solid rgba(247,242,232,.35);padding-top:10px;align-self:stretch}
+@media (prefers-reduced-motion:no-preference){.wv-cover img{transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}.wv-cover:hover img{transform:scale(1.02)}}
+
 /* 05 next model */
 .next{margin-top:36px;border:2px dashed var(--wv-deep);background:var(--paper)}
 .next-head{background:var(--paper-2);color:var(--ink)}
@@ -1109,6 +1120,15 @@ footer .w{padding-block:26px;display:grid;gap:6px}
 
 <!-- SECTION 06. WHY WORLD VISION -->
 <section class="bb" id="why-wv">
+  <figure class="wv-cover">
+    <img src="assets/buan-tidal-flat.jpg" alt="해 질 녘 전북 부안 갯벌 위로 길게 뻗은 나무 데크" width="1536" height="864" loading="lazy">
+    <figcaption>
+      <span class="cv-issue">World Vision · Local impact · Vol. 2026.11</span>
+      <span class="cv-title">Bridge <i>&amp;</i><br>Backbone.</span>
+      <span class="cv-line">흩어진 자원을 잇는 다리,<br>끝까지 곁에 남는 중심.</span>
+      <span class="cv-cap">전북 부안 갯벌 — 지자체와 기업, 시민이 함께 지켜 온 곳</span>
+    </figcaption>
+  </figure>
   <div class="w">
     <span class="eyebrow"><b>Why World Vision</b></span>
     <h2 class="disp">Why World<br>Vision?</h2>
