@@ -97,7 +97,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .res-ideas{display:flex;flex-wrap:wrap;gap:8px}
 .res-ideas li{font-size:15px;font-weight:700;letter-spacing:-.02em;background:var(--paper-2);padding:8px 14px}
 .res-case{text-align:right;font-size:13.5px;line-height:1.5}
-.res-case a{display:inline-block;text-decoration:none;font-weight:700;color:var(--wv-deep);border-bottom:1px solid currentColor;padding-bottom:1px}
+.res-case a{display:inline-block;margin-top:3px;text-decoration:none;font-weight:700;color:var(--wv-deep);border-bottom:1px solid currentColor;padding-bottom:1px}
 .res-case span{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--ink-2);margin-bottom:4px;text-transform:uppercase}
 .res-case .none{color:var(--ink-2);font-weight:600;font-family:var(--body);font-size:13.5px;letter-spacing:-.01em;text-transform:none}
 
@@ -245,6 +245,9 @@ a.inl:hover{text-decoration:underline}
 .mk-m{font-family:var(--body);font-size:clamp(22px,2.4vw,30px);font-weight:900;letter-spacing:-.04em;line-height:1.15}
 @media (max-width:900px){.cs-card.wide{flex-direction:column}.cs-card.wide .cs-vis{flex:none;min-height:0;aspect-ratio:16/9}}
 
+.next-step{border-top:3px solid var(--wv);padding-top:14px}
+.next-step b{color:var(--wv-deep)}
+
 /* impact builder */
 .ib-lede{max-width:none}
 .roles2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2vw,24px);margin-top:clamp(36px,5vw,56px)}
@@ -320,6 +323,14 @@ a.inl:hover{text-decoration:underline}
 .drawer-head{display:flex;justify-content:space-between;align-items:center}
 .drawer-x{font:400 28px/1 var(--body);background:none;border:0;color:var(--ink);cursor:pointer;padding:4px 8px}
 .drawer h2{font-size:24px;font-weight:800;letter-spacing:-.04em;margin-top:12px}
+.net-map{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(8,58px);gap:6px;margin-top:18px;position:relative}
+.nm-t{background:var(--paper-2);border:1px solid var(--rule);padding:7px 8px;display:flex;flex-direction:column;justify-content:space-between;min-width:0;transition:background .2s,color .2s}
+.nm-t b{font-size:13.5px;font-weight:800;letter-spacing:-.03em;line-height:1.2}
+.nm-t span{font-family:var(--mono);font-size:9.5px;color:var(--ink-2);letter-spacing:.02em}
+.nm-t:hover{background:var(--wv);color:var(--on-wv)}
+.nm-t:hover span{color:var(--on-wv)}
+.net-map::before{content:"";position:absolute;left:calc(25% + 10px);top:calc(7*64px - 2px);width:52%;border-top:1px dashed var(--hair)}
+@media (prefers-reduced-motion:no-preference){.drawer:not([hidden]) .nm-t{animation:tileIn .45s cubic-bezier(.2,.7,.2,1) both}.drawer:not([hidden]) .nm-t:nth-child(n+5){animation-delay:.05s}.drawer:not([hidden]) .nm-t:nth-child(n+9){animation-delay:.1s}@keyframes tileIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}}
 .net-groups{margin-top:12px}
 .net-groups section{padding:14px 0;border-bottom:1px solid var(--hair)}
 .net-groups h3{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.08em;color:var(--wv-deep);margin-bottom:8px}
@@ -430,7 +441,7 @@ footer .w{padding-block:26px;display:grid;gap:6px}
         <div class="res-k"><b>People</b><span>사람과 임직원</span><p>임직원의 경험과 재능이 지역 아이들의 진로와 지역 활동으로 이어집니다.</p></div>
         <i aria-hidden="true">→</i>
         <ul class="res-ideas"><li>진로 멘토링</li><li>일터 공개 · 기업 투어</li><li>지역 참여 활동</li></ul>
-        <p class="res-case"><span>Case</span><a href="#case-future">아모레퍼시픽 · 해방프로젝트</a></p>
+        <p class="res-case"><span>Case · 아모레퍼시픽</span><a href="#case-future">2025 해방프로젝트</a><br><a href="#case-future">2026 MYB(밋유어뷰티)</a></p>
       </div>
     </div>
   </div>
@@ -441,7 +452,7 @@ footer .w{padding-block:26px;display:grid;gap:6px}
   <div class="w">
     <span class="eyebrow"><b>Case studies</b></span>
     <h2 class="sec-h">임팩트 빌더가 움직이면,<br>지역에서 이런 일이 일어납니다.</h2>
-    <p class="lede">임팩트 빌더(Impact Builder)는 지역의 문제를 찾고, 여러 기관이 한 사업으로 움직이도록<br class="pc">처음부터 끝까지 연결하고 조율하는 역할입니다. <a href="#why-wv" class="inl">자세히 보기 →</a></p>
+    <p class="lede">임팩트 빌더(Impact Builder)는 지역의 문제를 찾고,<br>여러 기관이 한 사업으로 움직이도록<br>처음부터 끝까지 연결하고 조율하는 역할입니다. <a href="#why-wv" class="inl">자세히 보기 →</a></p>
 
     <div class="cs-cards" role="tablist" aria-label="사업 사례">
       <button class="cs-card" type="button" role="tab" id="tab-economy" aria-controls="case-economy" aria-selected="false" data-case="case-economy">
@@ -467,7 +478,7 @@ footer .w{padding-block:26px;display:grid;gap:6px}
       <button class="cs-card" type="button" role="tab" id="tab-future" aria-controls="case-future" aria-selected="false" data-case="case-future">
         <span class="cs-vis photo"><img src="assets/haebang-group.webp" alt="" loading="lazy"><span class="cs-big">+21.1<small>% 다시 도전할 용기</small></span></span>
         <span class="cs-txt">
-          <span class="cs-ax">Local future · 전남 진도</span>
+          <span class="cs-ax">Local future · 전남 진도 · 2025 파일럿 → 2026 MYB</span>
           <span class="cs-name">해방프로젝트</span>
           <span class="cs-one">경험이 부족해 꿈이 작아지던 아이들이, 스스로 세상을 넓히고 도전하는 힘을 얻었습니다.</span>
           <span class="cs-impact"><b>+15.3%</b> 자기효능감 <b>+16.6%</b> 진로 인식</span>
@@ -554,7 +565,7 @@ footer .w{padding-block:26px;display:grid;gap:6px}
 
     <div class="cs-panel" id="case-future" role="tabpanel" aria-labelledby="tab-future" hidden>
       <div class="cs-head">
-        <span class="eyebrow"><b>Case 03</b> · 전라남도 진도군 · 2025 완료</span>
+        <span class="eyebrow"><b>Case 03</b> · 전라남도 진도군 · 2025 파일럿 → 2026 밋유어뷰티(MYB)</span>
         <h3>진도군 트윈세대 해방프로젝트</h3>
         <p>이동의 장벽이 성장의 장벽이 되지 않도록.</p>
       </div>
@@ -580,13 +591,15 @@ footer .w{padding-block:26px;display:grid;gap:6px}
           <div class="blk"><h4>Partners</h4>
             <ul class="roles">
               <li><b>오리진디자인</b><span>공동 기획 · 운영 · 기관 조율</span></li>
-              <li><b>아모레퍼시픽</b><span>기업 투어 · 진로 멘토링</span></li>
+              <li><b>아모레퍼시픽</b><span>2025 기업 투어 · 진로 멘토링 → 2026 MYB 후원</span></li>
               <li><b>진도군교육지원청 · 군내중학교</b><span>참여와 교과 연계</span></li>
               <li><b>서울용산경찰서</b><span>서울 활동 안전 지원</span></li>
               <li class="me"><b>월드비전</b><span>공동 기획 · 사업 방향과 측정 기준 설계 · 재원</span></li>
             </ul>
           </div>
-          <div class="blk yours"><h4>If you are</h4><p>어떤 업종이든, 일터를 열고 임직원이 멘토가 되는 것만으로 지역 아이들의 꿈이 넓어집니다.</p></div>
+          <div class="blk next-step"><h4>Next · 2026</h4><p>파일럿의 경험을 바탕으로, 올해는 아모레퍼시픽 후원으로 진도 청소년 진로탐색 프로그램 <b>'밋유어뷰티(Meet Your Beauty)'</b>가 이어지고 있습니다. 진도 석교중학교 학생 27명이 진로 탐색과 멘토 만남, 직업 체험에 참여했습니다.</p>
+            <div class="press"><a href="https://www.worldvision.or.kr/supportGuide/enterpriseSupportNewsDetail?newsIdx=115" target="_blank" rel="noopener">월드비전 기업후원 소식 ↗</a></div></div>
+          <div class="blk yours"><h4>If you are</h4><p>작은 파일럿도 기업이 함께하면 정식 사업으로 자랍니다. 일터를 열고 임직원이 멘토가 되는 것에서 시작할 수 있습니다.</p></div>
         </div>
       </div>
     </div>
@@ -611,15 +624,15 @@ footer .w{padding-block:26px;display:grid;gap:6px}
           </div>
         </div>
         <div>
-          <div class="blk"><h4>Partners · 제안 구조</h4>
+          <div class="blk"><h4>함께 만들 협력 구조</h4>
             <ul class="roles">
               <li><b>기업 파트너</b><span>사업 재원 · 결제·금융 인프라 · 캠페인</span></li>
-              <li><b>유디임팩트</b><span>AI 전환 솔루션 · 상인 교육과 코칭</span></li>
-              <li><b>행정안전부 · 지자체</b><span>상인 참여 · 공공서비스 연계 · 확산</span></li>
-              <li class="me"><b>월드비전</b><span>운영 거버넌스 · 커뮤니티 허브 · 아동 영양 지원 · 성과 관리</span></li>
+              <li><b>AI 전환 전문기관</b><span>상인 진단 · 교육 · 코칭</span></li>
+              <li><b>정부 · 지자체 · 상인회</b><span>상인 참여 · 공공서비스 연계</span></li>
+              <li class="me"><b>월드비전</b><span>협력 구조 설계 · 커뮤니티 허브 · 아동 영양 지원 · 성과 관리</span></li>
             </ul>
           </div>
-          <div class="blk"><h4>Sustain</h4><p>월드비전이 첫 단추를 끼우고, 이후에는 상인과 지역이 스스로 운영하는 구조를 목표로 합니다.</p></div>
+          <div class="blk"><h4>How we start</h4><p>함께할 기업과 재원이 정해지면, 대상 시장과 지자체, 전문기관을 찾아 협력 구조를 새로 설계합니다. 월드비전이 첫 단추를 끼우고, 이후에는 상인과 지역이 스스로 운영하는 구조를 목표로 합니다.</p></div>
           <div class="blk yours"><h4>If you are</h4><p>금융·결제·플랫폼 기업이라면, 결제 인프라와 고객 캠페인이 시장의 매출과 아이들의 식사로 이어집니다.</p></div>
         </div>
       </div>
@@ -730,14 +743,23 @@ footer .w{padding-block:26px;display:grid;gap:6px}
 <aside class="drawer" id="network" role="dialog" aria-modal="true" aria-labelledby="net-title" hidden>
   <div class="drawer-head"><span class="eyebrow"><b>Field network</b></span><button type="button" class="drawer-x" data-close aria-label="닫기">×</button></div>
   <h2 id="net-title">전국 14개 지역사업본부</h2>
-  <div class="net-groups">
-    <section><h3>서울 · 인천 · 경기</h3><ul><li>서울동부사업본부</li><li>서울서부사업본부</li><li>인천경기사업본부</li><li>경기남부사업본부</li><li>경기북부사업본부</li></ul></section>
-    <section><h3>강원</h3><ul><li>강원사업본부</li></ul></section>
-    <section><h3>충청</h3><ul><li>대전세종충남사업본부</li><li>충북사업본부</li></ul></section>
-    <section><h3>전라</h3><ul><li>광주전남사업본부</li><li>전북사업본부</li></ul></section>
-    <section><h3>경상</h3><ul><li>대구경북사업본부</li><li>부산사업본부</li><li>경남울산사업본부</li></ul></section>
-    <section><h3>제주</h3><ul><li>제주나눔센터</li></ul></section>
+  <div class="net-map" role="list" aria-label="전국 14개 지역사업본부 지도">
+    <div class="nm-t" role="listitem" style="grid-column:2;grid-row:1/span 1" title="경기북부사업본부"><b>경기북부</b><span>사업본부</span></div>
+    <div class="nm-t" role="listitem" style="grid-column:4;grid-row:1/span 2" title="강원사업본부"><b>강원</b><span>사업본부</span></div>
+    <div class="nm-t" role="listitem" style="grid-column:1;grid-row:2/span 1" title="인천경기사업본부"><b>인천경기</b><span>사업본부</span></div>
+    <div class="nm-t" role="listitem" style="grid-column:2;grid-row:2/span 1" title="서울서부사업본부"><b>서울서부</b><span>사업본부</span></div>
+    <div class="nm-t" role="listitem" style="grid-column:3;grid-row:2/span 1" title="서울동부사업본부"><b>서울동부</b><span>사업본부</span></div>
+    <div class="nm-t" role="listitem" style="grid-column:2;grid-row:3/span 1" title="경기남부사업본부"><b>경기남부</b><span>사업본부</span></div>
+    <div class="nm-t" role="listitem" style="grid-column:3;grid-row:3/span 1" title="충북사업본부"><b>충북</b><span>사업본부</span></div>
+    <div class="nm-t" role="listitem" style="grid-column:2;grid-row:4/span 1" title="대전세종충남사업본부"><b>대전세종충남</b><span>사업본부</span></div>
+    <div class="nm-t" role="listitem" style="grid-column:4;grid-row:4/span 1" title="대구경북사업본부"><b>대구경북</b><span>사업본부</span></div>
+    <div class="nm-t" role="listitem" style="grid-column:2;grid-row:5/span 1" title="전북사업본부"><b>전북</b><span>사업본부</span></div>
+    <div class="nm-t" role="listitem" style="grid-column:3;grid-row:6/span 1" title="경남울산사업본부"><b>경남울산</b><span>사업본부</span></div>
+    <div class="nm-t" role="listitem" style="grid-column:4;grid-row:6/span 1" title="부산사업본부"><b>부산</b><span>사업본부</span></div>
+    <div class="nm-t" role="listitem" style="grid-column:2;grid-row:6/span 1" title="광주전남사업본부"><b>광주전남</b><span>사업본부</span></div>
+    <div class="nm-t" role="listitem" style="grid-column:2;grid-row:8/span 1" title="제주나눔센터"><b>제주</b><span>나눔센터</span></div>
   </div>
+  <p class="src" style="margin-top:12px">지역 위치를 단순화한 지도입니다.</p>
   <p class="src" style="margin-top:18px">자료: 월드비전 조직도 (worldvision.or.kr)</p>
 </aside>
 
