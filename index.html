@@ -261,8 +261,10 @@ a.inl:hover{text-decoration:underline}
 .r-en{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(56px,7vw,96px);line-height:.85;color:var(--wv);margin-top:12px}
 .roles2 h3{font-size:clamp(19px,2vw,23px);font-weight:800;letter-spacing:-.04em;margin-top:18px}
 .roles2 p{font-size:15.5px;line-height:1.75;margin-top:10px;opacity:.9}
-.r-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:20px}
-.r-tags li{font-size:13px;font-weight:700;border:1px solid currentColor;padding:4px 10px;opacity:.85}
+.r-tags{display:flex;flex-wrap:wrap;row-gap:4px;margin-top:auto;padding-top:16px;border-top:1px solid currentColor;font-family:var(--mono);font-size:12px;letter-spacing:.02em}
+.roles2 p{margin-bottom:24px}
+.r-tags li{opacity:.8;cursor:default}
+.r-tags li+li::before{content:"/";margin:0 9px;color:var(--wv);opacity:1}
 .flow6{margin-top:clamp(36px,5vw,56px)}
 .f-k{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase}
 .flow6 ol{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));margin-top:14px;counter-reset:s;border-top:3px solid var(--on-wv)}
