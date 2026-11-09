@@ -206,9 +206,11 @@ a.inl:hover{text-decoration:underline}
 .cta{margin-top:clamp(48px,6vw,80px);background:var(--paper);color:var(--ink);padding:clamp(24px,4vw,48px)}
 .cta .disp{font-size:clamp(52px,8vw,108px)}
 .cta .disp span{color:var(--wv)}
-.cta-row{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:end;margin-top:24px}
-.cta-q{font-size:clamp(20px,2.4vw,28px);font-weight:800;letter-spacing:-.04em;line-height:1.45}
-.cta-row .lede{margin-top:10px}
+.cta-row{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:stretch;margin-top:24px}
+.cta-row>div:first-child{display:flex;flex-direction:column;justify-content:space-between}
+.cta-q{font-size:clamp(20px,2.4vw,28px);font-weight:800;letter-spacing:-.04em;line-height:1.45;margin-top:-.24em}
+.cta-row .lede{margin-top:10px;margin-bottom:-.3em}
+.cta-row .btns{justify-content:space-between}
 .btns{display:flex;flex-direction:column;gap:10px}
 .btn{display:flex;justify-content:space-between;align-items:center;gap:8px;font:800 16px var(--body);text-decoration:none;padding:15px 20px;border:2px solid var(--ink);cursor:pointer;background:none;color:var(--ink);text-align:left}
 .btn.solid{background:var(--wv);border-color:var(--wv);color:var(--on-wv)}
