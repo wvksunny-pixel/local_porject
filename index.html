@@ -85,6 +85,11 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .why h3{font-size:20px;font-weight:800;letter-spacing:-.035em;line-height:1.45;margin-top:18px}
 .why p{font-size:15.5px;color:var(--ink-2);line-height:1.75;margin-top:10px}
 .why blockquote{margin:22px 0 0;padding-top:14px;border-top:1px solid var(--hair);font-size:15px;font-weight:700;letter-spacing:-.03em;line-height:1.55}
+@supports (grid-template-rows:subgrid){
+  .why{grid-template-rows:repeat(4,auto)}
+  .why article{display:grid;grid-row:span 4;grid-template-rows:subgrid;row-gap:0;align-content:start}
+  .why blockquote{align-self:start}
+}
 .why blockquote::before{content:"현장의 목소리";display:block;font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.08em;color:var(--wv-deep);margin-bottom:6px}
 
 /* 3 for corporate */
