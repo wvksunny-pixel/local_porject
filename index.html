@@ -150,7 +150,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .big div{padding:14px 12px 4px 0;min-width:0}
 .big div+div{padding-left:12px;border-left:1px solid var(--hair)}
 .big strong{display:block;font-family:var(--display);font-weight:900;font-size:clamp(34px,3.6vw,48px);line-height:.95;color:var(--ink)}
-.big strong i{font-style:normal;color:var(--wv-deep)}
+.big strong{white-space:nowrap}
+.big strong i{font-style:normal;color:var(--wv-deep);font-family:var(--body);font-weight:700;font-size:.42em;margin-left:2px;vertical-align:baseline}
+.big strong i.ar{font-family:var(--display);font-size:.6em;margin:0 3px}
 .big span{display:block;font-size:13px;color:var(--ink-2);margin-top:6px;line-height:1.5}
 .ba{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
 .ba figure{position:relative}
@@ -609,7 +611,7 @@ footer .w{padding-block:26px;display:grid;gap:6px}
           </div>
           <div class="blk"><h4>Solution</h4><p>새로 짓지 않고, 고령 주민이 매일 찾는 공간에서 돌봄을 시작했습니다. 공간을 바꾸고, 주민 건강리더가 이웃을 살피는 구조를 만들었습니다.</p></div>
           <div class="blk"><h4>Result · 외부 기관 3개년 측정</h4>
-            <div class="big"><div><strong>10.7<i>→</i>1.2<i>%</i></strong><span>낙상 경험률</span></div><div><strong>3.17<i>배</i></strong><span>SROI</span></div><div><strong>27<i>명</i></strong><span>주민 건강리더 '일죽동친'</span></div></div>
+            <div class="big"><div><strong>10.7<i class="ar">→</i>1.2<i>%</i></strong><span>낙상 경험률</span></div><div><strong>3.17<i>배</i></strong><span>SROI</span></div><div><strong>27<i>명</i></strong><span>주민 건강리더 '일죽동친'</span></div></div>
           </div>
         </div>
         <div>
@@ -647,7 +649,7 @@ footer .w{padding-block:26px;display:grid;gap:6px}
             <p class="cap">아모레퍼시픽 본사에서 열린 MYB 진로캠프 (사진: 월드비전)</p>
             <p class="quote-s">“멘토를 직접 만나 이야기를 듣고 다양한 직업을 체험하면서 앞으로 무엇을 하고 싶은지 생각해 볼 수 있었다.”<span>— 참여 학생 · 월드비전 기업후원 소식(2026.11)</span></p></div>
           <div class="blk"><h4>Result · 진행 중</h4>
-            <div class="big"><div><strong>27<i>명</i></strong><span>진도 석교중학교 참여 학생</span></div><div><strong>4<i>단계</i></strong><span>탐색 · 만남 · 설계 · 경험</span></div><div><strong>1박 2일</strong><span>아모레퍼시픽 본사 · 서울경찰청 진로캠프</span></div></div>
+            <div class="big"><div><strong>27<i>명</i></strong><span>진도 석교중학교 참여 학생</span></div><div><strong>4<i>단계</i></strong><span>탐색 · 만남 · 설계 · 경험</span></div><div><strong>1<i>박</i> 2<i>일</i></strong><span>아모레퍼시픽 본사 · 서울경찰청 진로캠프</span></div></div>
             <p class="cap">캠프 이후에도 멘토링과 진로탐색 활동이 이어집니다.</p>
             <div class="press"><a href="https://www.worldvision.or.kr/supportGuide/enterpriseSupportNewsDetail?newsIdx=115" target="_blank" rel="noopener">월드비전 기업후원 소식 ↗</a></div>
           </div>
