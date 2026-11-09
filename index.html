@@ -710,53 +710,12 @@ footer .w{padding-block:26px;display:grid;gap:6px}
           <p class="lede">지역, 풀고 싶은 문제, 활용할 자원 중 하나만 있어도 시작할 수 있습니다.</p>
         </div>
         <div class="btns">
-          <button type="button" class="btn solid" id="open-inq" aria-controls="inquiry" aria-expanded="false">협력 문의하기 <span aria-hidden="true">→</span></button>
+          <a class="btn solid" id="open-inq" href="https://www.worldvision.or.kr/supportGuide/enterpriseSupportInfo" target="_blank" rel="noopener">협력 문의하기 <span aria-hidden="true">↗</span></a>
           <a class="btn" href="https://www.worldvision.or.kr/" target="_blank" rel="noopener">월드비전 홈페이지 <span aria-hidden="true">↗</span></a>
           <p class="reach">월드비전 대표전화 <b>02-2078-7000</b></p>
         </div>
       </div>
 
-      <form class="inq" id="inquiry" novalidate hidden>
-        <fieldset class="inq-grid">
-          <legend>담당자 정보</legend>
-          <label>이름 <em>*</em><input id="f-name" name="name" type="text" autocomplete="name" required placeholder="홍길동"></label>
-          <label>기업명 <em>*</em><input id="f-company" name="company" type="text" autocomplete="organization" required placeholder="○○주식회사"></label>
-          <label>이메일 <em>*</em><input id="f-email" name="email" type="email" autocomplete="email" required placeholder="name@company.com"></label>
-        </fieldset>
-        <fieldset class="inq-q">
-          <legend>사업장이 있는 지역 <span>복수 선택</span></legend>
-          <div class="chips">
-            <label><input type="checkbox" name="region" value="서울"><span>서울</span></label>
-            <label><input type="checkbox" name="region" value="인천·경기"><span>인천·경기</span></label>
-            <label><input type="checkbox" name="region" value="강원"><span>강원</span></label>
-            <label><input type="checkbox" name="region" value="충청"><span>충청</span></label>
-            <label><input type="checkbox" name="region" value="전라"><span>전라</span></label>
-            <label><input type="checkbox" name="region" value="경상"><span>경상</span></label>
-            <label><input type="checkbox" name="region" value="제주"><span>제주</span></label>
-          </div>
-        </fieldset>
-        <fieldset class="inq-q">
-          <legend>함께 쓸 수 있는 자원 <span>복수 선택</span></legend>
-          <div class="chips">
-            <label><input type="checkbox" name="resource" value="공장·생산기술"><span>공장·생산기술</span></label>
-            <label><input type="checkbox" name="resource" value="물류·유통망"><span>물류·유통망</span></label>
-            <label><input type="checkbox" name="resource" value="기술·전문성"><span>기술·전문성</span></label>
-            <label><input type="checkbox" name="resource" value="사람·임직원"><span>사람·임직원</span></label>
-          </div>
-        </fieldset>
-        <label class="inq-msg">문의 내용
-          <textarea id="f-message" name="message" rows="3" placeholder="예: 충북 공장 인근 청소년의 진로 교육에 관심이 있습니다."></textarea>
-        </label>
-        <label class="hp" aria-hidden="true">비워 두세요<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
-        <div class="inq-consent">
-          <label><input id="f-consent" type="checkbox" name="consent" value="동의" required><span><b>개인정보 수집·이용에 동의합니다. <em>*</em></b></span></label>
-          <p>수집 항목: 이름, 기업명, 이메일 · 목적: 협력 문의 확인과 회신 · 처리 후 월드비전 개인정보처리방침에 따라 파기합니다.</p>
-        </div>
-        <div class="inq-foot">
-          <button type="submit" class="inq-send">문의 보내기 →</button>
-          <p class="inq-status" id="inq-status" role="status" aria-live="polite"></p>
-        </div>
-      </form>
     </div>
   </div>
 </section>
@@ -791,8 +750,6 @@ footer .w{padding-block:26px;display:grid;gap:6px}
 <script>
 /* 주소가 정해지면 여기에 입력하세요. 비어 있으면 해당 링크는 숨겨집니다. */
 var LINKS = { newsletter: '' };
-/* 문의 접수 주소(Google Apps Script 웹 앱 URL). 비어 있으면 실제로 보내지 않고 대표전화를 안내합니다. */
-var FORM_ENDPOINT = '';
 
 document.querySelectorAll('[data-link]').forEach(function(a){
   var url = LINKS[a.getAttribute('data-link')];
@@ -858,39 +815,6 @@ document.querySelectorAll('[data-open="network"]').forEach(function(b){ b.addEve
 document.querySelectorAll('[data-close]').forEach(function(b){ b.addEventListener('click', closeDrawer); });
 document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeDrawer(); });
 
-/* 협력 문의 양식 */
-(function(){
-  var form = document.getElementById('inquiry'), opener = document.getElementById('open-inq');
-  var status = document.getElementById('inq-status'), btn = form.querySelector('.inq-send');
-  opener.addEventListener('click', function(){
-    var show = form.hidden; form.hidden = !show; opener.setAttribute('aria-expanded', String(show));
-    if (show) document.getElementById('f-name').focus();
-  });
-  function say(msg, kind){ status.textContent = msg; status.className = 'inq-status ' + (kind || ''); }
-  function v(id){ return document.getElementById(id).value.trim(); }
-  function picked(name){ return Array.prototype.map.call(form.querySelectorAll('[name="' + name + '"]:checked'), function(i){ return i.value; }).join(', '); }
-  form.addEventListener('input', function(e){ if (e.target.getAttribute('aria-invalid')) e.target.removeAttribute('aria-invalid'); if (status.classList.contains('err')) say(''); });
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var bad = [];
-    [['f-name','이름'],['f-company','기업명'],['f-email','이메일']].forEach(function(p){
-      var el = document.getElementById(p[0]);
-      var ok = el.value.trim() && (el.type !== 'email' || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim()));
-      el.setAttribute('aria-invalid', ok ? 'false' : 'true'); if (!ok) bad.push(p[1]);
-    });
-    var consent = document.getElementById('f-consent');
-    if (!consent.checked) bad.push('개인정보 수집·이용 동의');
-    if (bad.length) { say('다음 항목을 확인해 주세요: ' + bad.join(', '), 'err'); (form.querySelector('[aria-invalid="true"]') || consent).focus(); return; }
-    if (form.elements['website'].value) return;
-    if (!FORM_ENDPOINT) { say('온라인 접수 창구를 준비하고 있습니다. 지금은 월드비전 대표전화 02-2078-7000으로 문의해 주세요.', 'err'); return; }
-    var data = new URLSearchParams({ name: v('f-name'), company: v('f-company'), email: v('f-email'), region: picked('region'), resource: picked('resource'), message: v('f-message'), consent: '동의', page: location.href });
-    btn.disabled = true; say('보내는 중입니다…');
-    fetch(FORM_ENDPOINT, { method: 'POST', mode: 'no-cors', body: data })
-      .then(function(){ form.reset(); say('문의가 접수되었습니다. 담당자가 확인 후 연락드리겠습니다.', 'ok'); })
-      .catch(function(){ say('보내지 못했습니다. 잠시 후 다시 시도하거나 대표전화 02-2078-7000으로 문의해 주세요.', 'err'); })
-      .then(function(){ btn.disabled = false; });
-  });
-})();
 
 // puzzle map
 (function(){
