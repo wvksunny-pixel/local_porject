@@ -748,6 +748,9 @@ footer .w{padding-block:26px;display:grid;gap:6px}
 </footer>
 
 <script>
+/* 링크로 들어오면 항상 맨 위에서 시작 (특정 위치 #링크는 예외) */
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+if (!location.hash) { window.scrollTo(0, 0); window.addEventListener('load', function(){ window.scrollTo(0, 0); }); }
 /* 주소가 정해지면 여기에 입력하세요. 비어 있으면 해당 링크는 숨겨집니다. */
 var LINKS = { newsletter: '' };
 
